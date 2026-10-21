@@ -6,6 +6,7 @@ b=p.LoadBoard(str(root/'Round_LED_Flash.kicad_pcb'))
 if list(b.GetTracks()):raise RuntimeError('Cannot reseed a routed board.')
 fp={f.GetReference():f for f in b.GetFootprints()}
 seeds={
+ 'U6':(72,78,0,False),'L1':(76.5,78,270,False),
  'U70':(131,85,180,False),'L2':(134,92,90,False),
  'C284':(134,95.1,90,True),'Q70':(132,83,0,True),
  'R270':(132,79,0,True),'F2':(132,107.5,0,True),

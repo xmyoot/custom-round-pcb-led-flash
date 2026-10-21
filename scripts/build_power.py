@@ -115,12 +115,14 @@ def populate(d):
     r('R71','100k','LOGIC_PG','CAP_DUMP_BASE',930,455)
     for ref,x in [('R72',930),('R73',980)]:
         r(ref,'100 0.5W','CAP_BANK','CAP_DUMP_DRAIN',x,505,fp='Resistor_SMD:R_2010_5025Metric',
-          notes='Parallel 50ohm discharge, 0.48W initial total at 4.9V. Effective 2.5F: nominal 125s time constant.')
+          notes='Parallel 50ohm active dump, 0.48W initial total at 4.9V. Slows near MOSFET threshold; R74 provides final bleed.')
+    r('R74','330 0.25W','CAP_BANK','GND',1030,505,fp='Resistor_SMD:R_1206_3216Metric',
+      notes='Permanent bleeder: 73mW maximum at 4.9V. Conservative RC model below 0.5V within 60min; always measure TP7 before service.')
     for ref,net,x in [('TP7','CAP_BANK',930),('TP8','CAP_MID',980)]:
         add(ref,net,'Connector:TestPoint','TestPoint:TestPoint_Pad_D1.5mm',{1:net},x,555,
             notes='Stored energy test access; verify safe voltage before service.')
     annotations.append(text('13 / DEFAULT-ON CAPACITOR SERVICE DISCHARGE',795,435,2))
-    annotations.append(text('Nominal bank discharge to 0.5V takes about 4.8 minutes; measure before handling.',795,605))
+    annotations.append(text('Active dump removes most energy; permanent 330ohm bleed provides final discharge. Measure TP7 before service.',795,605))
 
     # These declare externally supplied rails after passive protection elements.
     # They do not override electrical or voltage-domain verification.

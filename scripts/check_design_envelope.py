@@ -55,6 +55,8 @@ cool=262144*resistance('R201')/50000*1e-6
 window_min=window*.99*.977;window_max=window*1.01*1.023
 # Qg maximum39nC at10V / minimum pull-up current near minimum1.7V threshold.
 gate_off=39e-9/(1.7/(resistance('R232')*1.01))
+bleed_seconds=2.5*1.3*1.2*resistance('R74')*1.01*math.log(4.9/.5)
+adc_off_v=5e-6*max(resistance('R28'),resistance('R30'))*1.01
 
 # Actual TDK R/T8016 min/max table at cell qualification boundaries.
 ntc_table={0:(31907,33393),5:(24877,25898),40:(5236.9,5417.1),45:(4286.1,4451.3)}
@@ -67,6 +69,8 @@ for temp,(lo,hi) in ntc_table.items():
  ntc[str(temp)]={'ratio_min':min(fractions),'ratio_max':max(fractions)}
 
 checks={
+ 'permanent_bleed_to_half_volt_model_within_60min':bleed_seconds<3600,
+ 'ADC_off_leakage_below_unpowered_pin_limit':adc_off_v<.3,
  'cap_ready_reachable_at_charger_min':ready['rising_max_V']<4.7,
  'boost_ready_reachable_at_boost_min':boost_ready['rising_max_V']<boost_min,
  'input_above_converter_min_3V':vin>3,
@@ -80,6 +84,7 @@ checks={
  'fortyfiveC_always_hot_inhibited':ntc['45']['ratio_max']<.43,
 }
 result={'status':'calculated model; prototype qualification pending','checks':checks,
+ 'permanent_bleed_to_half_volt_model_s':bleed_seconds,'ADC_off_leakage_max_model_V':adc_off_v,
  'boost_V':[boost_min,boost_max],'cap_ready':ready,'loaded_cap_uvlo':uvlo,'boost_ready':boost_ready,
  'current_model_max_A_per_channel':imax,'output_power_max_W':pout,'input_power_model_W':pin,
  'bank_ESR_aged_cold_ohm':esr,'series_path_allocation_ohm':series,'loaded_input_min_V':vin,

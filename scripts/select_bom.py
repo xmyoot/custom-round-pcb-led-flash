@@ -17,7 +17,7 @@ def enrich(d):
                 suffix=token[-1].upper();token=token[:-1]
             txt=format(Decimal(token).normalize(),'f')
             code=txt.replace('.',suffix) if '.' in txt else txt+suffix
-            size='2010' if '2010' in fp else ('0805' if '0805' in fp else '0603')
+            size='2010' if '2010' in fp else ('1206' if '1206' in fp else ('0805' if '0805' in fp else '0603'))
             series='RC'+size+('FK-07' if size=='2010' else 'FR-07')
             p['MPN']=series+code+'L';p['Manufacturer']='Yageo'
             p['Notes']+=' 1% general-purpose resistor; individual sourcing and series-code audit pending.'

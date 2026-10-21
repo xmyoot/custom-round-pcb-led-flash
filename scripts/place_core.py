@@ -46,15 +46,31 @@ def opposite_holes_clear(f,placed):
         if any(other.GetLayer()!=f.GetLayer() and overlap(box(pad),box(other)) for other in placed):return False
     return True
 
-critical=['U60','U61','L2','C284','U70','Q70','R270','C280','C281','C282','C283','C274','C275','R271','R272','C277','R275','C278','C276',
+critical=['J3','J4','J5','U60','C230','U61','C231','L2','C284','U70','Q70','R270','C280','C274','C275','R271','R272','C277','R275','C278','C276','C281','C282','C283','C270','C271','C272',
           'U6','L1','C11','C12','C13','C14','C15','C16','C10','R10','R11',
           'U30','C61','C60','R61','Q30','SW1','SW2',
           'U7','C6','C8','U5','C7','U3','C4','D4','D5','U2','C2','C3']
+decaps={'C'+str(n):'U'+str(n-100) for n in range(140,154)}
+decaps.update({'C155':'U55','C156':'U56','C162':'U62','C163':'U63','C236':'U54','C80':'U8','C5':'U4','C9':'U9','C1':'U1'})
 order={ref:i for i,ref in enumerate(critical)}
 movable.sort(key=lambda f:(order.get(f.GetReference(),100),-((box(f)[2]-box(f)[0])*(box(f)[3]-box(f)[1]))))
+base=[f for f in movable if f.GetReference() not in decaps]
+movable=[]
+for f in base:
+    movable.append(f)
+    movable.extend(fps[c] for c,u in decaps.items() if u==f.GetReference())
 placed=list(fixed); result=[]
 for f in movable:
     ref=f.GetReference(); desired=f.GetPosition(); dx=p.ToMM(desired.x); dy=p.ToMM(desired.y)
+    if ref in decaps:
+        parent=fps[decaps[ref]]
+        if f.GetLayer()!=parent.GetLayer():f.Flip(f.GetPosition(),False)
+        supply=next((pad.GetNetname() for pad in f.Pads() if pad.GetNetname() not in ('/GND','GND')),None)
+        powerpad=next((pad for pad in parent.Pads() if pad.GetNetname()==supply),None)
+        if powerpad:
+            loc=powerpad.GetPosition(); center=parent.GetPosition()
+            vx=p.ToMM(loc.x-center.x);vy=p.ToMM(loc.y-center.y);norm=max(math.hypot(vx,vy),.1)
+            dx=p.ToMM(loc.x)+1.3*vx/norm;dy=p.ToMM(loc.y)+1.3*vy/norm
     obs=obstacles(f,placed)
     offsets=sorted([(ix*.5,iy*.5) for ix in range(-24,25) for iy in range(-24,25)],key=lambda xy:xy[0]**2+xy[1]**2)
     found=None
@@ -65,12 +81,19 @@ for f in movable:
     if found is None:
         # Broaden only when the block-local search cannot fit a component.
         candidates=[]
-        for rr in (30,32,34,36,38,40):
+        for rr in (29+i*.5 for i in range(24)):
             for deg in range(0,360,2):
                 xx=100+rr*math.cos(math.radians(deg)); yy=100+rr*math.sin(math.radians(deg))
                 candidates.append(((xx-dx)**2+(yy-dy)**2,xx,yy))
         for _,xx,yy in sorted(candidates):
             f.SetPosition(pt(xx,yy)); bounds=box(f)
+            if in_ring(bounds) and not any(overlap(bounds,o) for o in obs) and opposite_holes_clear(f,placed):
+                found=(xx,yy);break
+    if found is None and ref not in critical and ref not in decaps:
+        # Ordinary SMT passives may move to the other assembly side.
+        f.Flip(f.GetPosition(),False);obs=obstacles(f,placed)
+        for _,xx,yy in sorted(candidates):
+            f.SetPosition(pt(xx,yy));bounds=box(f)
             if in_ring(bounds) and not any(overlap(bounds,o) for o in obs) and opposite_holes_clear(f,placed):
                 found=(xx,yy);break
     if found is None: raise RuntimeError(f'No conservative placement found for {ref}; revise floorplan.')

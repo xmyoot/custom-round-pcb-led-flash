@@ -1,6 +1,8 @@
 {
   "status": "calculated model; prototype qualification pending",
   "checks": {
+    "permanent_bleed_to_half_volt_model_within_60min": true,
+    "ADC_off_leakage_below_unpowered_pin_limit": true,
     "cap_ready_reachable_at_charger_min": true,
     "boost_ready_reachable_at_boost_min": true,
     "input_above_converter_min_3V": true,
@@ -13,6 +15,8 @@
     "zeroC_always_cold_inhibited": true,
     "fortyfiveC_always_hot_inhibited": true
   },
+  "permanent_bleed_to_half_volt_model_s": 2966.8003916693465,
+  "ADC_off_leakage_max_model_V": 0.11110000000000002,
   "boost_V": [
     20.64343050847458,
     21.500783149448342
