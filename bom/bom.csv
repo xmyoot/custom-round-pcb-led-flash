@@ -1,0 +1,26 @@
+Reference,Qty,Value,Footprint,MPN,Manufacturer,Chosen_Distributor,Datasheet,Validated,DNP,Notes
+"C10,C21,C23,C24,C40,C41",6,100n,0603,,,,,,,
+"C11,C12,C13",3,10u 10V,0805,,,,,,,
+"C14,C15,C16",3,22u 16V,0805,,,,,,,
+C20,1,1u,0603,,,,,,,
+C22,1,10u,0805,,,,,,,
+"C30,C31,C32,C33",4,5F 2.7V,CP_Radial_D10.0mm_P5.00mm,HV1020-2R7505-R,Eaton,,https://www.eaton.com/content/dam/eaton/products/electronic-components/resources/data-sheet/eaton-hv-supercapacitors-cylindrical-cells-data-sheet.pdf,,,Maximum body 10.5 mm diameter x 22.3 mm high. Hand-solder after reflow. Pulse and aged ESR validation pending.
+D2,1,BLUE,0603,,,,,,,Select LED MPN and brightness/current before BOM freeze.
+D3,1,GREEN,0603,,,,,,,Select LED MPN and brightness/current before BOM freeze.
+J1,1,USB4085-GF-A,USB_C_Receptacle_GCT_USB4085,USB4085-GF-A,GCT,,https://gct.co/files/drawings/usb4085.pdf,,,"Charging only. Contacts and shell stakes are through-hole. Local pad clearance is 0.15 mm, per land pattern."
+J2,1,BATTERY,JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,B2B-PH-K-S(LF)(SN),JST,,,,,Raw cell negative is not protected system ground. Fuse and DW01 circuit pending.
+L1,1,1.5uH,Coilcraft_XFL4020,XFL4020-152MEC,Coilcraft,,https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf,,,Independent footprint verification remains a release gate.
+"Q20,Q21",2,AO3401A,SOT-23,AO3401A,Alpha & Omega Semiconductor,,https://www.aosmd.com/res/data_sheets/AO3401A.pdf,,,Divider high-side switch. Gate pulls to its own source; diode blocks source-to-ADC while off.
+"Q22,Q23",2,2N7002-7-F,SOT-23,2N7002-7-F,Diodes Incorporated,,https://www.diodes.com/datasheet/download/2N7002.pdf,,,Lifecycle/orderable suffix must be rechecked before BOM freeze; -7 listing is NRND.
+R10,1,470k,0603,,,,,,,
+R11,1,150k,0603,,,,,,,
+"R12,R13,R20,R21,R22,R23,R40,R41",8,10k,0603,,,,,,,
+"R14,R27,R28,R29,R30,R50,R51",7,100k,0603,,,,,,,
+"R24,R25,R26",3,4.7k,0603,,,,,,,Default-low flash/arm request. Hardware interlocks remain mandatory during boot/reset.
+"R31,R32",2,2.2k,0603,,,,,,,
+"R42,R43",2,1k,0603,,,,,,,
+SW1,1,POWER,SW_SPDT_CK_JS102011SAQN,JS102011SAQN,C&K,,,,,Common is pin 2. Position connects enable to cell or ground.
+SW2,1,SHUTTER,SW_SPST_TL3342,TL3342F160QG,E-Switch,,,,,
+TH1,1,10k NTC,0603,,,,,,,LED-area sensor; actual MPN/Beta pending. Not a cell temperature sensor.
+U6,1,TPS63070RNMR,TPS63070_RNM0015A,TPS63070RNMR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/tps63070.pdf,,,
+U10,1,ESP32-C3-WROOM-02-N4,ESP32-C3-WROOM-02_NoViaInPad,ESP32-C3-WROOM-02-N4,Espressif Systems,,https://www.espressif.com/sites/default/files/documentation/esp32-c3-wroom-02_datasheet_en.pdf,,,

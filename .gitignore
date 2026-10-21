@@ -1,0 +1,8 @@
+*.lck
+*.kicad_prl
+*-backups/
+*.bak
+__pycache__/
+datasheets/*.txt
+datasheets/*.pdf
+analysis/cache/

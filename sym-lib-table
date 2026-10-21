@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Round_LED_Flash")(type "KiCad")(uri "${KIPRJMOD}/libraries/Round_LED_Flash.kicad_sym")(options "")(descr "Project IC symbols with explicit physical pin numbers"))
+)

@@ -1,0 +1,6 @@
+(version 1)
+(rule "Board routed edge clearance"
+  (constraint edge_clearance (min 0.5mm)))
+(rule "Keep other components out of the RF antenna area"
+  (condition "A.Type == 'Footprint' && A.Reference != 'U10' && A.intersectsArea('ANTENNA - no copper or other components; keep enclosure metal away')")
+  (constraint disallow footprint))

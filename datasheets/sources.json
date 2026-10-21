@@ -1,0 +1,118 @@
+{
+  "Bridgelux_DS350": {
+    "url": "https://www.bridgelux.com/sites/default/files/DS350.pdf",
+    "file": "Bridgelux_DS350.pdf",
+    "sha256": "144e271ab31cebbe2073ad9952e50a72744dab95f8c9b8ec7ba2d3aa7accde2b",
+    "bytes": 1909857,
+    "status": "downloaded"
+  },
+  "Eaton_HV": {
+    "url": "https://www.eaton.com/content/dam/eaton/products/electronic-components/resources/data-sheet/eaton-hv-supercapacitors-cylindrical-cells-data-sheet.pdf",
+    "status": "failed",
+    "reason": "The read operation timed out"
+  },
+  "MP3435": {
+    "url": "https://www.monolithicpower.cn/cn/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP3435GL/",
+    "file": "MP3435.pdf",
+    "sha256": "1f827a0457f2acab98499f0529422b80dd5737ad5719d651981cc0bfc9a2f52f",
+    "bytes": 796404,
+    "status": "downloaded"
+  },
+  "CAT4101": {
+    "url": "https://www.onsemi.com/download/data-sheet/pdf/cat4101-d.pdf",
+    "status": "failed",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  "TPS63070": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps63070.pdf",
+    "file": "TPS63070.pdf",
+    "sha256": "a88ef66f3493156ff6e7da0849de0e0e1068647f2553d08c1844d4a90c5c65ef",
+    "bytes": 1680561,
+    "status": "downloaded"
+  },
+  "TLVH431": {
+    "url": "https://www.ti.com/lit/ds/symlink/tlvh431.pdf",
+    "file": "TLVH431.pdf",
+    "sha256": "e30d628cb6475d48e9ae87336ee0f0065eb5faea33f0465188dc4c43b56e6217",
+    "bytes": 2148710,
+    "status": "downloaded"
+  },
+  "ESP32-C3-WROOM-02": {
+    "url": "https://www.espressif.com/sites/default/files/documentation/esp32-c3-wroom-02_datasheet_en.pdf",
+    "file": "ESP32-C3-WROOM-02.pdf",
+    "sha256": "2375b1be75ebbfcffa050e6a26c3ee7957bc7171b319066081a491d1b2e21161",
+    "bytes": 958836,
+    "status": "downloaded"
+  },
+  "USB4085": {
+    "url": "https://gct.co/files/drawings/usb4085.pdf",
+    "file": "USB4085.pdf",
+    "sha256": "39afb82c5104579e8c2db4f4e758825c48cab1c4b06d4c61c62056470ff09e9e",
+    "bytes": 201409,
+    "status": "downloaded"
+  },
+  "SN74LVC1G123": {
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g123.pdf",
+    "file": "SN74LVC1G123.pdf",
+    "sha256": "7248ef0ff62af4d2da172bb2900f0f1f136a6ae90109a6485228e01269fa1c1d",
+    "bytes": 1245318,
+    "status": "downloaded"
+  },
+  "SN74LVC1G74": {
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf",
+    "file": "SN74LVC1G74.pdf",
+    "sha256": "e46a5a867fec742290000dca5ed3b291535f3c4418ef2ae267acc4ab51b26d8a",
+    "bytes": 1427201,
+    "status": "downloaded"
+  },
+  "LTC6993": {
+    "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ltc6993-6993-1-6993-2-6993-3-6993-4.pdf",
+    "status": "failed",
+    "reason": "The read operation timed out"
+  },
+  "TPS3808": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps3808.pdf",
+    "file": "TPS3808.pdf",
+    "sha256": "74d889c0f68af88032f1633c26381817cc03e10d9fd3b4c177a044ad3ed86eed",
+    "bytes": 2046179,
+    "status": "downloaded"
+  },
+  "TP4056": {
+    "url": "https://www.toppwr.com/uploadfile/file/20230304/640301eae1260.pdf",
+    "status": "failed",
+    "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  "DW01A": {
+    "url": "https://hmsemi.com/downfile/DW01A.PDF",
+    "file": "DW01A.pdf",
+    "sha256": "cdba0ec05698cf629e4a23269f8c0371a0583cc132ec6730ef204aa04e886569",
+    "bytes": 1276278,
+    "status": "downloaded"
+  },
+  "TUSB320LAI": {
+    "url": "https://www.ti.com/lit/ds/symlink/tusb320lai.pdf",
+    "file": "TUSB320LAI.pdf",
+    "sha256": "62f7b3f65338e25ebd6fd46ef04474ba806b06b1cc04bc0b3d7b8191b01ca87d",
+    "bytes": 1313743,
+    "status": "downloaded"
+  },
+  "AO3401A": {
+    "url": "https://www.aosmd.com/res/data_sheets/AO3401A.pdf",
+    "file": "AO3401A.pdf",
+    "sha256": "0d8e3261ae280e007b5837fff60c55142f2d92af71edc4d02aee6f7a760a785c",
+    "bytes": 326568,
+    "status": "downloaded"
+  },
+  "2N7002": {
+    "url": "https://www.diodes.com/datasheet/download/2N7002.pdf",
+    "file": "2N7002.pdf",
+    "sha256": "ff8e1c98f93c7e3a2cdbe763d4ef6bd6028699bf005882871c00d2d5a398f6b1",
+    "bytes": 360248,
+    "status": "downloaded"
+  },
+  "LTC3225": {
+    "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/3225fb.pdf",
+    "status": "failed",
+    "reason": "The read operation timed out"
+  }
+}
