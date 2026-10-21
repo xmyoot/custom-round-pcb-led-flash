@@ -2,7 +2,7 @@
 
 ## Actual state
 
-One authoritative KiCad10 project exists at the root. Current candidate:244 symbols, including6 nonphysical power flags and2 offboard assembly items;236 PCB footprints. No routed tracks or planes yet. Schematic and PCB are matched by native netlist/pad assignments. The source remains an unreleased prototype candidate.
+One authoritative KiCad10 project exists at the root. Current candidate:245 symbols, including6 nonphysical power flags and2 offboard assembly items;237 PCB footprints. Converter routing and the inner ground reference are in progress. Schematic and PCB are matched by native netlist/pad assignments. The source remains an unreleased prototype candidate.
 
 Implemented: MCU/boot/UART isolation; TPS63070 logic supply; independent battery undervoltage supervisor; fused DW01/AO3400A protection; TUSB320LAI source-current qualification; TLV760 USB logic supply; TPS25200 VBUS clamp/current limiter; TP4056300mA cell charging with separate pack NTC and shorted-NTC comparator; three indicators; shutter/slide controls; LED-area NTC; switched ADC dividers; LTC3225 balanced4.8V2.5F effective capacitor bank; default-on discharge; fused MP3435 boost with input disconnect/current sense; two CAT4101200mA sinks; AO4407A physical LED cutoff; two LTC6993-1 non-retriggerable timers; separate preflash energy, loaded-bank UVLO, boost-ready, and startup interlocks.
 
@@ -13,7 +13,10 @@ External items in the same BOM: one Bridgelux BXRV-TR-2765G-10A0-A-23 COB and on
 - Preserve84mm OD/55mm opening,4layers1.6mm. Rear cell mounting replaces the incompatible18x70mm battery cutout. RF module antenna extends beyond board perimeter; enclosure envelope is larger than PCB.
 - Selected COB is2700/6500K, a departure from requested approximate3000K warm. Its18V channels require21.07V boost, superseding10.5V architecture assumptions.
 - Use200mA nominal/channel via2.49k RSET.300/350mA were provisional and lacked simultaneous-flash aged/cold ESR margin. Current-bound scaling from the CAT4101350mA specification is a model requiring prototype characterization.
-- Two Eaton5F/2.7V cells in series give2.5F,80mohm initial bank ESR. Model200% aged ESR and conservative150% cold multiplier at0C, plus50mohm for interconnects and power components. Stored energy28.8J at4.8V. Nominal cold start charge time~160s; real/tolerance time longer.
+- Two Eaton5F/2.7V cells in series give2.5F,80mohm initial bank ESR. Model200% aged ESR and conservative150% cold multiplier at0C, plus50mohm for interconnects and power components. Stored energy28.8J at4.8V. Permanent330ohm bleed draws14.5mA near full charge; nominal cold charge is about178s, with tolerance/imbalance extending it.
+- The self-biased Q34 active discharge slows near its gate threshold. R74 provides an independent passive endpoint: calculated below0.5V within60min with+30% capacitance,+20% temperature allowance and+1% resistance. This is a model, not a service guarantee: always measure TP7. Each active dump resistor starts near0.24W; permanent1206 bleeder starts below0.073W.
+- ADC dividers are22k/22k. AO3401A5uA off-leakage at55C produces a conservative0.111V on an unpowered ADC, below0.3V. Verify unpowered leakage on the prototype.
+- Battery cutoff and restart differ: supervisor cutoff is nominal2.79V, but TPS63070 cold startup requires at least3V. Recharge before restarting a deeply discharged cell. Timer cooldown applies during continuous powered operation; firmware must enforce at least1.3s after startup before arming to cover power-cycle rearming.
 - Boost feedback162k/10k0.1%; compensation120k/33n plus47p is an analytical starting network. Stability and pulse load response require qualification.
 - Separate GPIO2 trigger allows LED PFET settling before precise channel pulses. Firmware sets TRIG_REQ low before ARM, waits for GPIO7 permission, triggers window, waits50us, then commands0.5–1ms pulses within the window. Startup strap levels remain intact.
 - Hardware window1.403ms nominal; cooldown1.258s nominal. Physical cutoff remains independent of sink enables. Output reservoir is before cutoff; do not add bulk capacitance on LED_ANODES.

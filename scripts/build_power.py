@@ -30,10 +30,10 @@ def populate(d):
         mpn='0451002.MRL',manufacturer='Littelfuse',notes='Fuse interruption rating versus actual cell fault current remains a release gate.')
     npn('Q3','USB_INHIBIT_BASE','SYS_EN',980,110)
     r('R3','47k','VBUS_RAW','USB_INHIBIT_BASE',980,70)
-    ic('U9','TPS3808G30',[(1,'RESET_N','open_collector'),(2,'GND','power_in'),(3,'MR_N','input'),(4,'CT','input'),(5,'SENSE','input'),(6,'VDD','power_in')],
+    ic('U9','TPS3808G33',[(1,'RESET_N','open_collector'),(2,'GND','power_in'),(3,'MR_N','input'),(4,'CT','input'),(5,'SENSE','input'),(6,'VDD','power_in')],
        {1:'SYS_EN',2:'GND',3:'BAT_PROT',4:None,5:'BAT_PROT',6:'BAT_PROT'},s6,1080,240,
-       'TPS3808G30DBVR','Texas Instruments',ti+'tps3808.pdf',
-       'Independent 2.79V system undervoltage cutoff, before emergency DW01 overdischarge. CT open gives nominal 20ms release delay.')
+       'TPS3808G33DBVR','Texas Instruments',ti+'tps3808.pdf',
+       'Independent 3.07V system undervoltage cutoff; minimum threshold remains above 3V converter startup requirement. CT open gives nominal 20ms release delay.')
     c('C9','100n','BAT_PROT','GND',1080,290)
     annotations.append(text('09 / CELL FUSE + DW01 LOW-SIDE PROTECTION',795,25,2))
     annotations.append(text('Raw negative is isolated from all USB, fixture and enclosure grounds.',795,155))
