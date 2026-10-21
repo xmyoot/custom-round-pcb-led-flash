@@ -8,8 +8,8 @@
 An advanced, hardware-interlocked **annular ring LED camera flash and video light** engineered in **KiCad 10.0.7**. Designed to fit concentric around photographic lens barrels (84.0 mm OD × 55.0 mm ID), the board integrates a **supercapacitor-buffered boost powertrain**, dual regulated current sinks for a tunable white COB, hardware-enforced timing and safety interlocks, and Bluetooth Low Energy (BLE 5.0) control via an **ESP32-C3**.
 
 <p align="center">
-  <img src="client_request/IMG_7281.PNG" alt="Round LED Flash Concept" width="48%" />
-  <img src="client_request/IMG_7282.PNG" alt="Round LED Flash Specifications" width="48%" />
+  <img src="output/renders/Round_LED_Flash_3D_Isometric.png" alt="Round LED Flash 3D Isometric Assembly" width="58%" />
+  <img src="output/renders/Round_LED_Flash_3D_Top.png" alt="Round LED Flash 3D Top View" width="38%" />
 </p>
 
 ---
