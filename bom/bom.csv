@@ -1,30 +1,94 @@
 Reference,Qty,Value,Footprint,MPN,Manufacturer,Chosen_Distributor,Datasheet,Validated,DNP,Notes
-"C10,C21,C23,C24,C40,C41",6,100n,0603,,,,,,,
-"C11,C12,C13",3,10u 10V,0805,,,,,,,
-"C14,C15,C16",3,22u 16V,0805,,,,,,,
-C20,1,1u,0603,,,,,,,
-C22,1,10u,0805,,,,,,,
+C2,1,1u 50V,0805,GRM21BR71H105KA12L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR71H105KA12L,,,Exact nominal/package selection; effective capacitance and source verification pending.
+"C3,C230,C231",3,1u 10V,0603,GRM188R61C105KA12D,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R61C105KA12D,,,Exact nominal/package selection; effective capacitance and source verification pending.
+C6,1,4.7u 16V,0805,GRM21BR71E475KA73L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR71E475KA73L,,,Exact nominal/package selection; effective capacitance and source verification pending.
+"C7,C274,C283",3,100n 50V,0603,GRM188R71H104KA93D,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R71H104KA93D,,,Exact nominal/package selection; effective capacitance and source verification pending.
+"C10,C21,C23,C24,C40,C41,C1,C9,C4,C5,C80,C142,C143,C140,C141,C144,C145,C146,C147,C148,C149,C150,C151,C152,C153,C236,C162,C163,C155,C156,C273",31,100n,0603,GRM188R71H104KA93D,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R71H104KA93D,,,Exact nominal/package selection; effective capacitance and source verification pending.
+"C11,C12,C13,C8",4,10u 10V,0805,GRM21BR61C106KE15L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR61C106KE15L,,,Exact nominal/package selection; effective capacitance and source verification pending.
+"C14,C15,C16",3,22u 16V,0805,GRM21BR61C226ME44L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR61C226ME44L,,,Exact nominal/package selection; effective capacitance and source verification pending.
+C20,1,1u,0603,GRM188R61C105KA12D,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R61C105KA12D,,,Exact nominal/package selection; effective capacitance and source verification pending.
+C22,1,10u,0805,GRM21BR61C106KE15L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR61C106KE15L,,,Exact nominal/package selection; effective capacitance and source verification pending.
 "C30,C32",2,5F 2.7V,CP_Radial_D10.0mm_P5.00mm,HV1020-2R7505-R,Eaton,,https://www.eaton.com/content/dam/eaton/products/electronic-components/resources/data-sheet/eaton-hv-supercapacitors-cylindrical-cells-data-sheet.pdf,,,Maximum body 10.5 mm diameter x 22.3 mm high. Hand-solder after reflow. Pulse and aged ESR validation pending.
-C60,1,4.7u 10V,0805,,,,,,,
-C61,1,2.2u 16V,0805,,,,,,,Select effective capacitance >=1uF at applied voltage for charge-pump flying capacitor.
-D2,1,BLUE,0603,,,,,,,Select LED MPN and brightness/current before BOM freeze.
-D3,1,GREEN,0603,,,,,,,Select LED MPN and brightness/current before BOM freeze.
+C60,1,4.7u 10V,0805,GRM21BR71E475KA73L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR71E475KA73L,,,Exact nominal/package selection; effective capacitance and source verification pending.
+C61,1,2.2u 16V,0805,GRM21BR71C225KA12L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR71C225KA12L,,,Select effective capacitance >=1uF at applied voltage for charge-pump flying capacitor.
+"C270,C271,C272",3,22u 10V,1206,GRM31CR61C226KE15L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM31CR61C226KE15L,,,Exact nominal/package selection; effective capacitance and source verification pending.
+C275,1,2.2u 10V,0805,GRM21BR71C225KA12L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR71C225KA12L,,,Exact nominal/package selection; effective capacitance and source verification pending.
+C276,1,10n,0603,GRM188R71H103KA01D,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R71H103KA01D,,,Exact nominal/package selection; effective capacitance and source verification pending.
+C277,1,33n,0603,GRM188R71H333KA61D,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R71H333KA61D,,,Exact nominal/package selection; effective capacitance and source verification pending.
+C278,1,47p,0603,GRM1885C1H470JA01D,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM1885C1H470JA01D,,,Exact nominal/package selection; effective capacitance and source verification pending.
+"C280,C281,C282",3,10u 50V,1210,GRM32ER71H106KA12L,Murata,,https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM32ER71H106KA12L,,,Choose DC-bias-characterized MLCC; total effective ceramic output capacitance >=15uF.
+C284,1,120u 35V,CP_Elec_10x12.6,35SVPF120M,Panasonic,,https://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000COL87.pdf,,,"Polymer output reservoir; independent package, ESR, ripple and loop-stability verification pending."
+D1,1,RED,0603,LTST-C190KRKT,Lite-On,,https://optoelectronics.liteon.com/upload/download/DS-22-99-0178/LTST-C190KRKT.pdf,,,Exact LED MPN pending.
+D2,1,AMBER BLE,0603,LTST-C190KFKT,Lite-On,,https://optoelectronics.liteon.com/upload/download/DS-22-99-0186/LTST-C190KFKT.PDF,,,Select LED MPN and brightness/current before BOM freeze.
+D3,1,GREEN,0603,LTST-C190KGKT,Lite-On,,,,,Select LED MPN and brightness/current before BOM freeze.
+"D4,D5",2,PESD5V0S1BA,SOD-323,"PESD5V0S1BA,115",Nexperia,,https://assets.nexperia.com/documents/data-sheet/PESD5V0S1BA.pdf,,,"Bidirectional ESD device; comma is part of the orderable MPN, not a second part."
+D6,1,SMF4L6.0A,SOD-123F,SMF4L6.0A,Littelfuse,,https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smf_datasheet.pdf.pdf,,,6V standoff input transient clamp; place at receptacle. Not protection from a sustained non-compliant supply.
+D60,1,10V ZENER,SOD-123,BZT52C10-7-F,Diodes Incorporated,,https://www.diodes.com/datasheet/download/BZT52Cxx.pdf,,,Select 10V zener; cathode to PFET source. Gate transient and off-time verification pending.
+D70,1,GATE CLAMP,SOD-123,BAV21W-7-F,Diodes Incorporated,,https://www.diodes.com/datasheet/download/BAV19W-BAV21W.pdf,,,"Low-leakage silicon diode anode at source, cathode at gate; select MPN and check MPS figure4 orientation."
+F1,1,2A FAST,Fuse_Littelfuse-NANO2-451_453,0451002.MRL,Littelfuse,,,,,Fuse interruption rating versus actual cell fault current remains a release gate.
+F2,1,7A FAST,Fuse_Littelfuse-NANO2-451_453,0451007.MRL,Littelfuse,,,,,Cap bank branch fuse; verify actual capacitor fault current and repetitive pulse I2t.
 J1,1,USB4085-GF-A,USB_C_Receptacle_GCT_USB4085,USB4085-GF-A,GCT,,https://gct.co/files/drawings/usb4085.pdf,,,"Charging only. Contacts and shell stakes are through-hole. Local pad clearance is 0.15 mm, per land pattern."
 J2,1,BATTERY,JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,B2B-PH-K-S(LF)(SN),JST,,,,,Raw cell negative is not protected system ground. Fuse and DW01 circuit pending.
+J3,1,BM02B-GHS-TBT(LF)(SN),JST_GH_BM02B-GHS-TBT_1x02-1MP_P1.25mm_Vertical,BM02B-GHS-TBT(LF)(SN),JST,,https://www.jst-mfg.com/product/pdf/eng/eGH.pdf,,,Raw cell negative is not protected system ground. Fuse and DW01 circuit pending.
 L1,1,1.5uH,Coilcraft_XFL4020,XFL4020-152MEC,Coilcraft,,https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf,,,Independent footprint verification remains a release gate.
+L2,1,1.5uH,Coilcraft_XAL7030-152,XAL7030-152MEC,Coilcraft,,https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf,,,
+LED1,1,BXRV-TR-2765G-10A0-A-23,,BXRV-TR-2765G-10A0-A-23,Bridgelux,,https://www.bridgelux.com/sites/default/files/DS350.pdf,,,"OFFBOARD assembly item: 2700/6500K, 15.8mm square, separate warm/cool terminals; mount on electrically isolated heat spreader."
+"Q1,Q2,Q34",3,AO3400A,SOT-23,AO3400A,Alpha & Omega Semiconductor,,https://www.aosmd.com/res/data_sheets/AO3400A.pdf,,,
 "Q20,Q21,Q30",3,AO3401A,SOT-23,AO3401A,Alpha & Omega Semiconductor,,https://www.aosmd.com/res/data_sheets/AO3401A.pdf,,,Divider high-side switch. Gate pulls to its own source; diode blocks source-to-ADC while off.
-"Q22,Q23,Q31,Q32,Q33",5,MMBT3904-7-F,SOT-23,MMBT3904-7-F,Diodes Incorporated,,https://www.diodes.com/datasheet/download/MMBT3904.pdf,,,Lifecycle/orderable suffix must be rechecked before BOM freeze; -7 listing is NRND.
-R10,1,470k,0603,,,,,,,
-R11,1,150k,0603,,,,,,,
-"R12,R13,R20,R21,R22,R23,R40,R41,R62,R63",10,10k,0603,,,,,,,
-"R14,R27,R28,R29,R30,R50,R52,R51,R53,R67,R60,R64,R65,R66",14,100k,0603,,,,,,,Base current limits PG loading; pull-down saturation current is only tens of microamps.
-"R24,R25,R26",3,4.7k,0603,,,,,,,Default-low flash/arm request. Hardware interlocks remain mandatory during boot/reset.
-"R42,R43",2,1k,0603,,,,,,,
-R61,1,24k,0603,,,,,,,Nominal input current 150mA; nominal balanced bank charge current 75mA.
-"R68,R69",2,47k,0603,,,,,,,
+"Q22,Q23,Q31,Q32,Q33,Q3,Q35,Q61,Q62",9,MMBT3904-7-F,SOT-23,MMBT3904-7-F,Diodes Incorporated,,https://www.diodes.com/datasheet/download/MMBT3904.pdf,,,Lifecycle/orderable suffix must be rechecked before BOM freeze; -7 listing is NRND.
+Q60,1,AO4407A,SOIC-8_3.9x4.9mm_P1.27mm,AO4407A,Alpha & Omega Semiconductor,,https://www.aosmd.com/res/data_sheets/AO4407A.pdf,,,
+Q70,1,SiR800DP-T1-GE3,PowerPAK_SO-8_Single,SiR800DP-T1-GE3,Vishay,,https://www.vishay.com/docs/65738/sir800dp.pdf,,,Input disconnect per MPS reference; check linear startup SOA and reverse VGS with D70.
+R1,1,100,0603,RC0603FR-07100RL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R4,1,887k,0603,RC0603FR-07887KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R9,1,4.02k,0603,RC0603FR-074K02L,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R10,1,470k,0603,RC0603FR-07470KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+"R11,R6",2,150k,0603,RC0603FR-07150KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+"R12,R24,R25,R26,R100,R101,R232",7,4.7k,0603,RC0603FR-074K7L,Yageo,,,,,Default-low flash/arm request. Hardware interlocks remain mandatory during boot/reset.
+"R13,R27,R28,R29,R30,R50,R52,R51,R53,R67,R60,R64,R65,R66,R8,R83,R84,R70,R71,R152,R220,R221,R235,R274",24,100k,0603,RC0603FR-07100KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.; Base current limits PG loading; pull-down saturation current is only tens of microamps. 1% general-purpose resistor; individual sourcing and series-code audit pending.
+"R14,R81,R82,R165",4,1M,0603,RC0603FR-071ML,Yageo,,,,,Base current limits PG loading; pull-down saturation current is only tens of microamps.
+"R15,R233,R234",3,2.2k,0603,RC0603FR-072K2L,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+"R16,R17",2,22,0603,RC0603FR-0722RL,Yageo,,,,,Series damping after connector-side TVS; adds 0.43% to nominal 5.1k Rd path. 1% general-purpose resistor; individual sourcing and series-code audit pending.
+"R18,R20,R21,R22,R23,R40,R41,R62,R63,R5,R7,R162,R163,R236,R237,R242",16,10k,0603,RC0603FR-0710KL,Yageo,,,,,Series control isolation required by TPS63070 datasheet section11.1 for pins tied to VIN. 1% general-purpose resistor; individual sourcing and series-code audit pending.; 1% general-purpose resistor; individual sourcing and series-code audit pending.
+"R42,R43,R2,R273",4,1k,0603,RC0603FR-071KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R61,1,24k,0603,RC0603FR-0724KL,Yageo,,,,,Nominal input current 150mA; nominal balanced bank charge current 75mA.
+"R68,R69,R3",3,47k,0603,RC0603FR-0747KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+"R72,R73",2,100 0.5W,2010,RC2010FK-07100RL,Yageo,,,,,"Parallel 50ohm discharge, 0.48W initial total at 4.9V. Effective 2.5F: nominal 125s time constant."
+R80,1,6.49k,0603,RC0603FR-076K49L,Yageo,,,,,Nominal beta-model temperature band about 5 to 40C; full R/T and threshold tolerances must be checked.
+R142,1,165k,0603,RC0603FR-07165KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R143,1,147k,0603,TNPW0603147KBEEA,Vishay,,https://www.vishay.com/docs/28758/tnpw_e3.pdf,,,0.1% 25ppm/C precision divider; verify orderable MPN. Tight ratios preserve boost-ready margin.
+"R153,R272",2,10k,0603,TNPW060310K0BEEA,Vishay,,https://www.vishay.com/docs/28758/tnpw_e3.pdf,,,Base current limits PG loading; pull-down saturation current is only tens of microamps.
+R164,1,2.21M,0603,RC0603FR-072M21L,Yageo,,,,,"Positive feedback provides rail hysteresis. Include pull-up loading, reference and resistor tolerances in thresholds."
+R200,1,137k,0603,RC0603FR-07137KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R201,1,240k,0603,RC0603FR-07240KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R210,1,357k,0603,RC0603FR-07357KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R211,1,146k,0603,RC0603FR-07146KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+"R230,R231",2,2.49k,0603,RC0603FR-072K49L,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R238,1,56k,0603,RC0603FR-0756KL,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R239,1,261k,0603,TNPW0603261KBEEA,Vishay,,https://www.vishay.com/docs/28758/tnpw_e3.pdf,,,0.1% 25ppm/C precision divider; verify orderable MPN. Tight ratios preserve boost-ready margin.
+R240,1,100k,0603,TNPW0603100KBEEA,Vishay,,https://www.vishay.com/docs/28758/tnpw_e3.pdf,,,0.1% 25ppm/C precision divider; verify orderable MPN. Tight ratios preserve boost-ready margin.
+R241,1,10M,0603,RC0603FR-0710ML,Yageo,,,,,1% general-purpose resistor; individual sourcing and series-code audit pending.
+R270,1,0.010 0.5W,0805,WSLP0805R0100FEA,Vishay,,https://www.vishay.com/docs/30122/wslp.pdf,,,Select metal-element 1W 1% pulse-rated shunt. 45-63mV sense gives 4.5-6.3A average limit.
+R271,1,162k,0603,TNPW0603162KBEEA,Vishay,,https://www.vishay.com/docs/28758/tnpw_e3.pdf,,,0.1% 25ppm/C precision divider; verify orderable MPN. Tight ratios preserve boost-ready margin.
+R275,1,120k,0603,RC0603FR-07120KL,Yageo,,,,,Engineering starting value only. Measure/validate Bode margin and short flash load response before release.
+R276,1,22k 0.125W,0805,RC0805FR-0722KL,Yageo,,,,,Discharges output reservoir; about 10s to 0.5V at 120uF nominal. Not on switched LED rail.
 SW1,1,POWER,SW_SPDT_CK_JS102011SAQN,JS102011SAQN,C&K,,,,,Common is pin 2. Position connects enable to cell or ground.
 SW2,1,SHUTTER,SW_SPST_TL3342,TL3342F160QG,E-Switch,,,,,
-TH1,1,10k NTC,0603,,,,,,,LED-area sensor; actual MPN/Beta pending. Not a cell temperature sensor.
+TH1,1,10k NTC,0603,NTCG163JF103FT1,TDK,,https://product.tdk.com/system/files/dam/doc/product/sensor/ntc/chip-ntc-thermistor/data_sheet/datasheet_ntcg163jf103ft1.pdf,,,LED-area sensor; actual MPN/Beta pending. Not a cell temperature sensor.
+TH2,1,10k CELL NTC,,B57861S0103F040,TDK,,https://product.tdk.com/system/files/dam/doc/product/sensor/ntc/ntc_element/data_sheet/50/db/ntc/ntc_mini_sensors_s861.pdf,,,"OFFBOARD assembly item bonded to cell; connect through J3. 10k 1%, B25/100=3988K 1%."
+U1,1,DW01A,SOT-23-6,DW01A,HM Semiconductor,,https://hmsemi.com/downfile/DW01A.PDF,,,Procure the HM-specified variant; mixed-vendor DW01 substitutions require threshold review.
+U2,1,TLV76033DBZR,SOT-23,TLV76033DBZR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/tlv760.pdf,,,
+U3,1,TUSB320LAIRWBR,Texas_X2QFN-12_1.6x1.6mm_P0.4mm,TUSB320LAIRWBR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/tusb320lai.pdf,,,GPIO UFP mode: OUT1 low only for 1.5A/3A advertisement. Internal Rd; do not fit external Rd.
+"U4,U45",2,SN74LVC1G04DBVR,SOT-23-5,SN74LVC1G04DBVR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/sn74lvc1g04.pdf,,,
+U5,1,TPS25200DRVR,WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm,TPS25200DRVR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/tps25200.pdf,,,
 U6,1,TPS63070RNMR,TPS63070_RNM0015A,TPS63070RNMR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/tps63070.pdf,,,
+U7,1,TP4056-42-ESOP8,TP4056_TopPower_ESOP8,TP4056-42-ESOP8,NanJing Top Power ASIC,,https://www.toppwr.com/uploadfile/file/20230304/640301eae1260.pdf,,,300mA nominal. Exposed-pad dimensions must be independently checked against TopPower package drawing.
+"U8,U42,U43,U55",4,TLV3011BIDBVR,SOT-23-6,TLV3011BIDBVR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/tlv3011.pdf,,,"Independent shorted-NTC inhibit, because TP4056 TEMP tied low disables internal monitoring."
+U9,1,TPS3808G30DBVR,SOT-23-6,TPS3808G30DBVR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/tps3808.pdf,,,"Independent 2.79V system undervoltage cutoff, before emergency DW01 overdischarge. CT open gives nominal 20ms release delay."
 U10,1,ESP32-C3-WROOM-02-N4,ESP32-C3-WROOM-02_NoViaInPad,ESP32-C3-WROOM-02-N4,Espressif Systems,,https://www.espressif.com/sites/default/files/documentation/esp32-c3-wroom-02_datasheet_en.pdf,,,
 U30,1,LTC3225EDDB#TRMPBF,DFN-10-1EP_2x3mm_P0.5mm_EP0.64x2.4mm,LTC3225EDDB#TRMPBF,Analog Devices,,https://www.analog.com/media/en/technical-documentation/data-sheets/3225fb.pdf,,,"4.8V selection, automatic cell balancing. EP soldered to ground. Independent package-land check pending."
+"U40,U41",2,LTC6993CS6-1#TRMPBF,SOT-23-6,LTC6993CS6-1#TRMPBF,Analog Devices,,https://www.analog.com/media/en/technical-documentation/data-sheets/ltc6993-6993-1-6993-2-6993-3-6993-4.pdf,,,Rising-edge non-retriggerable. 1% timing resistors. -2 variant is not permitted.
+"U44,U46,U47,U48,U49,U50,U51,U52,U53,U56",10,SN74LVC1G08DBVR,SOT-23-5,SN74LVC1G08DBVR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/sn74lvc1g08.pdf,,,
+U54,1,TPS3808G33DBVR,SOT-23-6,TPS3808G33DBVR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/tps3808.pdf,,,CT intentionally open for nominal 20ms release delay; MR follows regulator PG. 3.07V brownout threshold.
+"U60,U61",2,CAT4101TV-T75,TO-263-5_TabPin3,CAT4101TV-T75,onsemi,,https://www.onsemi.com/download/data-sheet/pdf/cat4101-d.pdf,,,Nominal 300mA from manufacturer RSET table; two-channel worst-case current and pulse settling require validation.
+"U62,U63",2,SN74LVC1G125DBVR,SOT-23-5,SN74LVC1G125DBVR,Texas Instruments,,https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf,,,
+U70,1,MP3435GL-Z,MP3435_QFN20_3x4,MP3435GL-Z,Monolithic Power Systems,,https://www.monolithicpower.cn/cn/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP3435GL/,,,21.07V nominal. Kelvin IN/SENSE; compensation must be qualified for actual effective Cout and load steps.

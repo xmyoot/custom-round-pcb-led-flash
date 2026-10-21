@@ -1,11 +1,9 @@
 # Round LED Flash
 
-**Engineering draft — incomplete electrical design; not for fabrication.**
+**Prototype design candidate — layout and release verification in progress; not for fabrication yet.**
 
-Open `Round_LED_Flash.kicad_pro` in **KiCad 10**. This is the only authoritative project, with one `.kicad_sch` and one `.kicad_pcb`. Project libraries are under `libraries/`; generated checks and previews are under `analysis/`.
+Open `Round_LED_Flash.kicad_pro` in KiCad10.0.7. This is the single authoritative project. Project libraries are under `libraries/`; source generators are under `scripts/`; evidence is under `analysis/` and `datasheets/`.
 
-The implemented core contains the ESP32-C3 module, 3.3 V buck-boost circuit, switched battery/capacitor ADC sensing, shutter, two logic indicators, UART programming pads, USB/battery connector interfaces, four supercapacitors, and mounting holes. Charging, cell protection, capacitor charging/balancing/isolation, the LED boost/current drivers, and hardware flash timing remain to be implemented.
+The candidate now includes the ESP32-C3, 3.3V buck-boost, protected USB-C charging, DW01 cell protection, balanced4.8V supercapacitor charging,21.07V LED boost, two nominal200mA current sinks, independent flash/cooldown timers, physical LED power cutoff, rail interlocks, and service discharge.
 
-See [implementation status](docs/IMPLEMENTATION_STATUS.md) for the actual state, component decisions, verification limits, and next engineering work. The architecture document is a requirements baseline; its provisional LED voltage and capacitor assumptions must not be used as frozen design values.
-
-Do not regenerate the mechanical seed after electrical placement. Scripts refuse to overwrite a routed board. When using external generators, close/reopen KiCad editors so their in-memory documents do not overwrite external changes.
+Read `docs/IMPLEMENTATION_STATUS.md` for actual checks and remaining work. The original architecture is historical where it conflicts with implementation. Source files are versioned with Git, rather than named PCB copies. Close/reopen KiCad editors after external generation to avoid saving stale in-memory documents.

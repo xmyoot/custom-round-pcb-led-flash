@@ -1,0 +1,423 @@
+{
+  "task_id": "base",
+  "schema_version": "1.0",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:43:21Z",
+  "model_tier": "B",
+  "model_id": "gpt-6",
+  "data": {
+    "family": "micropower comparator with integrated voltage reference",
+    "description": "Single open-drain comparator, B version with hysteresis, fail-safe inputs and POR; DBV SOT-23-6 package",
+    "package": {
+      "code": "DBV (SOT-23-6)",
+      "pin_count": 6,
+      "body_mm": {
+        "length": 2.9,
+        "width": 1.6
+      },
+      "evidence": {
+        "page": 1,
+        "section": "Device Information",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    "pinout": [],
+    "pin_relationships": [
+      {
+        "type": "requires_pullup",
+        "pins": [
+          "1"
+        ],
+        "notes": "Open-drain sinking-only output requires external pull-up; B version permits pull-up to 5.5 V independent of V+.",
+        "evidence": {
+          "page": 21,
+          "section": "9.4.1 Open Drain Output",
+          "method": "prose",
+          "confidence": "high"
+        }
+      }
+    ],
+    "absolute_max": {
+      "VS": [
+        {
+          "min": -0.5,
+          "typ": null,
+          "max": 7,
+          "unit": "V",
+          "condition": "V+ minus V-",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "VIN": [
+        {
+          "min": -0.5,
+          "typ": null,
+          "max": 7,
+          "unit": "V",
+          "condition": "IN+ and IN- relative to V-",
+          "notes": "Inputs are diode clamped to V-. Below -0.3 V limit current magnitude to less than 10 mA; beyond 7 V externally clamp voltage.",
+          "evidence": {
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "VOUT": [
+        {
+          "min": -0.5,
+          "typ": null,
+          "max": 7,
+          "unit": "V",
+          "condition": "Open-drain OUT relative to V-",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "output_short_circuit_current": [
+        {
+          "min": null,
+          "typ": null,
+          "max": 0.01,
+          "unit": "A",
+          "condition": "Short circuit to V- or V+",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "TJ_max": [
+        {
+          "min": null,
+          "typ": null,
+          "max": 150,
+          "unit": "\u00b0C",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "Tstg": [
+        {
+          "min": -65,
+          "typ": null,
+          "max": 150,
+          "unit": "\u00b0C",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "recommended_operating": {
+      "VS": [
+        {
+          "min": 1.65,
+          "typ": null,
+          "max": 5.5,
+          "unit": "V",
+          "condition": "B versions; VS=V+ minus V-",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "TA": [
+        {
+          "min": -40,
+          "typ": null,
+          "max": 125,
+          "unit": "\u00b0C",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "VIN": [
+        {
+          "min": -0.2,
+          "typ": null,
+          "max": null,
+          "unit": "V",
+          "condition": null,
+          "notes": "Upper input common-mode boundary is V+ +0.2 V, all relative to V-. Fail-safe 0\u20135.5 V does not imply both inputs may operate outside common-mode range.",
+          "evidence": {
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "VOUT": [
+        {
+          "min": -0.2,
+          "typ": null,
+          "max": 5.5,
+          "unit": "V",
+          "condition": "B version open drain relative to V-",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "reference_voltage": [
+        {
+          "min": 1.223,
+          "typ": 1.242,
+          "max": 1.26,
+          "unit": "V",
+          "condition": "VS=1.8 V and 5.5 V; TA=25 C unless otherwise noted",
+          "notes": "Use B-version electrical table limits. Accuracy +/-1.5% max (+/-0.25% typical), despite cover general 1% claim.",
+          "evidence": {
+            "page": 8,
+            "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "reference_accuracy": [
+        {
+          "min": null,
+          "typ": 0.25,
+          "max": 1.5,
+          "unit": "%",
+          "condition": null,
+          "notes": "Absolute magnitude of +/- accuracy.",
+          "evidence": {
+            "page": 8,
+            "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "input_hysteresis": [
+        {
+          "min": 0.002,
+          "typ": 0.006,
+          "max": 0.008,
+          "unit": "V",
+          "condition": "TA=-40 C to +125 C; built in B-version hysteresis",
+          "notes": null,
+          "evidence": {
+            "page": 8,
+            "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "reference_load_capacitance": [
+        {
+          "min": null,
+          "typ": null,
+          "max": 1e-08,
+          "unit": "F",
+          "condition": null,
+          "notes": "Reference stable with up to 10 nF capacitive load.",
+          "evidence": {
+            "page": 21,
+            "section": "9.4.3 Voltage Reference",
+            "method": "prose",
+            "confidence": "high"
+          }
+        }
+      ],
+      "reference_output_current": [
+        {
+          "min": null,
+          "typ": 0.0005,
+          "max": null,
+          "unit": "A",
+          "condition": null,
+          "notes": "Typical sink/source capability; not guaranteed minimum.",
+          "evidence": {
+            "page": 21,
+            "section": "9.4.3 Voltage Reference",
+            "method": "prose",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "thermal": {
+      "theta_ja": [
+        {
+          "min": null,
+          "typ": 162.5,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "DBV SOT-23-6 B version",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "theta_jc_top": [
+        {
+          "min": null,
+          "typ": 78.8,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "DBV SOT-23-6 B version",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "theta_jb": [
+        {
+          "min": null,
+          "typ": 42.1,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "DBV SOT-23-6 B version",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "psi_jt": [
+        {
+          "min": null,
+          "typ": 21.2,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "DBV SOT-23-6 B version",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "psi_jb": [
+        {
+          "min": null,
+          "typ": 41.9,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "DBV SOT-23-6 B version",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "esd": {
+      "HBM": [
+        {
+          "min": -2000,
+          "typ": null,
+          "max": 2000,
+          "unit": "V",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "6.3 ESD Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "CDM": [
+        {
+          "min": -1000,
+          "typ": null,
+          "max": 1000,
+          "unit": "V",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "6.3 ESD Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "moisture_sensitivity": {
+      "msl": 1,
+      "peak_reflow_c": 260,
+      "evidence": {
+        "page": 30,
+        "section": "Package Option Addendum: TLV3011BIDBVR",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    "compliance": [
+      {
+        "mark": "RoHS",
+        "evidence": {
+          "page": 30,
+          "section": "Package Option Addendum: TLV3011BIDBVR",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ]
+  }
+}

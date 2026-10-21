@@ -1,0 +1,89 @@
+{
+  "status": "calculated model; prototype qualification pending",
+  "checks": {
+    "cap_ready_reachable_at_charger_min": true,
+    "boost_ready_reachable_at_boost_min": true,
+    "input_above_converter_min_3V": true,
+    "current_below_min_average_limit": true,
+    "cap_terminal_above_uvlo": true,
+    "nominal_requested_1ms_plus_50us_inside_window": true,
+    "hardware_cutoff_model_below_2ms": true,
+    "minimum_cooldown_exceeds_1s": true,
+    "open_ntc_halts": true,
+    "zeroC_always_cold_inhibited": true,
+    "fortyfiveC_always_hot_inhibited": true
+  },
+  "boost_V": [
+    20.64343050847458,
+    21.500783149448342
+  ],
+  "cap_ready": {
+    "rising_min_V": 4.384454257416324,
+    "rising_max_V": 4.6347484920364135,
+    "falling_min_V": 4.305893633698721,
+    "falling_max_V": 4.553845408225532
+  },
+  "loaded_cap_uvlo": {
+    "rising_min_V": 3.2168725609076536,
+    "rising_max_V": 3.5242520396444394,
+    "falling_min_V": 2.9954221009186544,
+    "falling_max_V": 3.290534243380436
+  },
+  "boost_ready": {
+    "rising_min_V": 19.07058144981608,
+    "rising_max_V": 20.2255144953775,
+    "falling_min_V": 18.63100900183102,
+    "falling_max_V": 19.772221153826788
+  },
+  "current_model_max_A_per_channel": 0.22958500669344045,
+  "output_power_max_W": 9.87251488656062,
+  "input_power_model_W": 12.340643608200773,
+  "bank_ESR_aged_cold_ohm": 0.24,
+  "series_path_allocation_ohm": 0.05,
+  "loaded_input_min_V": 3.180756794327479,
+  "input_current_model_max_A": 3.8797822047284214,
+  "input_current_limit_min_A": 4.455445544554456,
+  "cap_terminal_loaded_min_V": 3.3747459045639,
+  "timer_window_s": [
+    0.0013569076224,
+    0.00140288,
+    0.0014494977023999998
+  ],
+  "PFET_off_bound_model_s": 0.00010890176470588235,
+  "cooldown_min_s": 1.217056997376,
+  "ntc_boundary_fractions": {
+    "0": {
+      "ratio_min": 0.827302139544521,
+      "ratio_max": 0.8364075974112244
+    },
+    "5": {
+      "ratio_min": 0.7893887596420873,
+      "ratio_max": 0.7991859432069626
+    },
+    "40": {
+      "ratio_min": 0.44346170076114627,
+      "ratio_max": 0.45677573180296976
+    },
+    "45": {
+      "ratio_min": 0.39484341111448584,
+      "ratio_max": 0.40873018814972173
+    }
+  },
+  "assumptions": [
+    "Indoor prototype operating range0 to40C; no subzero flash guarantee.",
+    "80% boost efficiency is a design floor to qualify by measurement, not a datasheet guarantee.",
+    "CAT4101 current bound extrapolated by inverse RSET from its350mA test; measure both actual channels.",
+    "Cold ESR multiplier1.5 is conservative at0C from Eaton typical curve; ESR is not guaranteed for1ms by DC test.",
+    "Total interconnect/FET/shunt/inductor/fuse allocation50mohm must be checked against final geometry and parts.",
+    "TLV3011B offset bound+/-5mV is conservative; reference limits from extracted PDF. Internal hysteresis modeled+/-4mV.",
+    "TCAD/loop and optical timing measurements are prototype qualification, not represented by ERC/DRC."
+  ],
+  "sources": {
+    "cap": "Eaton HV TechnicalData4376 pp2-4",
+    "current": "onsemi CAT4101 Rev8 pp2,7",
+    "boost": "MPS MP3435 Rev1.0 pp5-6,18-21",
+    "comparators": "TI TLV3011B SBOS300C and datasheets/extracted/TLV3011BIDBVR.json",
+    "NTC": "TDK R/T8016 10k 1% B3988 1%, table in l865 sheet (same curve and tolerances as S861)",
+    "timer": "ADI LTC6993 RevF pp1,13; timing resistor1%"
+  }
+}

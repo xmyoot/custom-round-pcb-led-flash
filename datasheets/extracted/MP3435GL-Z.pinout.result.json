@@ -1,0 +1,359 @@
+{
+  "task_id": "pinout",
+  "schema_version": "1.0",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:41:44Z",
+  "model_tier": "A",
+  "model_id": "gpt-6",
+  "data": [
+    {
+      "numbers": [
+        "1",
+        "2"
+      ],
+      "name": "OUT",
+      "type": "power_out",
+      "description": "Power output; internal high-side MOSFET drain.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": null,
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "3"
+      ],
+      "name": "TM",
+      "type": "unspecified",
+      "description": "Internal test pin.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": "Float in application; only use in product test mode.",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "4"
+      ],
+      "name": "BST",
+      "type": "power_in",
+      "description": "Bootstrap supply for high-side MOSFET driver.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": null,
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "5"
+      ],
+      "name": "SOUT",
+      "type": "input",
+      "description": "Samples output voltage and charges BST capacitor; powers VDD when SOUT exceeds VIN.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": null,
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "6"
+      ],
+      "name": "EN",
+      "type": "input",
+      "description": "Regulator on/off control; high enables switching.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": [
+        {
+          "min": 1.26,
+          "typ": 1.33,
+          "max": 1.39,
+          "unit": "V",
+          "condition": "Rising switching turn-on threshold",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "Electrical Characteristics",
+            "method": "table",
+            "confidence": "high"
+          }
+        },
+        {
+          "min": null,
+          "typ": null,
+          "max": 0.4,
+          "unit": "V",
+          "condition": "Falling micro-power low threshold",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "Electrical Characteristics",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "drive_strength": null,
+      "notes": "Do not float. For automatic start connect to input, through 100 kohm if VIN >5.5 V. Also configures input UVLO.",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "7"
+      ],
+      "name": "GATE",
+      "type": "output",
+      "description": "Driver for optional input disconnect MOSFET.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": "Floating or connected to external MOSFET requires external current sense resistor. Connect directly to GND for internal sensing; do not use a pull-down resistor.",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "8"
+      ],
+      "name": "SENSE",
+      "type": "input",
+      "description": "External current sense input relative to IN.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": "Connect SENSE to IN when internal current sensing is selected.",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "9",
+        "20"
+      ],
+      "name": "SW",
+      "type": "passive",
+      "description": "Internal low-side MOSFET drain and synchronous high-side MOSFET source; connect power inductor.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": null,
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "10",
+        "17",
+        "18",
+        "19"
+      ],
+      "name": "PGND",
+      "type": "power_in",
+      "description": "Power ground.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": null,
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "11"
+      ],
+      "name": "IN",
+      "type": "power_in",
+      "description": "Input supply.",
+      "power_domain": "VIN",
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": "Must be locally bypassed.",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "12"
+      ],
+      "name": "VDD",
+      "type": "power_out",
+      "description": "Internal bias supply.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": "Decouple with 2.2 uF ceramic capacitor placed as close as possible.",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "13"
+      ],
+      "name": "COMP",
+      "type": "output",
+      "description": "Compensation node.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": "Connect a resistor and capacitor in series to analog ground for loop stability. Page 23 example uses 24.9 kohm and 3.3 nF for 12 V output, VIN 3\u201310 V, 2 A; these are example values, not universal requirements.",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "14"
+      ],
+      "name": "FB",
+      "type": "input",
+      "description": "Feedback input with 1.225 V typical reference.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": "Connect output resistor divider. VOUT=VREF*(1+Rtop/Rbottom); choose resistors in 10 kohm range or higher (page 18).",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "15"
+      ],
+      "name": "SS",
+      "type": "input",
+      "description": "Soft-start control.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": "Connect soft-start capacitor, charged by constant current; leave disconnected if soft start unused. Typical 7 uA charge current; 10 nF sufficient for most applications (page 18).",
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "16"
+      ],
+      "name": "AGND",
+      "type": "power_in",
+      "description": "Analog ground.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "absolute_max": null,
+      "recommended": null,
+      "drive_strength": null,
+      "notes": null,
+      "evidence": {
+        "page": 3,
+        "section": "Pin Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    }
+  ]
+}

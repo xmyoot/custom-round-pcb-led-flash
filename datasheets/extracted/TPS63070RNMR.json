@@ -1,0 +1,1105 @@
+{
+  "base": {
+    "absolute_max": {
+      "EN": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 20,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "FB": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 12,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "FB2": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 3,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "L1": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 20,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "L2": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 12,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "PG": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 12,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "PS/SYNC": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 20,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "TJ": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 150,
+          "min": -40,
+          "unit": "\u00b0C"
+        }
+      ],
+      "Tstg": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 150,
+          "min": -65,
+          "unit": "\u00b0C"
+        }
+      ],
+      "VAUX": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 7,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "VIN": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 20,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "VOUT": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 12,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ],
+      "VSEL": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings"
+          },
+          "max": 20,
+          "min": -0.3,
+          "unit": "V"
+        }
+      ]
+    },
+    "compliance": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 35,
+          "section": "Packaging Information"
+        },
+        "mark": "RoHS",
+        "rating": "Yes"
+      }
+    ],
+    "description": "Adjustable 2 V to 16 V buck-boost converter with 3.6 A typical average input current limit; output discharge disabled.",
+    "esd": {
+      "CDM": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.2 ESD Ratings"
+          },
+          "typ": 500,
+          "unit": "V"
+        }
+      ],
+      "HBM": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.2 ESD Ratings"
+          },
+          "typ": 2000,
+          "unit": "V"
+        }
+      ]
+    },
+    "family": "synchronous buck-boost regulator",
+    "moisture_sensitivity": {
+      "evidence": {
+        "confidence": "high",
+        "method": "table",
+        "page": 35,
+        "section": "Packaging Information"
+      },
+      "msl": 1,
+      "peak_reflow_c": 260
+    },
+    "package": {
+      "body_mm": {
+        "height": 1,
+        "length": 3,
+        "width": 2.5
+      },
+      "code": "VQFN-HR RNM0015A",
+      "evidence": {
+        "confidence": "high",
+        "method": "table",
+        "page": 39,
+        "section": "RNM0015A package outline"
+      },
+      "pin_count": 15,
+      "pitch_mm": 0.5
+    },
+    "pin_relationships": [
+      {
+        "evidence": {
+          "confidence": "medium",
+          "method": "prose",
+          "page": 11,
+          "section": "8.4.3 Power Good"
+        },
+        "notes": "PG open drain requires an external pull-up; can pull up to maximum output voltage rating.",
+        "pins": [
+          "2"
+        ],
+        "type": "requires_pullup"
+      }
+    ],
+    "pinout": [
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 20,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Low: forced PWM; high: PWM/PFM power save; external clock: synchronization.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "PS/SYNC",
+        "notes": "If tied to VIN, section 11.1 page 32 requires a 10 k\u03a9 series resistor; one shared resistor is sufficient. EN and PS/SYNC prose pages 11\u201312 also recommends 1 k\u03a9\u20131 M\u03a9.",
+        "numbers": [
+          "1"
+        ],
+        "power_domain": null,
+        "recommended": [
+          {
+            "condition": "Rising threshold; PS/SYNC for mode change",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 6,
+              "section": "7.5 Electrical Characteristics"
+            },
+            "max": 0.83,
+            "min": 0.77,
+            "typ": 0.8,
+            "unit": "V"
+          },
+          {
+            "condition": "Falling threshold; PS/SYNC for mode change",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 6,
+              "section": "7.5 Electrical Characteristics"
+            },
+            "max": 0.73,
+            "min": 0.67,
+            "typ": 0.7,
+            "unit": "V"
+          }
+        ],
+        "type": "input"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 12,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Open-drain power-good output; high impedance in regulation, low otherwise.",
+        "drive_strength": [
+          {
+            "condition": "PG sink current",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 6,
+              "section": "7.5 Electrical Characteristics"
+            },
+            "typ": 0.001,
+            "unit": "A"
+          }
+        ],
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "PG",
+        "notes": "External pull-up required; rising threshold 94.5/96/98.5% of target output; falling 90/92/94.5%. VOL <= 0.4 V at 1 mA sink; leakage <= 0.2 uA with PG=5 V.",
+        "numbers": [
+          "2"
+        ],
+        "power_domain": null,
+        "subtype": "open_drain",
+        "type": "open_collector"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 7,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Internal regulator capacitor connection; must not be loaded externally.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "VAUX",
+        "numbers": [
+          "3"
+        ],
+        "power_domain": null,
+        "type": "power_out"
+      },
+      {
+        "alt_functions": [],
+        "description": "Control / logic ground.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "GND",
+        "numbers": [
+          "4"
+        ],
+        "power_domain": null,
+        "type": "power_in"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 12,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Adjustable output feedback; regulated to 0.8 V. Fixed variants connect FB to VOUT.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "FB",
+        "notes": "0.8 V reference; output 2.5\u20139 V. Bottom feedback resistor R2 should not exceed 400 k\u03a9 for >=2 uA divider current (page 17).",
+        "numbers": [
+          "5"
+        ],
+        "power_domain": null,
+        "type": "input"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 3,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Voltage scaling output. Connect resistor FB to FB2; VSEL high pulls FB2 to GND and raises output voltage; leave FB2 open or grounded if unused.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "FB2",
+        "numbers": [
+          "6"
+        ],
+        "power_domain": null,
+        "type": "output"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 12,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Buck-boost converter output.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "VOUT",
+        "numbers": [
+          "7",
+          "8"
+        ],
+        "power_domain": "VOUT",
+        "type": "power_out"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 12,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Inductor connection.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "L2",
+        "numbers": [
+          "9"
+        ],
+        "power_domain": null,
+        "type": "passive"
+      },
+      {
+        "alt_functions": [],
+        "description": "Power ground.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "PGND",
+        "numbers": [
+          "10"
+        ],
+        "power_domain": null,
+        "type": "power_in"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 20,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Inductor connection.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "L1",
+        "numbers": [
+          "11"
+        ],
+        "power_domain": null,
+        "type": "passive"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 20,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "Power-stage supply voltage.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "VIN",
+        "numbers": [
+          "12",
+          "13"
+        ],
+        "power_domain": "VIN",
+        "type": "power_in"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 20,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "High enables, low disables. Must not float.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "EN",
+        "notes": "If tied to VIN, section 11.1 page 32 requires a 10 k\u03a9 series resistor; one shared resistor is sufficient. EN and PS/SYNC prose pages 11\u201312 also recommends 1 k\u03a9\u20131 M\u03a9.",
+        "numbers": [
+          "14"
+        ],
+        "power_domain": null,
+        "recommended": [
+          {
+            "condition": "Rising threshold; PS/SYNC for mode change",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 6,
+              "section": "7.5 Electrical Characteristics"
+            },
+            "max": 0.83,
+            "min": 0.77,
+            "typ": 0.8,
+            "unit": "V"
+          },
+          {
+            "condition": "Falling threshold; PS/SYNC for mode change",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 6,
+              "section": "7.5 Electrical Characteristics"
+            },
+            "max": 0.73,
+            "min": 0.67,
+            "typ": 0.7,
+            "unit": "V"
+          }
+        ],
+        "type": "input"
+      },
+      {
+        "absolute_max": [
+          {
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 4,
+              "section": "7.1 Absolute Maximum Ratings"
+            },
+            "max": 20,
+            "min": -0.3,
+            "unit": "V"
+          }
+        ],
+        "alt_functions": [],
+        "description": "High enables internal transistor pulling FB2 to GND; low makes FB2 high impedance.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "6 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "VSEL",
+        "notes": "If tied to VIN, section 11.1 page 32 requires a 10 k\u03a9 series resistor; one shared resistor is sufficient. EN and PS/SYNC prose pages 11\u201312 also recommends 1 k\u03a9\u20131 M\u03a9.",
+        "numbers": [
+          "15"
+        ],
+        "power_domain": null,
+        "recommended": [
+          {
+            "condition": "Low-level input",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 6,
+              "section": "7.5 Electrical Characteristics"
+            },
+            "max": 0.3,
+            "unit": "V"
+          },
+          {
+            "condition": "High-level input",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 6,
+              "section": "7.5 Electrical Characteristics"
+            },
+            "min": 1.1,
+            "unit": "V"
+          }
+        ],
+        "type": "input"
+      }
+    ],
+    "recommended_operating": {
+      "CIN": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions"
+          },
+          "min": 4.7e-06,
+          "typ": 1e-05,
+          "unit": "F"
+        }
+      ],
+      "COUT": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions"
+          },
+          "max": 0.00047,
+          "min": 1.5e-05,
+          "notes": "Effective capacitance after bias/tolerance; range given for nominal 1.5 uH inductor.",
+          "typ": 4.7e-05,
+          "unit": "F"
+        }
+      ],
+      "CVAUX": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions"
+          },
+          "typ": 1e-07,
+          "unit": "F"
+        }
+      ],
+      "FB2_on_resistance": [
+        {
+          "condition": "VSEL high",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 7,
+            "section": "7.5 Electrical Characteristics"
+          },
+          "max": 100,
+          "typ": 25,
+          "unit": "\u03a9"
+        }
+      ],
+      "FB2_sink": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 7,
+            "section": "7.5 Electrical Characteristics"
+          },
+          "max": 0.0001,
+          "unit": "A"
+        }
+      ],
+      "IIN_limit": [
+        {
+          "condition": "Average positive input current limit; VIN=5 V, VOUT=6.5 V, TJ=0 to 125 \u00b0C",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 7,
+            "section": "7.5 Electrical Characteristics"
+          },
+          "max": 4.15,
+          "min": 3.05,
+          "typ": 3.6,
+          "unit": "A"
+        }
+      ],
+      "L": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions"
+          },
+          "max": 2.8e-06,
+          "min": 7e-07,
+          "typ": 1.5e-06,
+          "unit": "H"
+        }
+      ],
+      "TJ": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions"
+          },
+          "max": 125,
+          "min": -40,
+          "unit": "\u00b0C"
+        }
+      ],
+      "VIN": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions"
+          },
+          "max": 16,
+          "min": 2,
+          "notes": "Start-up requires VIN >= 3 V with VOUT below 3 V; see EC table page 6.",
+          "unit": "V"
+        }
+      ],
+      "VOUT": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions"
+          },
+          "max": 9,
+          "min": 2.5,
+          "unit": "V"
+        }
+      ]
+    },
+    "thermal": {
+      "psi_jb": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "7.4 Thermal Information"
+          },
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables.",
+          "typ": 13,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "psi_jt": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "7.4 Thermal Information"
+          },
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables.",
+          "typ": 2.4,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "theta_ja": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "7.4 Thermal Information"
+          },
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables.",
+          "typ": 63,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "theta_jb": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "7.4 Thermal Information"
+          },
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables.",
+          "typ": 13,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "theta_jc_top": [
+        {
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "7.4 Thermal Information"
+          },
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables.",
+          "typ": 42,
+          "unit": "\u00b0C/W"
+        }
+      ]
+    }
+  },
+  "categories": [
+    "regulator"
+  ],
+  "extraction": {
+    "extracted_at": "2026-10-21T04:42:37Z",
+    "extractor_schema_version": "1.0",
+    "extractor_scout": null,
+    "plan_ref": "TPS63070RNMR.plan.json",
+    "quality_score": 86
+  },
+  "regulator": {
+    "cin_min": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions"
+        },
+        "min": 4.7e-06,
+        "unit": "F"
+      }
+    ],
+    "compensation_pin": null,
+    "cout_min": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions"
+        },
+        "min": 1.5e-05,
+        "notes": "Effective after DC bias and tolerance; nominal L=1.5 uH.",
+        "unit": "F"
+      }
+    ],
+    "enable_pin": "14",
+    "feedback_pin": "5",
+    "inductor_range": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions"
+        },
+        "max": 2.8e-06,
+        "min": 7e-07,
+        "typ": 1.5e-06,
+        "unit": "H"
+      }
+    ],
+    "iout_max": [
+      {
+        "condition": "During operation with VIN >=4.5 V or VOUT >=4.5 V and VOUT/VIN <=1",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 6,
+          "section": "7.5 Electrical Characteristics"
+        },
+        "max": 2,
+        "notes": "Not the 3.6 A input current limit. Startup input current limited to typically 1 A while PG is low (page 15).",
+        "unit": "A"
+      }
+    ],
+    "power_good_pin": "2",
+    "reference_voltage": [
+      {
+        "condition": "TPS63070/TPS630702; PS/SYNC=VIN",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 7,
+          "section": "7.5 Electrical Characteristics"
+        },
+        "typ": 0.8,
+        "unit": "V"
+      }
+    ],
+    "stability_conditions": {
+      "cap_types_allowed": [
+        "ceramic_x5r",
+        "ceramic_x7r"
+      ],
+      "evidence": {
+        "confidence": "medium",
+        "method": "prose",
+        "page": 17,
+        "section": "9.2.2 Detailed Design Procedure"
+      },
+      "notes": "X5R or X7R input/output capacitors (p19). Internal compensation. Adjustable TPS63070 requires effective COUT in uF >= 10 times effective L in uH (p17). Account for DC bias and tolerance; greater COUT may be required if boost RHP zero is below 400 kHz (p18). 100 nF VAUX capacitor; no external VAUX load. 10 k\u03a9 series resistor when digital controls tied to VIN (p32)."
+    },
+    "switching_freq": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 7,
+          "section": "7.5 Electrical Characteristics"
+        },
+        "max": 2700000.0,
+        "min": 2100000.0,
+        "typ": 2400000.0,
+        "unit": "Hz"
+      },
+      {
+        "condition": "External synchronization",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 7,
+          "section": "7.5 Electrical Characteristics"
+        },
+        "max": 2800000.0,
+        "min": 2100000.0,
+        "unit": "Hz"
+      }
+    ],
+    "topology": "buck_boost",
+    "vin_range": [
+      {
+        "condition": "After start-up; VOUT >=3 V",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions"
+        },
+        "max": 16,
+        "min": 2,
+        "unit": "V"
+      },
+      {
+        "condition": "Start-up; VOUT <3 V",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 6,
+          "section": "7.5 Electrical Characteristics"
+        },
+        "max": 16,
+        "min": 3,
+        "unit": "V"
+      }
+    ],
+    "vout_range": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions"
+        },
+        "max": 9,
+        "min": 2.5,
+        "unit": "V"
+      }
+    ]
+  },
+  "schema_version": {
+    "base": "1.0",
+    "categories": {
+      "regulator": "0.3"
+    }
+  },
+  "source": {
+    "datasheet_date": "2019-03",
+    "datasheet_revision": "SLVSC58B",
+    "family_ref": null,
+    "local_path": "datasheets\\TPS63070.pdf",
+    "manufacturer": "Texas Instruments",
+    "mpn": "TPS63070RNMR",
+    "page_count": 42,
+    "sha256": "sha256:a88ef66f3493156ff6e7da0849de0e0e1068647f2553d08c1844d4a90c5c65ef",
+    "source_url": "https://www.ti.com/lit/ds/symlink/tps63070.pdf"
+  }
+}

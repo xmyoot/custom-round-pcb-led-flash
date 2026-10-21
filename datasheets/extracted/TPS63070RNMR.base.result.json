@@ -1,0 +1,467 @@
+{
+  "task_id": "base",
+  "schema_version": "1.0",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:42:23Z",
+  "model_tier": "B",
+  "model_id": "gpt-6.1-sol",
+  "data": {
+    "family": "synchronous buck-boost regulator",
+    "description": "Adjustable 2 V to 16 V buck-boost converter with 3.6 A typical average input current limit; output discharge disabled.",
+    "package": {
+      "code": "VQFN-HR RNM0015A",
+      "pin_count": 15,
+      "pitch_mm": 0.5,
+      "body_mm": {
+        "length": 3,
+        "width": 2.5,
+        "height": 1
+      },
+      "evidence": {
+        "page": 39,
+        "section": "RNM0015A package outline",
+        "confidence": "high",
+        "method": "table"
+      }
+    },
+    "pinout": [],
+    "absolute_max": {
+      "VIN": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ],
+      "EN": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ],
+      "PS/SYNC": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ],
+      "VSEL": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ],
+      "L1": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ],
+      "L2": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 12
+        }
+      ],
+      "PG": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 12
+        }
+      ],
+      "VOUT": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 12
+        }
+      ],
+      "FB": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 12
+        }
+      ],
+      "VAUX": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 7
+        }
+      ],
+      "FB2": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 3
+        }
+      ],
+      "TJ": [
+        {
+          "unit": "°C",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -40,
+          "max": 150
+        }
+      ],
+      "Tstg": [
+        {
+          "unit": "°C",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -65,
+          "max": 150
+        }
+      ]
+    },
+    "recommended_operating": {
+      "VIN": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 2,
+          "max": 16,
+          "notes": "Start-up requires VIN >= 3 V with VOUT below 3 V; see EC table page 6."
+        }
+      ],
+      "VOUT": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 2.5,
+          "max": 9
+        }
+      ],
+      "TJ": [
+        {
+          "unit": "°C",
+          "evidence": {
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -40,
+          "max": 125
+        }
+      ],
+      "L": [
+        {
+          "unit": "H",
+          "evidence": {
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 7e-07,
+          "typ": 1.5e-06,
+          "max": 2.8e-06
+        }
+      ],
+      "CIN": [
+        {
+          "unit": "F",
+          "evidence": {
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 4.7e-06,
+          "typ": 1e-05
+        }
+      ],
+      "CVAUX": [
+        {
+          "unit": "F",
+          "evidence": {
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 1e-07
+        }
+      ],
+      "COUT": [
+        {
+          "unit": "F",
+          "evidence": {
+            "page": 4,
+            "section": "7.3 Recommended Operating Conditions",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 1.5e-05,
+          "typ": 4.7e-05,
+          "max": 0.00047,
+          "notes": "Effective capacitance after bias/tolerance; range given for nominal 1.5 uH inductor."
+        }
+      ],
+      "IIN_limit": [
+        {
+          "unit": "A",
+          "evidence": {
+            "page": 7,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 3.05,
+          "typ": 3.6,
+          "max": 4.15,
+          "condition": "Average positive input current limit; VIN=5 V, VOUT=6.5 V, TJ=0 to 125 °C"
+        }
+      ],
+      "FB2_sink": [
+        {
+          "unit": "A",
+          "evidence": {
+            "page": 7,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "max": 0.0001
+        }
+      ],
+      "FB2_on_resistance": [
+        {
+          "unit": "Ω",
+          "evidence": {
+            "page": 7,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 25,
+          "max": 100,
+          "condition": "VSEL high"
+        }
+      ]
+    },
+    "thermal": {
+      "theta_ja": [
+        {
+          "unit": "°C/W",
+          "evidence": {
+            "page": 5,
+            "section": "7.4 Thermal Information",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 63,
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables."
+        }
+      ],
+      "theta_jc_top": [
+        {
+          "unit": "°C/W",
+          "evidence": {
+            "page": 5,
+            "section": "7.4 Thermal Information",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 42,
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables."
+        }
+      ],
+      "theta_jb": [
+        {
+          "unit": "°C/W",
+          "evidence": {
+            "page": 5,
+            "section": "7.4 Thermal Information",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 13,
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables."
+        }
+      ],
+      "psi_jt": [
+        {
+          "unit": "°C/W",
+          "evidence": {
+            "page": 5,
+            "section": "7.4 Thermal Information",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 2.4,
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables."
+        }
+      ],
+      "psi_jb": [
+        {
+          "unit": "°C/W",
+          "evidence": {
+            "page": 5,
+            "section": "7.4 Thermal Information",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 13,
+          "notes": "Thermal table labels package 13 PINS, inconsistent with 15-pin RNM ordering and pin tables."
+        }
+      ]
+    },
+    "esd": {
+      "HBM": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.2 ESD Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 2000
+        }
+      ],
+      "CDM": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.2 ESD Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 500
+        }
+      ]
+    },
+    "moisture_sensitivity": {
+      "msl": 1,
+      "peak_reflow_c": 260,
+      "evidence": {
+        "page": 35,
+        "section": "Packaging Information",
+        "confidence": "high",
+        "method": "table"
+      }
+    },
+    "compliance": [
+      {
+        "mark": "RoHS",
+        "rating": "Yes",
+        "evidence": {
+          "page": 35,
+          "section": "Packaging Information",
+          "confidence": "high",
+          "method": "table"
+        }
+      }
+    ],
+    "pin_relationships": [
+      {
+        "type": "requires_pullup",
+        "pins": [
+          "2"
+        ],
+        "notes": "PG open drain requires an external pull-up; can pull up to maximum output voltage rating.",
+        "evidence": {
+          "page": 11,
+          "section": "8.4.3 Power Good",
+          "confidence": "medium",
+          "method": "prose"
+        }
+      }
+    ]
+  }
+}

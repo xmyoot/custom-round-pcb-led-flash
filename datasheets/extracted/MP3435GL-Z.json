@@ -1,0 +1,891 @@
+{
+  "base": {
+    "absolute_max": {
+      "BST_TM": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": null,
+          "min": -0.3,
+          "notes": "Upper limit is VSW + 5.5 V.",
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "EN_sink_current": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 0.0005,
+          "min": null,
+          "notes": null,
+          "typ": null,
+          "unit": "A"
+        }
+      ],
+      "GATE": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": null,
+          "min": -0.3,
+          "notes": "Upper limit is IN + 5.5 V; symbolic upper limit retained rather than treating 5.5 V as an absolute voltage.",
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "PD": [
+        {
+          "condition": "TA=25 C, EVL3435-L-00A 4-layer 2oz 63mm x 63mm PCB",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 4.6,
+          "min": null,
+          "notes": null,
+          "typ": null,
+          "unit": "W"
+        }
+      ],
+      "SW": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 24,
+          "min": -0.3,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        },
+        {
+          "condition": "Transient shorter than 10 ns",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 28,
+          "min": -3.5,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "TJ_max": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 150,
+          "min": null,
+          "notes": null,
+          "typ": null,
+          "unit": "\u00b0C"
+        }
+      ],
+      "Tstg": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 150,
+          "min": -65,
+          "notes": null,
+          "typ": null,
+          "unit": "\u00b0C"
+        }
+      ],
+      "VIN_max": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 24,
+          "min": -0.3,
+          "notes": "Applies to IN, SENSE, OUT, SOUT.",
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "lead_temperature": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 260,
+          "min": null,
+          "notes": null,
+          "typ": null,
+          "unit": "\u00b0C"
+        }
+      ],
+      "other_pins": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Absolute Maximum Ratings"
+          },
+          "max": 5.5,
+          "min": -0.3,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ]
+    },
+    "compliance": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "prose",
+          "page": 1,
+          "section": "Features"
+        },
+        "mark": "RoHS"
+      }
+    ],
+    "description": "600 kHz synchronous boost converter with input disconnect and configurable input current limit",
+    "esd": {
+      "CDM": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "ESD Ratings"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 1500,
+          "unit": "V"
+        }
+      ],
+      "HBM": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "ESD Ratings"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 2000,
+          "unit": "V"
+        }
+      ]
+    },
+    "family": "synchronous boost converter",
+    "moisture_sensitivity": {
+      "evidence": {
+        "confidence": "high",
+        "method": "table",
+        "page": 2,
+        "section": "Ordering Information"
+      },
+      "msl": 1
+    },
+    "package": {
+      "body_mm": {
+        "length": 4,
+        "width": 3
+      },
+      "code": "QFN-20 (3mmx4mm)",
+      "evidence": {
+        "confidence": "high",
+        "method": "table",
+        "page": 2,
+        "section": "Ordering Information"
+      },
+      "pin_count": 20
+    },
+    "pin_relationships": [],
+    "pinout": [
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Power output; internal high-side MOSFET drain.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "OUT",
+        "notes": null,
+        "numbers": [
+          "1",
+          "2"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "power_out"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Internal test pin.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "TM",
+        "notes": "Float in application; only use in product test mode.",
+        "numbers": [
+          "3"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "unspecified"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Bootstrap supply for high-side MOSFET driver.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "BST",
+        "notes": null,
+        "numbers": [
+          "4"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "power_in"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Samples output voltage and charges BST capacitor; powers VDD when SOUT exceeds VIN.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "SOUT",
+        "notes": null,
+        "numbers": [
+          "5"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "input"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Regulator on/off control; high enables switching.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "EN",
+        "notes": "Do not float. For automatic start connect to input, through 100 kohm if VIN >5.5 V. Also configures input UVLO.",
+        "numbers": [
+          "6"
+        ],
+        "power_domain": null,
+        "recommended": [
+          {
+            "condition": "Rising switching turn-on threshold",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 5,
+              "section": "Electrical Characteristics"
+            },
+            "max": 1.39,
+            "min": 1.26,
+            "notes": null,
+            "typ": 1.33,
+            "unit": "V"
+          },
+          {
+            "condition": "Falling micro-power low threshold",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 5,
+              "section": "Electrical Characteristics"
+            },
+            "max": 0.4,
+            "min": null,
+            "notes": null,
+            "typ": null,
+            "unit": "V"
+          }
+        ],
+        "type": "input"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Driver for optional input disconnect MOSFET.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "GATE",
+        "notes": "Floating or connected to external MOSFET requires external current sense resistor. Connect directly to GND for internal sensing; do not use a pull-down resistor.",
+        "numbers": [
+          "7"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "output"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "External current sense input relative to IN.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "SENSE",
+        "notes": "Connect SENSE to IN when internal current sensing is selected.",
+        "numbers": [
+          "8"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "input"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Internal low-side MOSFET drain and synchronous high-side MOSFET source; connect power inductor.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "SW",
+        "notes": null,
+        "numbers": [
+          "9",
+          "20"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "passive"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Power ground.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "PGND",
+        "notes": null,
+        "numbers": [
+          "10",
+          "17",
+          "18",
+          "19"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "power_in"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Input supply.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "IN",
+        "notes": "Must be locally bypassed.",
+        "numbers": [
+          "11"
+        ],
+        "power_domain": "VIN",
+        "recommended": null,
+        "type": "power_in"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Internal bias supply.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "VDD",
+        "notes": "Decouple with 2.2 uF ceramic capacitor placed as close as possible.",
+        "numbers": [
+          "12"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "power_out"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Compensation node.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "COMP",
+        "notes": "Connect a resistor and capacitor in series to analog ground for loop stability. Page 23 example uses 24.9 kohm and 3.3 nF for 12 V output, VIN 3\u201310 V, 2 A; these are example values, not universal requirements.",
+        "numbers": [
+          "13"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "output"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Feedback input with 1.225 V typical reference.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "FB",
+        "notes": "Connect output resistor divider. VOUT=VREF*(1+Rtop/Rbottom); choose resistors in 10 kohm range or higher (page 18).",
+        "numbers": [
+          "14"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "input"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Soft-start control.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "SS",
+        "notes": "Connect soft-start capacitor, charged by constant current; leave disconnected if soft start unused. Typical 7 uA charge current; 10 nF sufficient for most applications (page 18).",
+        "numbers": [
+          "15"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "input"
+      },
+      {
+        "absolute_max": null,
+        "alt_functions": [],
+        "description": "Analog ground.",
+        "drive_strength": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "Pin Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "AGND",
+        "notes": null,
+        "numbers": [
+          "16"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "type": "power_in"
+      }
+    ],
+    "recommended_operating": {
+      "EN_sink_current": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Recommended Operating Conditions"
+          },
+          "max": 0.0003,
+          "min": 0,
+          "notes": null,
+          "typ": null,
+          "unit": "A"
+        }
+      ],
+      "TJ": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Recommended Operating Conditions"
+          },
+          "max": 125,
+          "min": -40,
+          "notes": null,
+          "typ": null,
+          "unit": "\u00b0C"
+        }
+      ],
+      "VIN": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Recommended Operating Conditions"
+          },
+          "max": 20,
+          "min": 3,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "VOUT": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Recommended Operating Conditions"
+          },
+          "max": 22,
+          "min": null,
+          "notes": "Lower bound is VIN, not a fixed numeric minimum.",
+          "typ": null,
+          "unit": "V"
+        }
+      ]
+    },
+    "thermal": {
+      "theta_ja": [
+        {
+          "condition": "EVL3435-L-00A 4-layer 2oz 63mm x 63mm PCB",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Thermal Resistance"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 27,
+          "unit": "\u00b0C/W"
+        },
+        {
+          "condition": "JESD51-7 comparison only; not for actual application design",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Thermal Resistance"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 48,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "theta_jc": [
+        {
+          "condition": "EVL3435-L-00A",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Thermal Resistance"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 4,
+          "unit": "\u00b0C/W"
+        },
+        {
+          "condition": "JESD51-7",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "Thermal Resistance"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 11,
+          "unit": "\u00b0C/W"
+        }
+      ]
+    }
+  },
+  "categories": [
+    "regulator"
+  ],
+  "extraction": {
+    "extracted_at": "2026-10-21T04:41:53Z",
+    "extractor_schema_version": "1.0",
+    "extractor_scout": null,
+    "plan_ref": "MP3435GL-Z.plan.json",
+    "quality_score": 86
+  },
+  "regulator": {
+    "cin_min": [
+      {
+        "condition": "High-power applications",
+        "evidence": {
+          "confidence": "medium",
+          "method": "prose",
+          "page": 18,
+          "section": "Selecting the Input Capacitor"
+        },
+        "max": null,
+        "min": 4.4e-05,
+        "notes": "At least two 22 uF capacitors recommended for loop stability.",
+        "typ": null,
+        "unit": "F"
+      }
+    ],
+    "compensation_pin": "13",
+    "cout_min": null,
+    "dropout": null,
+    "enable_pin": "6",
+    "feedback_pin": "14",
+    "inductor_range": null,
+    "iout_max": null,
+    "power_good_pin": null,
+    "reference_voltage": [
+      {
+        "condition": "TJ=25 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 5,
+          "section": "Electrical Characteristics"
+        },
+        "max": 1.238,
+        "min": 1.212,
+        "notes": null,
+        "typ": 1.225,
+        "unit": "V"
+      },
+      {
+        "condition": "TJ=-40 C to +125 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 5,
+          "section": "Electrical Characteristics"
+        },
+        "max": 1.243,
+        "min": 1.207,
+        "notes": null,
+        "typ": 1.225,
+        "unit": "V"
+      }
+    ],
+    "sequencing": null,
+    "stability_conditions": {
+      "cap_types_allowed": [
+        "tantalum",
+        "electrolytic"
+      ],
+      "esr_range": null,
+      "evidence": {
+        "confidence": "medium",
+        "method": "prose",
+        "page": 19,
+        "section": "Selecting the Output Capacitor"
+      },
+      "notes": "Page 19 also recommends ceramic without specifying dielectric; three 22 uF ceramic capacitors suitable for most applications, not a guaranteed minimum. Select COUT for ripple/transients and allow voltage derating. External series R-C compensation from COMP to AGND is required (p3); p20 gives FP1=1/(2*pi*RLOAD*COUT), FZ1=1/(2*pi*RCOMP*CCOMP). In CCM, FRHPZ=RLOAD/(2*pi*L)*(VIN/VOUT)^2 (p21), worst at minimum VIN and maximum output power. Page 23 example: RCOMP=24.9 kohm, CCOMP=3.3 nF for VIN 3\u201310 V, VOUT 12 V, 2 A. No universal output current rating: limited by allowable temperature rise, current limit and VIN (p21). Switch current limit is NOT output current; p6 gives 19/25/29 A min/typ/max at TJ=25 C, GATE=GND, duty=40%."
+    },
+    "switching_freq": [
+      {
+        "condition": "TJ=25 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 5,
+          "section": "Electrical Characteristics"
+        },
+        "max": 690000,
+        "min": 510000,
+        "notes": null,
+        "typ": 600000,
+        "unit": "Hz"
+      },
+      {
+        "condition": "TJ=-40 C to +125 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 5,
+          "section": "Electrical Characteristics"
+        },
+        "max": 690000,
+        "min": 450000,
+        "notes": null,
+        "typ": null,
+        "unit": "Hz"
+      }
+    ],
+    "topology": "boost",
+    "vin_range": [
+      {
+        "condition": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 4,
+          "section": "Recommended Operating Conditions"
+        },
+        "max": 20,
+        "min": 3,
+        "notes": null,
+        "typ": null,
+        "unit": "V"
+      }
+    ],
+    "vout_range": [
+      {
+        "condition": null,
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 4,
+          "section": "Recommended Operating Conditions"
+        },
+        "max": 22,
+        "min": null,
+        "notes": "Minimum VOUT is VIN.",
+        "typ": null,
+        "unit": "V"
+      }
+    ]
+  },
+  "schema_version": {
+    "base": "1.0",
+    "categories": {
+      "regulator": "0.3"
+    }
+  },
+  "source": {
+    "datasheet_date": "2021-11-30",
+    "datasheet_revision": "1.0",
+    "family_ref": null,
+    "local_path": "datasheets\\MP3435.pdf",
+    "manufacturer": "Monolithic Power Systems",
+    "mpn": "MP3435GL-Z",
+    "page_count": 26,
+    "sha256": "sha256:1f827a0457f2acab98499f0529422b80dd5737ad5719d651981cc0bfc9a2f52f",
+    "source_url": "https://www.MonolithicPower.com"
+  }
+}

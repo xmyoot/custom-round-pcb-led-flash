@@ -1,0 +1,386 @@
+{
+  "task_id": "base",
+  "schema_version": "1.0",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:41:44Z",
+  "model_tier": "B",
+  "model_id": "gpt-6",
+  "data": {
+    "family": "synchronous boost converter",
+    "description": "600 kHz synchronous boost converter with input disconnect and configurable input current limit",
+    "package": {
+      "code": "QFN-20 (3mmx4mm)",
+      "pin_count": 20,
+      "body_mm": {
+        "length": 4,
+        "width": 3
+      },
+      "evidence": {
+        "page": 2,
+        "section": "Ordering Information",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    "pinout": [],
+    "pin_relationships": [],
+    "absolute_max": {
+      "VIN_max": [
+        {
+          "min": -0.3,
+          "typ": null,
+          "max": 24,
+          "unit": "V",
+          "condition": null,
+          "notes": "Applies to IN, SENSE, OUT, SOUT.",
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "SW": [
+        {
+          "min": -0.3,
+          "typ": null,
+          "max": 24,
+          "unit": "V",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        },
+        {
+          "min": -3.5,
+          "typ": null,
+          "max": 28,
+          "unit": "V",
+          "condition": "Transient shorter than 10 ns",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "GATE": [
+        {
+          "min": -0.3,
+          "typ": null,
+          "max": null,
+          "unit": "V",
+          "condition": null,
+          "notes": "Upper limit is IN + 5.5 V; symbolic upper limit retained rather than treating 5.5 V as an absolute voltage.",
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "BST_TM": [
+        {
+          "min": -0.3,
+          "typ": null,
+          "max": null,
+          "unit": "V",
+          "condition": null,
+          "notes": "Upper limit is VSW + 5.5 V.",
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "other_pins": [
+        {
+          "min": -0.3,
+          "typ": null,
+          "max": 5.5,
+          "unit": "V",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "EN_sink_current": [
+        {
+          "min": null,
+          "typ": null,
+          "max": 0.0005,
+          "unit": "A",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "PD": [
+        {
+          "min": null,
+          "typ": null,
+          "max": 4.6,
+          "unit": "W",
+          "condition": "TA=25 C, EVL3435-L-00A 4-layer 2oz 63mm x 63mm PCB",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "TJ_max": [
+        {
+          "min": null,
+          "typ": null,
+          "max": 150,
+          "unit": "\u00b0C",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "lead_temperature": [
+        {
+          "min": null,
+          "typ": null,
+          "max": 260,
+          "unit": "\u00b0C",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "Tstg": [
+        {
+          "min": -65,
+          "typ": null,
+          "max": 150,
+          "unit": "\u00b0C",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Absolute Maximum Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "recommended_operating": {
+      "VIN": [
+        {
+          "min": 3,
+          "typ": null,
+          "max": 20,
+          "unit": "V",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "VOUT": [
+        {
+          "min": null,
+          "typ": null,
+          "max": 22,
+          "unit": "V",
+          "condition": null,
+          "notes": "Lower bound is VIN, not a fixed numeric minimum.",
+          "evidence": {
+            "page": 4,
+            "section": "Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "TJ": [
+        {
+          "min": -40,
+          "typ": null,
+          "max": 125,
+          "unit": "\u00b0C",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "EN_sink_current": [
+        {
+          "min": 0,
+          "typ": null,
+          "max": 0.0003,
+          "unit": "A",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "thermal": {
+      "theta_ja": [
+        {
+          "min": null,
+          "typ": 27,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "EVL3435-L-00A 4-layer 2oz 63mm x 63mm PCB",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Thermal Resistance",
+            "method": "table",
+            "confidence": "high"
+          }
+        },
+        {
+          "min": null,
+          "typ": 48,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "JESD51-7 comparison only; not for actual application design",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Thermal Resistance",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "theta_jc": [
+        {
+          "min": null,
+          "typ": 4,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "EVL3435-L-00A",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Thermal Resistance",
+            "method": "table",
+            "confidence": "high"
+          }
+        },
+        {
+          "min": null,
+          "typ": 11,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "JESD51-7",
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "Thermal Resistance",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "esd": {
+      "HBM": [
+        {
+          "min": null,
+          "typ": 2000,
+          "max": null,
+          "unit": "V",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "ESD Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "CDM": [
+        {
+          "min": null,
+          "typ": 1500,
+          "max": null,
+          "unit": "V",
+          "condition": null,
+          "notes": null,
+          "evidence": {
+            "page": 4,
+            "section": "ESD Ratings",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "moisture_sensitivity": {
+      "msl": 1,
+      "evidence": {
+        "page": 2,
+        "section": "Ordering Information",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    "compliance": [
+      {
+        "mark": "RoHS",
+        "evidence": {
+          "page": 1,
+          "section": "Features",
+          "method": "prose",
+          "confidence": "high"
+        }
+      }
+    ]
+  }
+}

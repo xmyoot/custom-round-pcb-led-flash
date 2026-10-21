@@ -1,0 +1,159 @@
+{
+  "task_id": "regulator",
+  "schema_version": "0.3",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:42:28Z",
+  "model_tier": "B",
+  "model_id": "gpt-6.1-sol",
+  "data": {
+    "topology": "buck_boost",
+    "vin_range": [
+      {
+        "unit": "V",
+        "evidence": {
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions",
+          "confidence": "high",
+          "method": "table"
+        },
+        "min": 2,
+        "max": 16,
+        "condition": "After start-up; VOUT >=3 V"
+      },
+      {
+        "unit": "V",
+        "evidence": {
+          "page": 6,
+          "section": "7.5 Electrical Characteristics",
+          "confidence": "high",
+          "method": "table"
+        },
+        "min": 3,
+        "max": 16,
+        "condition": "Start-up; VOUT <3 V"
+      }
+    ],
+    "vout_range": [
+      {
+        "unit": "V",
+        "evidence": {
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions",
+          "confidence": "high",
+          "method": "table"
+        },
+        "min": 2.5,
+        "max": 9
+      }
+    ],
+    "iout_max": [
+      {
+        "unit": "A",
+        "evidence": {
+          "page": 6,
+          "section": "7.5 Electrical Characteristics",
+          "confidence": "high",
+          "method": "table"
+        },
+        "max": 2,
+        "condition": "During operation with VIN >=4.5 V or VOUT >=4.5 V and VOUT/VIN <=1",
+        "notes": "Not the 3.6 A input current limit. Startup input current limited to typically 1 A while PG is low (page 15)."
+      }
+    ],
+    "reference_voltage": [
+      {
+        "unit": "V",
+        "evidence": {
+          "page": 7,
+          "section": "7.5 Electrical Characteristics",
+          "confidence": "high",
+          "method": "table"
+        },
+        "typ": 0.8,
+        "condition": "TPS63070/TPS630702; PS/SYNC=VIN"
+      }
+    ],
+    "feedback_pin": "5",
+    "compensation_pin": null,
+    "enable_pin": "14",
+    "power_good_pin": "2",
+    "cin_min": [
+      {
+        "unit": "F",
+        "evidence": {
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions",
+          "confidence": "high",
+          "method": "table"
+        },
+        "min": 4.7e-06
+      }
+    ],
+    "cout_min": [
+      {
+        "unit": "F",
+        "evidence": {
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions",
+          "confidence": "high",
+          "method": "table"
+        },
+        "min": 1.5e-05,
+        "notes": "Effective after DC bias and tolerance; nominal L=1.5 uH."
+      }
+    ],
+    "inductor_range": [
+      {
+        "unit": "H",
+        "evidence": {
+          "page": 4,
+          "section": "7.3 Recommended Operating Conditions",
+          "confidence": "high",
+          "method": "table"
+        },
+        "min": 7e-07,
+        "typ": 1.5e-06,
+        "max": 2.8e-06
+      }
+    ],
+    "switching_freq": [
+      {
+        "unit": "Hz",
+        "evidence": {
+          "page": 7,
+          "section": "7.5 Electrical Characteristics",
+          "confidence": "high",
+          "method": "table"
+        },
+        "min": 2100000.0,
+        "typ": 2400000.0,
+        "max": 2700000.0
+      },
+      {
+        "unit": "Hz",
+        "evidence": {
+          "page": 7,
+          "section": "7.5 Electrical Characteristics",
+          "confidence": "high",
+          "method": "table"
+        },
+        "min": 2100000.0,
+        "max": 2800000.0,
+        "condition": "External synchronization"
+      }
+    ],
+    "stability_conditions": {
+      "cap_types_allowed": [
+        "ceramic_x5r",
+        "ceramic_x7r"
+      ],
+      "notes": "X5R or X7R input/output capacitors (p19). Internal compensation. Adjustable TPS63070 requires effective COUT in uF >= 10 times effective L in uH (p17). Account for DC bias and tolerance; greater COUT may be required if boost RHP zero is below 400 kHz (p18). 100 nF VAUX capacitor; no external VAUX load. 10 kΩ series resistor when digital controls tied to VIN (p32).",
+      "evidence": {
+        "page": 17,
+        "section": "9.2.2 Detailed Design Procedure",
+        "confidence": "medium",
+        "method": "prose"
+      }
+    }
+  }
+}

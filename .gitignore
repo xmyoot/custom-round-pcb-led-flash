@@ -6,3 +6,5 @@ __pycache__/
 datasheets/*.txt
 datasheets/*.pdf
 analysis/cache/
+datasheets/extracted/_python_deps/
+datasheets/extracted/_pipeline_deps/

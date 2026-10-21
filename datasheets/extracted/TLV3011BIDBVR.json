@@ -1,0 +1,838 @@
+{
+  "base": {
+    "absolute_max": {
+      "TJ_max": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B"
+          },
+          "max": 150,
+          "min": null,
+          "notes": null,
+          "typ": null,
+          "unit": "\u00b0C"
+        }
+      ],
+      "Tstg": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B"
+          },
+          "max": 150,
+          "min": -65,
+          "notes": null,
+          "typ": null,
+          "unit": "\u00b0C"
+        }
+      ],
+      "VIN": [
+        {
+          "condition": "IN+ and IN- relative to V-",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B"
+          },
+          "max": 7,
+          "min": -0.5,
+          "notes": "Inputs are diode clamped to V-. Below -0.3 V limit current magnitude to less than 10 mA; beyond 7 V externally clamp voltage.",
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "VOUT": [
+        {
+          "condition": "Open-drain OUT relative to V-",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B"
+          },
+          "max": 7,
+          "min": -0.5,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "VS": [
+        {
+          "condition": "V+ minus V-",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B"
+          },
+          "max": 7,
+          "min": -0.5,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "output_short_circuit_current": [
+        {
+          "condition": "Short circuit to V- or V+",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "6.2 Absolute Maximum Ratings - TLV3011B and TLV3012B"
+          },
+          "max": 0.01,
+          "min": null,
+          "notes": null,
+          "typ": null,
+          "unit": "A"
+        }
+      ]
+    },
+    "compliance": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 30,
+          "section": "Package Option Addendum: TLV3011BIDBVR"
+        },
+        "mark": "RoHS"
+      }
+    ],
+    "description": "Single open-drain comparator, B version with hysteresis, fail-safe inputs and POR; DBV SOT-23-6 package",
+    "esd": {
+      "CDM": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "6.3 ESD Ratings"
+          },
+          "max": 1000,
+          "min": -1000,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "HBM": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 4,
+            "section": "6.3 ESD Ratings"
+          },
+          "max": 2000,
+          "min": -2000,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ]
+    },
+    "family": "micropower comparator with integrated voltage reference",
+    "moisture_sensitivity": {
+      "evidence": {
+        "confidence": "high",
+        "method": "table",
+        "page": 30,
+        "section": "Package Option Addendum: TLV3011BIDBVR"
+      },
+      "msl": 1,
+      "peak_reflow_c": 260
+    },
+    "package": {
+      "body_mm": {
+        "length": 2.9,
+        "width": 1.6
+      },
+      "code": "DBV (SOT-23-6)",
+      "evidence": {
+        "confidence": "high",
+        "method": "table",
+        "page": 1,
+        "section": "Device Information"
+      },
+      "pin_count": 6
+    },
+    "pin_relationships": [
+      {
+        "evidence": {
+          "confidence": "high",
+          "method": "prose",
+          "page": 21,
+          "section": "9.4.1 Open Drain Output"
+        },
+        "notes": "Open-drain sinking-only output requires external pull-up; B version permits pull-up to 5.5 V independent of V+.",
+        "pins": [
+          "1"
+        ],
+        "type": "requires_pullup"
+      }
+    ],
+    "pinout": [
+      {
+        "alt_functions": [],
+        "description": "Comparator output; open-drain sinking only.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "5 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "OUT",
+        "notes": "External pull-up required. B version can be pulled to 5.5 V regardless of V+ (p21). During POR, output is high impedance for up to 1.9 ms (p22).",
+        "numbers": [
+          "1"
+        ],
+        "power_domain": null,
+        "recommended": [
+          {
+            "condition": "Referenced to V-",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 5,
+              "section": "6.6 Recommended Operating Conditions"
+            },
+            "max": 5.5,
+            "min": -0.2,
+            "notes": null,
+            "typ": null,
+            "unit": "V"
+          }
+        ],
+        "subtype": "open_drain",
+        "type": "open_collector"
+      },
+      {
+        "alt_functions": [],
+        "description": "Negative, lowest power supply.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "5 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "V-",
+        "notes": null,
+        "numbers": [
+          "2"
+        ],
+        "power_domain": null,
+        "recommended": null,
+        "subtype": null,
+        "type": "power_in"
+      },
+      {
+        "alt_functions": [],
+        "description": "Non-inverting comparator input.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "5 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "IN+",
+        "notes": "B version fail-safe input 0\u20135.5 V independent of V+, even unpowered; output correct only with valid supply, outside POR, and at least one input within valid common-mode range. Both inputs outside range is indeterminate (p22).",
+        "numbers": [
+          "3"
+        ],
+        "power_domain": null,
+        "recommended": [
+          {
+            "condition": null,
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 5,
+              "section": "6.6 Recommended Operating Conditions"
+            },
+            "max": null,
+            "min": -0.2,
+            "notes": "Upper input common-mode boundary is V+ +0.2 V, all relative to V-. Fail-safe 0\u20135.5 V does not imply both inputs may operate outside common-mode range.",
+            "typ": null,
+            "unit": "V"
+          }
+        ],
+        "subtype": null,
+        "type": "input"
+      },
+      {
+        "alt_functions": [],
+        "description": "Inverting comparator input.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "5 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "IN-",
+        "notes": "B version fail-safe input 0\u20135.5 V independent of V+; common-mode and POR constraints still apply (p22).",
+        "numbers": [
+          "4"
+        ],
+        "power_domain": null,
+        "recommended": [
+          {
+            "condition": null,
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 5,
+              "section": "6.6 Recommended Operating Conditions"
+            },
+            "max": null,
+            "min": -0.2,
+            "notes": "Upper input common-mode boundary is V+ +0.2 V, all relative to V-. Fail-safe 0\u20135.5 V does not imply both inputs may operate outside common-mode range.",
+            "typ": null,
+            "unit": "V"
+          }
+        ],
+        "subtype": null,
+        "type": "input"
+      },
+      {
+        "alt_functions": [],
+        "description": "Reference output.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "5 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "REF",
+        "notes": "Stable with up to 10 nF capacitive load. Typical source/sink capability 500 uA. Reference and output low level are relative to V-.",
+        "numbers": [
+          "5"
+        ],
+        "power_domain": null,
+        "recommended": [
+          {
+            "condition": "VS=1.8 V and 5.5 V; TA=25 C unless otherwise noted",
+            "evidence": {
+              "confidence": "high",
+              "method": "table",
+              "page": 8,
+              "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+            },
+            "max": 1.26,
+            "min": 1.223,
+            "notes": "Use B-version electrical table limits. Accuracy +/-1.5% max (+/-0.25% typical), despite cover general 1% claim.",
+            "typ": 1.242,
+            "unit": "V"
+          }
+        ],
+        "subtype": null,
+        "type": "power_out"
+      },
+      {
+        "alt_functions": [],
+        "description": "Positive, highest power supply.",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 3,
+          "section": "5 Pin Configuration and Functions"
+        },
+        "is_5v_tolerant": null,
+        "name": "V+",
+        "notes": "VS=V+ minus V-. Use 0.1 uF ceramic bypass capacitor (p27).",
+        "numbers": [
+          "6"
+        ],
+        "power_domain": "VS",
+        "recommended": null,
+        "subtype": null,
+        "type": "power_in"
+      }
+    ],
+    "recommended_operating": {
+      "TA": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions"
+          },
+          "max": 125,
+          "min": -40,
+          "notes": null,
+          "typ": null,
+          "unit": "\u00b0C"
+        }
+      ],
+      "VIN": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions"
+          },
+          "max": null,
+          "min": -0.2,
+          "notes": "Upper input common-mode boundary is V+ +0.2 V, all relative to V-. Fail-safe 0\u20135.5 V does not imply both inputs may operate outside common-mode range.",
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "VOUT": [
+        {
+          "condition": "B version open drain relative to V-",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions"
+          },
+          "max": 5.5,
+          "min": -0.2,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "VS": [
+        {
+          "condition": "B versions; VS=V+ minus V-",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions"
+          },
+          "max": 5.5,
+          "min": 1.65,
+          "notes": null,
+          "typ": null,
+          "unit": "V"
+        }
+      ],
+      "input_hysteresis": [
+        {
+          "condition": "TA=-40 C to +125 C; built in B-version hysteresis",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 8,
+            "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+          },
+          "max": 0.008,
+          "min": 0.002,
+          "notes": null,
+          "typ": 0.006,
+          "unit": "V"
+        }
+      ],
+      "reference_accuracy": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 8,
+            "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+          },
+          "max": 1.5,
+          "min": null,
+          "notes": "Absolute magnitude of +/- accuracy.",
+          "typ": 0.25,
+          "unit": "%"
+        }
+      ],
+      "reference_load_capacitance": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "prose",
+            "page": 21,
+            "section": "9.4.3 Voltage Reference"
+          },
+          "max": 1e-08,
+          "min": null,
+          "notes": "Reference stable with up to 10 nF capacitive load.",
+          "typ": null,
+          "unit": "F"
+        }
+      ],
+      "reference_output_current": [
+        {
+          "condition": null,
+          "evidence": {
+            "confidence": "high",
+            "method": "prose",
+            "page": 21,
+            "section": "9.4.3 Voltage Reference"
+          },
+          "max": null,
+          "min": null,
+          "notes": "Typical sink/source capability; not guaranteed minimum.",
+          "typ": 0.0005,
+          "unit": "A"
+        }
+      ],
+      "reference_voltage": [
+        {
+          "condition": "VS=1.8 V and 5.5 V; TA=25 C unless otherwise noted",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 8,
+            "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+          },
+          "max": 1.26,
+          "min": 1.223,
+          "notes": "Use B-version electrical table limits. Accuracy +/-1.5% max (+/-0.25% typical), despite cover general 1% claim.",
+          "typ": 1.242,
+          "unit": "V"
+        }
+      ]
+    },
+    "thermal": {
+      "psi_jb": [
+        {
+          "condition": "DBV SOT-23-6 B version",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 41.9,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "psi_jt": [
+        {
+          "condition": "DBV SOT-23-6 B version",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 21.2,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "theta_ja": [
+        {
+          "condition": "DBV SOT-23-6 B version",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 162.5,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "theta_jb": [
+        {
+          "condition": "DBV SOT-23-6 B version",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 42.1,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "theta_jc_top": [
+        {
+          "condition": "DBV SOT-23-6 B version",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 78.8,
+          "unit": "\u00b0C/W"
+        }
+      ]
+    }
+  },
+  "categories": [
+    "opamp"
+  ],
+  "extraction": {
+    "extracted_at": "2026-10-21T04:43:21Z",
+    "extractor_schema_version": "1.0",
+    "extractor_scout": null,
+    "plan_ref": "TLV3011BIDBVR.plan.json",
+    "quality_score": 93
+  },
+  "opamp": {
+    "channels": 1,
+    "cmrr": [
+      {
+        "condition": "VCM=V-+1.5 V to V++0.2 V; VS=5.5 V",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": null,
+        "min": 60,
+        "notes": null,
+        "typ": 74,
+        "unit": "dB"
+      },
+      {
+        "condition": "VCM=V--0.2 V to V++0.2 V; VS=5.5 V",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": null,
+        "min": 54,
+        "notes": null,
+        "typ": 62,
+        "unit": "dB"
+      }
+    ],
+    "gbw": null,
+    "ib": [
+      {
+        "condition": "VCM=VS/2",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": 1e-11,
+        "min": -1e-11,
+        "notes": "Typical magnitude +/-4.5 pA; min/max ensured by characterization.",
+        "typ": 4.5e-12,
+        "unit": "A"
+      }
+    ],
+    "iq_per_amp": [
+      {
+        "condition": "Output logic high; TA=25 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 9,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": 3.1e-06,
+        "min": null,
+        "notes": null,
+        "typ": 2.4e-06,
+        "unit": "A"
+      },
+      {
+        "condition": "Output logic high; TA=-40 C to +125 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 9,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": 3.6e-06,
+        "min": null,
+        "notes": null,
+        "typ": null,
+        "unit": "A"
+      }
+    ],
+    "opamp_topology": "comparator",
+    "output_drive_current": [
+      {
+        "condition": "Sink test current at VOL<=0.2 V; VS=5 V",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": null,
+        "min": null,
+        "notes": "Test condition, not an independently rated maximum current.",
+        "typ": 0.005,
+        "unit": "A"
+      }
+    ],
+    "package": {
+      "body_mm": {
+        "length": 2.9,
+        "width": 1.6
+      },
+      "code": "DBV (SOT-23-6)",
+      "evidence": {
+        "confidence": "high",
+        "method": "table",
+        "page": 1,
+        "section": "Device Information"
+      },
+      "pin_count": 6
+    },
+    "psrr": null,
+    "shutdown_pin": null,
+    "slew_rate": null,
+    "thermal_resistance": {
+      "rtheta_ja": [
+        {
+          "condition": "DBV SOT-23-6 B version",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 162.5,
+          "unit": "\u00b0C/W"
+        }
+      ],
+      "rtheta_jc": [
+        {
+          "condition": "DBV SOT-23-6 B version",
+          "evidence": {
+            "confidence": "high",
+            "method": "table",
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B"
+          },
+          "max": null,
+          "min": null,
+          "notes": null,
+          "typ": 78.8,
+          "unit": "\u00b0C/W"
+        }
+      ]
+    },
+    "unity_gain_stable": null,
+    "vos": [
+      {
+        "condition": "VCM=V-; TA=25 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": 0.006,
+        "min": -0.006,
+        "notes": "Typical offset magnitude is +/-0.3 mV.",
+        "typ": 0.0003,
+        "unit": "V"
+      },
+      {
+        "condition": "VCM=V-; TA=-40 C to +125 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": 0.009,
+        "min": -0.009,
+        "notes": null,
+        "typ": null,
+        "unit": "V"
+      }
+    ],
+    "vout_swing_high": null,
+    "vout_swing_low": [
+      {
+        "condition": "VS=5 V, ISINK=5 mA, TA=-40 C to +125 C",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B"
+        },
+        "max": 0.2,
+        "min": null,
+        "notes": null,
+        "typ": 0.16,
+        "unit": "V"
+      }
+    ],
+    "vsupply_range": [
+      {
+        "condition": "B versions; VS=V+ minus V-",
+        "evidence": {
+          "confidence": "high",
+          "method": "table",
+          "page": 5,
+          "section": "6.6 Recommended Operating Conditions"
+        },
+        "max": 5.5,
+        "min": 1.65,
+        "notes": null,
+        "typ": null,
+        "unit": "V"
+      }
+    ],
+    "vsupply_split_capable": true
+  },
+  "schema_version": {
+    "base": "1.0",
+    "categories": {
+      "opamp": "1.0"
+    }
+  },
+  "source": {
+    "datasheet_date": "2023-04",
+    "datasheet_revision": "SBOS300C",
+    "family_ref": null,
+    "local_path": "datasheets\\TLV3011.pdf",
+    "manufacturer": "Texas Instruments",
+    "mpn": "TLV3011BIDBVR",
+    "page_count": 43,
+    "sha256": "sha256:02993c016420887ee4f1ab2fa640e7596c9c1324a73f4f72bee3b32adec38df3",
+    "source_url": "https://www.ti.com"
+  }
+}

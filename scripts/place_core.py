@@ -39,8 +39,19 @@ def obstacles(f, placed):
                 if pad.GetAttribute() in (p.PAD_ATTRIB_PTH,p.PAD_ATTRIB_NPTH): items.append(box(pad))
     return items
 
-order={'U6':0,'L1':1,'SW1':2,'SW2':3,'C11':4,'C14':5,'C10':6}
-movable.sort(key=lambda f:(order.get(f.GetReference(),10),-((box(f)[2]-box(f)[0])*(box(f)[3]-box(f)[1]))))
+def opposite_holes_clear(f,placed):
+    # A through-hole pad must also clear the opposite-side body courtyard.
+    for pad in f.Pads():
+        if pad.GetAttribute()!=p.PAD_ATTRIB_PTH:continue
+        if any(other.GetLayer()!=f.GetLayer() and overlap(box(pad),box(other)) for other in placed):return False
+    return True
+
+critical=['U60','U61','L2','C284','U70','Q70','R270','C280','C281','C282','C283','C274','C275','R271','R272','C277','R275','C278','C276',
+          'U6','L1','C11','C12','C13','C14','C15','C16','C10','R10','R11',
+          'U30','C61','C60','R61','Q30','SW1','SW2',
+          'U7','C6','C8','U5','C7','U3','C4','D4','D5','U2','C2','C3']
+order={ref:i for i,ref in enumerate(critical)}
+movable.sort(key=lambda f:(order.get(f.GetReference(),100),-((box(f)[2]-box(f)[0])*(box(f)[3]-box(f)[1]))))
 placed=list(fixed); result=[]
 for f in movable:
     ref=f.GetReference(); desired=f.GetPosition(); dx=p.ToMM(desired.x); dy=p.ToMM(desired.y)
@@ -49,8 +60,19 @@ for f in movable:
     found=None
     for ox,oy in offsets:
         f.SetPosition(pt(dx+ox,dy+oy)); bounds=box(f)
-        if in_ring(bounds) and not any(overlap(bounds,o) for o in obs):
+        if in_ring(bounds) and not any(overlap(bounds,o) for o in obs) and opposite_holes_clear(f,placed):
             found=(dx+ox,dy+oy); break
+    if found is None:
+        # Broaden only when the block-local search cannot fit a component.
+        candidates=[]
+        for rr in (30,32,34,36,38,40):
+            for deg in range(0,360,2):
+                xx=100+rr*math.cos(math.radians(deg)); yy=100+rr*math.sin(math.radians(deg))
+                candidates.append(((xx-dx)**2+(yy-dy)**2,xx,yy))
+        for _,xx,yy in sorted(candidates):
+            f.SetPosition(pt(xx,yy)); bounds=box(f)
+            if in_ring(bounds) and not any(overlap(bounds,o) for o in obs) and opposite_holes_clear(f,placed):
+                found=(xx,yy);break
     if found is None: raise RuntimeError(f'No conservative placement found for {ref}; revise floorplan.')
     placed.append(f); result.append({'reference':ref,'x':found[0],'y':found[1],'side':'F' if f.GetLayer()==p.F_Cu else 'B'})
 p.SaveBoard(str(ROOT/'Round_LED_Flash.kicad_pcb'),b)

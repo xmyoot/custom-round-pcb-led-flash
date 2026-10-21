@@ -1,0 +1,221 @@
+{
+  "task_id": "opamp",
+  "schema_version": "1.0",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:43:21Z",
+  "model_tier": "B",
+  "model_id": "gpt-6",
+  "data": {
+    "opamp_topology": "comparator",
+    "channels": 1,
+    "vsupply_range": [
+      {
+        "min": 1.65,
+        "typ": null,
+        "max": 5.5,
+        "unit": "V",
+        "condition": "B versions; VS=V+ minus V-",
+        "notes": null,
+        "evidence": {
+          "page": 5,
+          "section": "6.6 Recommended Operating Conditions",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "vsupply_split_capable": true,
+    "iq_per_amp": [
+      {
+        "min": null,
+        "typ": 2.4e-06,
+        "max": 3.1e-06,
+        "unit": "A",
+        "condition": "Output logic high; TA=25 C",
+        "notes": null,
+        "evidence": {
+          "page": 9,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      },
+      {
+        "min": null,
+        "typ": null,
+        "max": 3.6e-06,
+        "unit": "A",
+        "condition": "Output logic high; TA=-40 C to +125 C",
+        "notes": null,
+        "evidence": {
+          "page": 9,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "gbw": null,
+    "slew_rate": null,
+    "vos": [
+      {
+        "min": -0.006,
+        "typ": 0.0003,
+        "max": 0.006,
+        "unit": "V",
+        "condition": "VCM=V-; TA=25 C",
+        "notes": "Typical offset magnitude is +/-0.3 mV.",
+        "evidence": {
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      },
+      {
+        "min": -0.009,
+        "typ": null,
+        "max": 0.009,
+        "unit": "V",
+        "condition": "VCM=V-; TA=-40 C to +125 C",
+        "notes": null,
+        "evidence": {
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "ib": [
+      {
+        "min": -1e-11,
+        "typ": 4.5e-12,
+        "max": 1e-11,
+        "unit": "A",
+        "condition": "VCM=VS/2",
+        "notes": "Typical magnitude +/-4.5 pA; min/max ensured by characterization.",
+        "evidence": {
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "cmrr": [
+      {
+        "min": 60,
+        "typ": 74,
+        "max": null,
+        "unit": "dB",
+        "condition": "VCM=V-+1.5 V to V++0.2 V; VS=5.5 V",
+        "notes": null,
+        "evidence": {
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      },
+      {
+        "min": 54,
+        "typ": 62,
+        "max": null,
+        "unit": "dB",
+        "condition": "VCM=V--0.2 V to V++0.2 V; VS=5.5 V",
+        "notes": null,
+        "evidence": {
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "psrr": null,
+    "vout_swing_high": null,
+    "vout_swing_low": [
+      {
+        "min": null,
+        "typ": 0.16,
+        "max": 0.2,
+        "unit": "V",
+        "condition": "VS=5 V, ISINK=5 mA, TA=-40 C to +125 C",
+        "notes": null,
+        "evidence": {
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "output_drive_current": [
+      {
+        "min": null,
+        "typ": 0.005,
+        "max": null,
+        "unit": "A",
+        "condition": "Sink test current at VOL<=0.2 V; VS=5 V",
+        "notes": "Test condition, not an independently rated maximum current.",
+        "evidence": {
+          "page": 8,
+          "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "unity_gain_stable": null,
+    "shutdown_pin": null,
+    "thermal_resistance": {
+      "rtheta_ja": [
+        {
+          "min": null,
+          "typ": 162.5,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "DBV SOT-23-6 B version",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "rtheta_jc": [
+        {
+          "min": null,
+          "typ": 78.8,
+          "max": null,
+          "unit": "\u00b0C/W",
+          "condition": "DBV SOT-23-6 B version",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.5 Thermal Information - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    "package": {
+      "code": "DBV (SOT-23-6)",
+      "pin_count": 6,
+      "body_mm": {
+        "length": 2.9,
+        "width": 1.6
+      },
+      "evidence": {
+        "page": 1,
+        "section": "Device Information",
+        "method": "table",
+        "confidence": "high"
+      }
+    }
+  }
+}

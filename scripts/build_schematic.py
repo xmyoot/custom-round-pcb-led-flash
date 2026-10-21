@@ -82,7 +82,7 @@ def core():
     # Section 1: logic regulator. Datasheet pin table and adjustable reference.
     ds='https://www.ti.com/lit/ds/symlink/tps63070.pdf'
     pins=[('12','VIN','power_in'),('13','VIN','power_in'),('14','EN','input'),('1','PS_SYNC','input'),('15','VSEL','input'),('6','FB2','passive'),('4','GND','power_in'),('10','PGND','power_in'),('11','L1','passive'),('9','L2','passive'),('7','VOUT','power_out'),('8','VOUT','passive'),('5','FB','input'),('3','VAUX','passive'),('2','PG','open_collector')]
-    ic('U6','TPS63070',pins,{12:'BAT_PROT',13:'BAT_PROT',14:'SYS_EN',1:'BAT_PROT',15:'GND',6:None,4:'GND',10:'GND',11:'LOGIC_L1',9:'LOGIC_L2',7:'3V3',8:'3V3',5:'LOGIC_FB',3:'LOGIC_AUX',2:'LOGIC_PG'},
+    ic('U6','TPS63070',pins,{12:'BAT_PROT',13:'BAT_PROT',14:'SYS_EN',1:'LOGIC_PS_SYNC',15:'GND',6:None,4:'GND',10:'GND',11:'LOGIC_L1',9:'LOGIC_L2',7:'3V3',8:'3V3',5:'LOGIC_FB',3:'LOGIC_AUX',2:'LOGIC_PG'},
        'Round_LED_Flash:TPS63070_RNM0015A',65,65,'TPS63070RNMR','Texas Instruments',ds)
     add('L1','1.5uH','Device:L','Round_LED_Flash:Coilcraft_XFL4020',{1:'LOGIC_L1',2:'LOGIC_L2'},115,55,90,mpn='XFL4020-152MEC',manufacturer='Coilcraft',datasheet='https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf',notes='Independent footprint verification remains a release gate.')
     r('R10','470k','3V3','LOGIC_FB',115,75)
@@ -92,19 +92,20 @@ def core():
         c(ref,'10u 10V','BAT_PROT','GND',x,115,fp='Capacitor_SMD:C_0805_2012Metric')
     for ref,x in (('C14',115),('C15',165),('C16',215)):
         c(ref,'22u 16V','3V3','GND',x,135,fp='Capacitor_SMD:C_0805_2012Metric')
-    r('R12','10k','3V3','LOGIC_PG',215,75)
+    r('R12','4.7k','3V3','LOGIC_PG',215,75)
+    r('R18','10k','BAT_PROT','LOGIC_PS_SYNC',215,95,notes='Series control isolation required by TPS63070 datasheet section11.1 for pins tied to VIN.')
     add('SW1','POWER','Switch:SW_SPDT','Button_Switch_SMD:SW_SPDT_CK_JS102011SAQN',{1:'BAT_PROT',2:'SW_ON',3:'GND'},65,115,mpn='JS102011SAQN',manufacturer='C&K',notes='Common is pin 2. Position connects enable to cell or ground.')
-    r('R13','10k','SW_ON','SYS_EN',65,145)
-    r('R14','100k','SYS_EN','GND',165,95)
+    r('R13','100k','SW_ON','SYS_EN',65,145)
+    r('R14','1M','SYS_EN','GND',165,95)
     # USB pulls enable low with a transistor (added in charging section).
     annotations.append(text('01 / 3.3 V BUCK-BOOST - 500 mA minimum design target',25,25,2))
     annotations.append(text('Draft: exact inductor suffix, capacitor MPNs and loop layout still require verification.',25,165))
 
     # Section 2: ESP32. Follow published module pin numbering, no boot-pin loads.
-    nets={1:'3V3',2:'MCU_EN',3:'REQ_W',4:'REQ_C',5:'ARM',6:'HW_OK',7:'STRAP8',8:'BOOT_N',9:'GND',10:'SHUTTER_N',11:'UART_RX',12:'UART_TX',13:'BLE_LED',14:'READY_LED',15:'ADC_NTC',16:'STRAP2',17:'ADC_CAP',18:'ADC_BAT',19:'GND'}
+    nets={1:'3V3',2:'MCU_EN',3:'REQ_W',4:'REQ_C',5:'ARM',6:'TRIGGER_ALLOWED',7:'STRAP8',8:'BOOT_N',9:'GND',10:'SHUTTER_N',11:'UART_RX',12:'UART_TX',13:'BLE_LED',14:'READY_LED',15:'ADC_NTC',16:'TRIG_REQ',17:'ADC_CAP',18:'ADC_BAT',19:'GND'}
     add('U10','ESP32-C3-WROOM-02-N4','RF_Module:ESP32-C3-WROOM-02','Round_LED_Flash:ESP32-C3-WROOM-02_NoViaInPad',nets,335,80,
         mpn='ESP32-C3-WROOM-02-N4',manufacturer='Espressif Systems',datasheet='https://www.espressif.com/sites/default/files/documentation/esp32-c3-wroom-02_datasheet_en.pdf')
-    for ref,net,x,y in [('R20','MCU_EN',390,45),('R21','BOOT_N',440,45),('R22','STRAP2',490,45),('R23','STRAP8',390,65)]: r(ref,'10k','3V3',net,x,y)
+    for ref,net,x,y in [('R20','MCU_EN',390,45),('R21','BOOT_N',440,45),('R22','TRIG_REQ',490,45),('R23','STRAP8',390,65)]: r(ref,'10k','3V3',net,x,y)
     c('C20','1u','MCU_EN','GND',440,65)
     c('C21','100n','3V3','GND',490,65)
     c('C22','10u','3V3','GND',390,85,fp='Capacitor_SMD:C_0805_2012Metric')
@@ -117,7 +118,7 @@ def core():
     r('R30','100k','ADC_CAP','GND',440,145)
     c('C24','100n','ADC_CAP','GND',490,145)
     annotations.append(text('02 / BLE CONTROLLER + UART PROGRAMMING',285,25,2))
-    annotations.append(text('Boot GPIO2/8 high; GPIO9 high for normal boot, low at reset for UART download.',285,165))
+    annotations.append(text('GPIO2 high for boot, then TRIG_REQ output LOW before ARM. GPIO7 reads TRIGGER_ALLOWED.',285,165))
 
     # Section 3: two 5F cells in series, charged/balanced to 4.8V by LTC3225.
     capfp='Capacitor_THT:CP_Radial_D10.0mm_P5.00mm'
@@ -126,7 +127,7 @@ def core():
             mpn='HV1020-2R7505-R',manufacturer='Eaton',datasheet='https://www.eaton.com/content/dam/eaton/products/electronic-components/resources/data-sheet/eaton-hv-supercapacitors-cylindrical-cells-data-sheet.pdf',notes='Maximum body 10.5 mm diameter x 22.3 mm high. Hand-solder after reflow. Pulse and aged ESR validation pending.')
     annotations.append(text('03 / 2.5 F EFFECTIVE CAP BANK - regulated 4.8 V',545,25,2))
     annotations.append(text('Two series cells; midpoint connects to LTC3225 CX. No bleed balancing resistors.',545,145))
-    annotations.append(text('Nominal stored energy 28.8 J. Flash isolation and service discharge still pending.',545,165))
+    annotations.append(text('Nominal stored energy 28.8 J. Fused boost branch, timed output cutoff and default-on discharge.',545,165))
 
     # Section 4: user inputs and indicators.
     add('SW2','SHUTTER','Switch:SW_Push','Button_Switch_SMD:SW_SPST_TL3342',{1:'SHUTTER_N',2:'GND'},65,235,mpn='TL3342F160QG',manufacturer='E-Switch')
@@ -139,14 +140,14 @@ def core():
         r(rref,'1k',net,net+'_A',65,y)
         add(ref,color,'Device:LED','LED_SMD:LED_0603_1608Metric',{1:'GND',2:net+'_A'},115,y,notes='Select LED MPN and brightness/current before BOM freeze.')
     annotations.append(text('04 / SHUTTER, INDICATORS, LED-AREA NTC',25,205,2))
-    annotations.append(text('USB charge-status LED belongs in the pending charger block.',25,365))
+    annotations.append(text('D1 indicates battery charging; D2 BLE; D3 firmware flash-ready. TH1 senses LED-area temperature.',25,365))
 
     # Section 5: connectors present in the mechanical placement.
     add('J1','USB4085-GF-A','Connector:USB_C_Receptacle_USB2.0_16P','Connector_USB:USB_C_Receptacle_GCT_USB4085',
-        {'A1':'GND','B1':'GND','A4':'VBUS_RAW','B4':'VBUS_RAW','A5':'CC1','B5':'CC2','A6':None,'B6':None,'A7':None,'B7':None,'A8':None,'B8':None,'A9':'VBUS_RAW','B9':'VBUS_RAW','A12':'GND','B12':'GND','SH':'GND'},335,265,
+        {'A1':'GND','B1':'GND','A4':'VBUS_RAW','B4':'VBUS_RAW','A5':'CC1_RAW','B5':'CC2_RAW','A6':None,'B6':None,'A7':None,'B7':None,'A8':None,'B8':None,'A9':'VBUS_RAW','B9':'VBUS_RAW','A12':'GND','B12':'GND','SH':'GND'},335,265,
         mpn='USB4085-GF-A',manufacturer='GCT',datasheet='https://gct.co/files/drawings/usb4085.pdf',notes='Charging only. Contacts and shell stakes are through-hole. Local pad clearance is 0.15 mm, per land pattern.')
     add('J2','BATTERY','Connector_Generic:Conn_01x02','Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical',{1:'CELL_P',2:'CELL_N_RAW'},440,245,
-        mpn='B2B-PH-K-S(LF)(SN)',manufacturer='JST',notes='Raw cell negative is not protected system ground. Fuse and DW01 circuit pending.')
+        mpn='B2B-PH-K-S(LF)(SN)',manufacturer='JST',notes='Raw cell negative is not protected system ground. Connect an isolated two-wire single-cell pack only.')
     for ref,net,y in [('TP1','GND',290),('TP2','3V3',310),('TP3','UART_TX',330),('TP4','UART_RX',350),('TP5','MCU_EN',370),('TP6','BOOT_N',390)]:
         add(ref,net,'Connector:TestPoint','TestPoint:TestPoint_Pad_D1.5mm',{1:net},440,y,notes='UART fixture uses protected ground only.')
     annotations.append(text('05 / CONNECTORS + 3.3 V UART POGO ACCESS',285,205,2))
@@ -198,7 +199,7 @@ def core():
 
 def write():
     rootid=uid('root')
-    out=['(kicad_sch (version 20250114) (generator "eeschema") (generator_version "10.0")',f'(uuid {q(rootid)}) (paper "A0")',
+    out=['(kicad_sch (version 20250114) (generator "eeschema") (generator_version "10.0")',f'(uuid {q(rootid)}) (paper "User" 1189 1189)',
          '(title_block (title "ROUND LED FLASH - ENGINEERING DRAFT") (date "2026-10-20") (rev "A-draft") (comment 1 "Incomplete electrical design - NOT FOR FABRICATION"))',
          '(lib_symbols '+'\n'.join(symbols.values())+')']
     errors=[]
@@ -250,4 +251,10 @@ def write():
     print(f'Wrote {len(parts)} symbols to the authoritative schematic')
 
 if __name__=='__main__':
-    core(); write()
+    core()
+    import build_power, build_flash, build_boost, select_bom
+    build_power.populate(globals())
+    build_flash.populate(globals())
+    build_boost.populate(globals())
+    select_bom.enrich(globals())
+    write()

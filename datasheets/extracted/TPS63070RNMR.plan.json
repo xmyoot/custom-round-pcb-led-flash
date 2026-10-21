@@ -1,0 +1,101 @@
+{
+  "cache_dir": "datasheets\\extracted",
+  "created_at": "2026-10-21T04:41:35Z",
+  "execution": {
+    "completed_at": "2026-10-21T04:42:37Z",
+    "outcomes": [
+      {
+        "attempts": 2,
+        "final_status": "complete",
+        "last_error": null,
+        "task_id": "base"
+      },
+      {
+        "attempts": 2,
+        "final_status": "complete",
+        "last_error": null,
+        "task_id": "pinout"
+      },
+      {
+        "attempts": 2,
+        "final_status": "complete",
+        "last_error": null,
+        "task_id": "regulator"
+      }
+    ],
+    "started_at": "2026-10-21T04:42:33Z"
+  },
+  "mpn": "TPS63070RNMR",
+  "pdf_path": "datasheets\\TPS63070.pdf",
+  "pdf_sha256": "sha256:a88ef66f3493156ff6e7da0849de0e0e1068647f2553d08c1844d4a90c5c65ef",
+  "plan_version": "1.0",
+  "scout_ref": "TPS63070RNMR.scout.json",
+  "tasks": [
+    {
+      "depends_on": [],
+      "pages": [
+        1,
+        3,
+        4,
+        5,
+        35,
+        39,
+        40,
+        41
+      ],
+      "prompt_template": "skills/datasheets/prompts/base.md",
+      "result_ref": "TPS63070RNMR.base.result.json",
+      "schema": "skills/datasheets/schemas/base.schema.json",
+      "status": "complete",
+      "subagent_role": "base",
+      "task_id": "base",
+      "tier": "B"
+    },
+    {
+      "depends_on": [],
+      "pages": [
+        3,
+        6,
+        7,
+        11,
+        12,
+        13,
+        32
+      ],
+      "prompt_template": "skills/datasheets/prompts/pinout.md",
+      "result_ref": "TPS63070RNMR.pinout.result.json",
+      "schema": "skills/datasheets/schemas/pinout.schema.json",
+      "status": "complete",
+      "subagent_role": "pinout",
+      "task_id": "pinout",
+      "tier": "A"
+    },
+    {
+      "depends_on": [],
+      "pages": [
+        1,
+        3,
+        4,
+        6,
+        7,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        32
+      ],
+      "prompt_template": "skills/datasheets/prompts/regulator.md",
+      "result_ref": "TPS63070RNMR.regulator.result.json",
+      "schema": "skills/datasheets/schemas/regulator.schema.json",
+      "status": "complete",
+      "subagent_role": "regulator",
+      "task_id": "regulator",
+      "tier": "B"
+    }
+  ]
+}

@@ -1,68 +1,56 @@
-# Implementation status — 2026-10-20
+# Implementation status —2026-10-20
 
 ## Actual state
 
-The authoritative root files now exist:
+One authoritative KiCad10 project exists at the root. Current candidate:244 symbols, including6 nonphysical power flags and2 offboard assembly items;236 PCB footprints. No routed tracks or planes yet. Schematic and PCB are matched by native netlist/pad assignments. The source remains an unreleased prototype candidate.
 
-- `Round_LED_Flash.kicad_pro`
-- `Round_LED_Flash.kicad_sch`
-- `Round_LED_Flash.kicad_pcb`
+Implemented: MCU/boot/UART isolation; TPS63070 logic supply; independent battery undervoltage supervisor; fused DW01/AO3400A protection; TUSB320LAI source-current qualification; TLV760 USB logic supply; TPS25200 VBUS clamp/current limiter; TP4056300mA cell charging with separate pack NTC and shorted-NTC comparator; three indicators; shutter/slide controls; LED-area NTC; switched ADC dividers; LTC3225 balanced4.8V2.5F effective capacitor bank; default-on discharge; fused MP3435 boost with input disconnect/current sense; two CAT4101200mA sinks; AO4407A physical LED cutoff; two LTC6993-1 non-retriggerable timers; separate preflash energy, loaded-bank UVLO, boost-ready, and startup interlocks.
 
-KiCad 10.0.7 and its bundled `pcbnew` import were exercised successfully. The schematic and PCB contain **65 symbols/footprints**, including non-BOM mounting holes and test pads. There are no routed tracks, ground planes, or fabrication outputs. The schematic is deliberately marked incomplete.
+External items in the same BOM: one Bridgelux BXRV-TR-2765G-10A0-A-23 COB and one TDK B57861S0103F040 cell NTC. J4/J5 are solder-wire lands, not separate purchased LEDs/connectors. J3 is a1.25mm JST-GH NTC interface, distinct from the2mm JST-PH battery connector to prevent interchange.
 
-Implemented core: ESP32-C3-WROOM-02-N4; TPS63070 adjustable 3.3 V supply; 1.5 µH logic inductor; boot/reset passives; ADC networks; power-good-controlled high-side sensing switches; shutter and slide switches; BLE/ready indicators; local NTC interface; UART pogo pads; USB/battery interfaces; 2S2P capacitor bank; three M2.5 mounting holes. The battery connector's raw cell terminals are not yet connected to the protected system rail because the protection stage is absent.
+## Engineering decisions
+
+- Preserve84mm OD/55mm opening,4layers1.6mm. Rear cell mounting replaces the incompatible18x70mm battery cutout. RF module antenna extends beyond board perimeter; enclosure envelope is larger than PCB.
+- Selected COB is2700/6500K, a departure from requested approximate3000K warm. Its18V channels require21.07V boost, superseding10.5V architecture assumptions.
+- Use200mA nominal/channel via2.49k RSET.300/350mA were provisional and lacked simultaneous-flash aged/cold ESR margin. Current-bound scaling from the CAT4101350mA specification is a model requiring prototype characterization.
+- Two Eaton5F/2.7V cells in series give2.5F,80mohm initial bank ESR. Model200% aged ESR and conservative150% cold multiplier at0C, plus50mohm for interconnects and power components. Stored energy28.8J at4.8V. Nominal cold start charge time~160s; real/tolerance time longer.
+- Boost feedback162k/10k0.1%; compensation120k/33n plus47p is an analytical starting network. Stability and pulse load response require qualification.
+- Separate GPIO2 trigger allows LED PFET settling before precise channel pulses. Firmware sets TRIG_REQ low before ARM, waits for GPIO7 permission, triggers window, waits50us, then commands0.5–1ms pulses within the window. Startup strap levels remain intact.
+- Hardware window1.403ms nominal; cooldown1.258s nominal. Physical cutoff remains independent of sink enables. Output reservoir is before cutoff; do not add bulk capacitance on LED_ANODES.
+- USB charging only with advertised1.5A/3A Type-C source. Legacy/default-current charging unsupported. USB presence inhibits logic and supercap recharge in hardware.
+- Pack NTC is isolated and bonded to the cell. A shorted TEMP pin disables TP4056 internal monitoring, so U8 independently inhibits CE on a short. Native TDK R/T8016 boundary calculations include NTC tolerance and divider loading.
 
 ## Checks actually run
 
-| Check | Result | Meaning |
-|---|---|---|
-| KiCad board DRC with schematic parity | 0 geometric violations, 125 unconnected items, 0 parity issues | Placed core matches the schematic; it is unrouted |
-| KiCad schematic ERC | 2 errors, 5 warnings | Missing power-stage connections and intentionally unfinished interfaces |
-| Native netlist export | Succeeded | Source for PCB pad-net assignments, including native no-connect nets |
-| Schematic SVG export and visual inspection | Succeeded | Draft readable at zoom; final schematic composition remains open |
-| PCB top render and visual inspection | Succeeded | Placement preview only; some custom footprints lack 3D bodies |
-| BOM export | Succeeded | Draft grouped BOM; many exact passive MPNs and sourcing checks remain |
+Native ERC:0violations. Latest placed-candidate DRC:0geometric violations,0schematic parity issues; hundreds of unconnected items because routing has not started. Refresh these reports after edits. Current report paths: `analysis/draft_erc.rpt`, `analysis/core_parity_drc.rpt`.
 
-`analysis/core_parity_drc.rpt` is the latest PCB result. `analysis/floorplan_drc.rpt` records the earlier mechanical-only seed and is not a release report. ERC's two undriven supply errors reflect the absent battery/protection circuits. Its isolated labels are HW_OK, CC1, CC2, CELL_P, and CELL_N_RAW. No checks were suppressed to hide these.
+`check_design_envelope.py` writes `analysis/design_envelope.json`. It covers comparator/ref/resistor corners, readiness reachability, cap sag/current-limit allocation, window/cooldown bounds, PFET-off estimate, and cell NTC boundaries. These are calculations with explicitly listed assumptions, not measured guarantees.
 
-This is not the full KiCad skill design review. Analyzer, SPICE, EMC, thermal, lifecycle, Gerber, and manufacturing assessments are pending the complete circuit and layout. No physical measurements exist.
+Schematic analyzer run: `analysis/2026-10-20_2150/schematic.json`. Count238 excludes6flags and includes2offboard items. Preliminary high findings PP-001 CAP_FUSED and VM-001 CC_ALLOWED/BAT_PROT/CHARGE_ALLOWED are analyzer topology/domain-inference limitations to cross-check, not accepted design blockers. No suppressions were added. Full routed-board review remains pending.
 
-## Component findings and departures
+Independent extraction cache: MP3435GL-Z86/100, TPS63070RNMR86/100, TLV3011BIDBVR93/100. Source pinout/operating facts are in `datasheets/extracted/`. Source PDF downloads/failed attempts are recorded; lack of a cached PDF is not proof that a part was checked. No distributor API credentials are configured, and lifecycle/stock audit is not complete.
 
-**COB candidate:** Bridgelux **BXRV-TR-2765G-10A0-A-23**. The manufacturer's current DS350 PDF was downloaded and read. It provides a documented 2700 K / 6500 K two-channel emitter, with a roughly 18 V operating envelope and a combined-current limit. The 2700 K endpoint is a departure from the requested ~3000 K. A 10.5 V boost cannot drive this part. The COB is not yet on the schematic or BOM, and source availability is not verified. Its selection requires completing the driver/power budget.
+## Layout and footprint status
 
-**Flash direction under evaluation:** approximately 20.5–21 V regulated output using **MP3435GL-Z**, with two **CAT4101TV-T75** current sinks. Consider about 300 mA nominal per channel, allowing tolerance below the COB's combined-current limit. These are candidates, not implemented or frozen circuits. CAT4101 is a five-lead D2PAK with a grounded tab, not SOT-223. Its pulse timing specifications require checking and bench confirmation. Current tolerances, sink compliance, converter duty cycle, compensation, input disconnect, current limiting and transient headroom remain open.
+All parts fit through conservative screening plus native DRC. Power-block seeds now precede ordinary logic placement. Critical loop/decoupling distances must still be reviewed and refined before routing; fit alone is insufficient.
 
-**Capacitor selection for fit:** four Eaton **HV1020-2R7505-R**, 5 F / 2.7 V cells, arranged as two parallel groups in series. This provides 5 F nominal bank capacitance and 40 mΩ maximum initial cell-bank ESR at the specified test conditions, before interconnects. The old 0.5 F architecture assumption is superseded for this draft. Aging and temperature increase ESR; nominal DC capacitance is not proof of 1 ms pulse performance. Each can can reach **10.5 mm diameter and 22.3 mm height**. Stored energy is **44.1 J at 4.2 V**. Controlled recharge, balancing, fault isolation, and discharge are still absent; the two 2.2 kΩ resistors do not establish transient overvoltage protection.
+Project footprints: TPS63070 RNM0015A, Coilcraft XFL4020, MP3435 special20pin QFN, TopPower TP4056 ESOP8, and RF module derived to remove open via-in-pad holes. The TPS63070 and MP3435 package drawings were inspected. TP4056 EP dimensions2.145x3.302mm in conventional SOIC orientation were transcribed from TopPower page14. Independent package/sign/paste checks remain part of release.
 
-**USB connector:** GCT **USB4085-GF-A**, with actual through-hole contacts and shell stakes. The manufacturer drawing was downloaded. Its dense land pattern requires **0.15 mm local pad clearance**; ordinary trace/clearance targets remain 0.20 mm. Fabricator suitability remains a release gate.
+Panasonic35SVPF120M is10mm diameter and12.7mm maximum height; its initial8mm provisional land was corrected toCP_Elec_10x12.6. Eaton cells max10.5mm diameter/22.3mm height. JST-GH NTC mechanical tabs are grounded. No validated full rear-cell/enclosure/heat-spreader3D assembly yet.
 
-**USB charging direction:** use **TUSB320LAI** sink-current detection with TP4056 rather than assume that 80 mA is supported by every TP4056 variant. A possible conservative implementation permits ~300 mA charging only when the Type-C source advertises at least 1.5 A; legacy/default-current charging would then be unavailable. This behavior has not been implemented or frozen. TUSB320 provides its own Rd termination; do not add duplicate external Rd resistors. Resolve VBUS transient/overvoltage protection, its independent logic supply, charger CE behavior and pack-temperature sensing before wiring.
+Default trace/clearance target0.20mm. Board clearance floor0.125mm accommodates the MPS recommended land pattern; U70 local clearance0.125mm, J1 local0.15mm. Fabricator must support5mil copper clearance and appropriate fine-pitch mask openings. Do not silently relax these rules through router settings.
 
-**ADC correction:** permanent battery/capacitor dividers can back-power an unpowered ESP32. The draft now switches each divider's upper leg using its own PMOS and an NMOS driven by TPS63070 power-good. Each PMOS gate returns to its own source. The TPS63070 data sheet states PG low when EN is low. Independent pin, leakage, startup, and shutdown checks remain part of verification. The 2N7002 orderable suffix/lifecycle needs resolution: a related `-7` listing is NRND; do not release the present draft BOM unchanged.
+Reference silk, fiducials, mask color/ENIG fabrication notes, final stackup, test documentation and fabrication package remain unfinished. Earlier image previews may be stale.
 
-## Mechanical and footprint limits
+## Remaining work
 
-The board retains 84 mm OD, a 55 mm opening, four copper layers, and 1.6 mm nominal thickness. The ESP32 antenna extends approximately 5 mm beyond the PCB perimeter, and the module body extends about 0.6 mm into the opening. This preserves the specified PCB outline but enlarges the component/enclosure envelope. Battery, heat spreader, enclosure, fasteners and wiring do not yet have a validated 3D assembly.
+1. Complete independent component/footprint and effective-capacitance checks; fix any issues before final routing.
+2. Finish deliberate power-loop placement/routes, low-impedance ground return/thermal vias, then automate ordinary signals with pinned router. Native DRC/parity must finish with0unconnected items.
+3. Improve schematic composition/annotations and assembly/test labeling.
+4. Run full KiCad skill review: schematic/PCB/cross/EMC/thermal, lifecycle when accessible, Gerber analysis after export; raw-file and manufacturer cross-checks plus false-positive triage. No SPICE simulator was found on PATH; disclose simulation limits if still unavailable.
+5. Generate/inspect schematic PDF, Gerbers, plated/NPTH drills, BOM/CPL and assembly/fabrication notes. Release as a prototype design with an explicit bring-up/qualification plan. No physical tests have occurred.
+6. Portfolio assets follow a successful prototype-design release; do not present measurements or compliance that do not exist.
 
-The antenna rule area blocks copper, pads and vias on every copper layer. A custom placement rule exempts the RF module itself and disallows other footprints in that area. The project-derived module footprint retains its electrical pad coordinates and exposed ground pad, removes stock 0.2 mm open via-in-pad holes, and removes edge-crossing silk. Separate ground stitching must be designed during routing.
+## Tooling note
 
-TPS63070 RNM0015A and Coilcraft XFL4020 footprints were created in the project library. The TI land pattern was checked visually from its package drawing, including its unusual power leads and solder-mask-defined pads. The Coilcraft dimensions were read from the manufacturer drawing's extracted data; independent visual and dimensional checking remains open. Zero DRC errors does not prove that a transcribed footprint matches a manufactured component.
-
-Reference silkscreen is intentionally unfinished and currently hidden. The preview uses default green mask; the requested matte black mask and ENIG finish are still manufacturing requirements and have not been applied as a released stackup.
-
-## Next required engineering work
-
-1. Close the real emitter/driver/current envelope, source availability, boost input sag, pulse settling, and cap aging/temperature budget.
-2. Complete TP4056/DW01 protection from exact manufacturer circuits; keep CELL_N_RAW separate from protected GND. Add a pack-temperature sensor connection and proper USB power qualification/protection.
-3. Complete reverse-blocking, limited cap recharge, per-section protection/balancing, boost input isolation, and service discharge. Recalculate charge time for 5 F.
-4. Implement hardware pulse cutoff and cooldown. **LTC6993-1** is the rising-edge non-retriggerable variant; **-2 is retriggerable and must not be substituted**. Two timers were considered, but neither is currently on the schematic. Verify the exact divider codes, resistor range and timing limits before adoption.
-5. Finish the schematic, MPNs, independent symbol/footprint checks, and all-component floorplan before routing. Improve schematic composition with local circuit wiring and larger functional group labels.
-6. Route and validate critical power/sense loops deliberately; use a pinned routing tool for ordinary signals only. KiCadRoutingTools has not been installed or run.
-7. Complete the architecture's release gates and full skill review, then generate and inspect manufacturing files. Portfolio assets follow that stage.
-
-## Reproducibility
-
-Run the schematic generator with KiCad's Python, then export a fresh native netlist with KiCad CLI before `sync_core_pcb.py`. That synchronizer preserves existing placement, transfers exact native net names and symbol fields, and rejects stale netlists. `place_core.py` is an unrouted-stage placement screen using conservative bounds plus native DRC. It is not a router or electrical optimizer. The mechanical seed generator now refuses to overwrite the electrically populated board.
-
-Downloaded evidence is in `datasheets/`; `sources.json` records successful PDFs and failed fetches. Manufacturer website access was used because DigiKey API credentials were absent. A LCSC search for MP3435 returned an unrelated NXP MCU; that result was rejected and not added to the BOM. No stock or price claim is made.
+Datasheet workers installed temporary validation dependencies under ignored `datasheets/extracted/_python_deps` and `_pipeline_deps`. Automatic approval review rejected optional cleanup with only “blocked by policy”; cleanup was not retried. These directories are excluded from tracked project artifacts.

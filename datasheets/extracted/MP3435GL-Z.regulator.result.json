@@ -1,0 +1,142 @@
+{
+  "task_id": "regulator",
+  "schema_version": "0.3",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:41:44Z",
+  "model_tier": "B",
+  "model_id": "gpt-6",
+  "data": {
+    "topology": "boost",
+    "vin_range": [
+      {
+        "min": 3,
+        "typ": null,
+        "max": 20,
+        "unit": "V",
+        "condition": null,
+        "notes": null,
+        "evidence": {
+          "page": 4,
+          "section": "Recommended Operating Conditions",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "vout_range": [
+      {
+        "min": null,
+        "typ": null,
+        "max": 22,
+        "unit": "V",
+        "condition": null,
+        "notes": "Minimum VOUT is VIN.",
+        "evidence": {
+          "page": 4,
+          "section": "Recommended Operating Conditions",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "iout_max": null,
+    "reference_voltage": [
+      {
+        "min": 1.212,
+        "typ": 1.225,
+        "max": 1.238,
+        "unit": "V",
+        "condition": "TJ=25 C",
+        "notes": null,
+        "evidence": {
+          "page": 5,
+          "section": "Electrical Characteristics",
+          "method": "table",
+          "confidence": "high"
+        }
+      },
+      {
+        "min": 1.207,
+        "typ": 1.225,
+        "max": 1.243,
+        "unit": "V",
+        "condition": "TJ=-40 C to +125 C",
+        "notes": null,
+        "evidence": {
+          "page": 5,
+          "section": "Electrical Characteristics",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "feedback_pin": "14",
+    "compensation_pin": "13",
+    "enable_pin": "6",
+    "power_good_pin": null,
+    "cin_min": [
+      {
+        "min": 4.4e-05,
+        "typ": null,
+        "max": null,
+        "unit": "F",
+        "condition": "High-power applications",
+        "notes": "At least two 22 uF capacitors recommended for loop stability.",
+        "evidence": {
+          "page": 18,
+          "section": "Selecting the Input Capacitor",
+          "method": "prose",
+          "confidence": "medium"
+        }
+      }
+    ],
+    "cout_min": null,
+    "inductor_range": null,
+    "switching_freq": [
+      {
+        "min": 510000,
+        "typ": 600000,
+        "max": 690000,
+        "unit": "Hz",
+        "condition": "TJ=25 C",
+        "notes": null,
+        "evidence": {
+          "page": 5,
+          "section": "Electrical Characteristics",
+          "method": "table",
+          "confidence": "high"
+        }
+      },
+      {
+        "min": 450000,
+        "typ": null,
+        "max": 690000,
+        "unit": "Hz",
+        "condition": "TJ=-40 C to +125 C",
+        "notes": null,
+        "evidence": {
+          "page": 5,
+          "section": "Electrical Characteristics",
+          "method": "table",
+          "confidence": "high"
+        }
+      }
+    ],
+    "dropout": null,
+    "stability_conditions": {
+      "cap_types_allowed": [
+        "tantalum",
+        "electrolytic"
+      ],
+      "esr_range": null,
+      "notes": "Page 19 also recommends ceramic without specifying dielectric; three 22 uF ceramic capacitors suitable for most applications, not a guaranteed minimum. Select COUT for ripple/transients and allow voltage derating. External series R-C compensation from COMP to AGND is required (p3); p20 gives FP1=1/(2*pi*RLOAD*COUT), FZ1=1/(2*pi*RCOMP*CCOMP). In CCM, FRHPZ=RLOAD/(2*pi*L)*(VIN/VOUT)^2 (p21), worst at minimum VIN and maximum output power. Page 23 example: RCOMP=24.9 kohm, CCOMP=3.3 nF for VIN 3\u201310 V, VOUT 12 V, 2 A. No universal output current rating: limited by allowable temperature rise, current limit and VIN (p21). Switch current limit is NOT output current; p6 gives 19/25/29 A min/typ/max at TJ=25 C, GATE=GND, duty=40%.",
+      "evidence": {
+        "page": 19,
+        "section": "Selecting the Output Capacitor",
+        "method": "prose",
+        "confidence": "medium"
+      }
+    },
+    "sequencing": null
+  }
+}

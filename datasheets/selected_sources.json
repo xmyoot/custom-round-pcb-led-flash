@@ -1,0 +1,646 @@
+{
+  "TPS63070RNMR": {
+    "mpn": "TPS63070RNMR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/tps63070.pdf",
+    "file": "TPS63070.pdf",
+    "sha256": "a88ef66f3493156ff6e7da0849de0e0e1068647f2553d08c1844d4a90c5c65ef",
+    "bytes": 1680561,
+    "status": "downloaded"
+  },
+  "XFL4020-152MEC": {
+    "mpn": "XFL4020-152MEC",
+    "manufacturer": "Coilcraft",
+    "url": "https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf",
+    "file": "XFL4020-152MEC.pdf",
+    "sha256": "6dca915ac1daa47210f7708a7540221ffef4f34a88a8621c94bd50cdf48647e6",
+    "bytes": 232753,
+    "status": "downloaded"
+  },
+  "RC0603FR-07470KL": {
+    "mpn": "RC0603FR-07470KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-07150KL": {
+    "mpn": "RC0603FR-07150KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "GRM188R71H104KA93D": {
+    "mpn": "GRM188R71H104KA93D",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R71H104KA93D",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "GRM21BR61C106KE15L": {
+    "mpn": "GRM21BR61C106KE15L",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR61C106KE15L",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "GRM21BR61C226ME44L": {
+    "mpn": "GRM21BR61C226ME44L",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR61C226ME44L",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "RC0603FR-074K7L": {
+    "mpn": "RC0603FR-074K7L",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "JS102011SAQN": {
+    "mpn": "JS102011SAQN",
+    "manufacturer": "C&K",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-07100KL": {
+    "mpn": "RC0603FR-07100KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-071ML": {
+    "mpn": "RC0603FR-071ML",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "ESP32-C3-WROOM-02-N4": {
+    "mpn": "ESP32-C3-WROOM-02-N4",
+    "manufacturer": "Espressif Systems",
+    "url": "https://www.espressif.com/sites/default/files/documentation/esp32-c3-wroom-02_datasheet_en.pdf",
+    "file": "ESP32-C3-WROOM-02.pdf",
+    "sha256": "2375b1be75ebbfcffa050e6a26c3ee7957bc7171b319066081a491d1b2e21161",
+    "bytes": 958836,
+    "status": "downloaded"
+  },
+  "RC0603FR-0710KL": {
+    "mpn": "RC0603FR-0710KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "GRM188R61C105KA12D": {
+    "mpn": "GRM188R61C105KA12D",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R61C105KA12D",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "HV1020-2R7505-R": {
+    "mpn": "HV1020-2R7505-R",
+    "manufacturer": "Eaton",
+    "url": "https://www.eaton.com/content/dam/eaton/products/electronic-components/resources/data-sheet/eaton-hv-supercapacitors-cylindrical-cells-data-sheet.pdf",
+    "status": "failed",
+    "reason": "The read operation timed out"
+  },
+  "TL3342F160QG": {
+    "mpn": "TL3342F160QG",
+    "manufacturer": "E-Switch",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "NTCG163JF103FT1": {
+    "mpn": "NTCG163JF103FT1",
+    "manufacturer": "TDK",
+    "url": "https://product.tdk.com/system/files/dam/doc/product/sensor/ntc/chip-ntc-thermistor/data_sheet/datasheet_ntcg163jf103ft1.pdf",
+    "status": "failed",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  "RC0603FR-071KL": {
+    "mpn": "RC0603FR-071KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "LTST-C190KFKT": {
+    "mpn": "LTST-C190KFKT",
+    "manufacturer": "Lite-On",
+    "url": "https://optoelectronics.liteon.com/upload/download/DS-22-99-0186/LTST-C190KFKT.PDF",
+    "status": "failed",
+    "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)>"
+  },
+  "LTST-C190KGKT": {
+    "mpn": "LTST-C190KGKT",
+    "manufacturer": "Lite-On",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "USB4085-GF-A": {
+    "mpn": "USB4085-GF-A",
+    "manufacturer": "GCT",
+    "url": "https://gct.co/files/drawings/usb4085.pdf",
+    "file": "USB4085.pdf",
+    "sha256": "39afb82c5104579e8c2db4f4e758825c48cab1c4b06d4c61c62056470ff09e9e",
+    "bytes": 201409,
+    "status": "downloaded"
+  },
+  "B2B-PH-K-S(LF)(SN)": {
+    "mpn": "B2B-PH-K-S(LF)(SN)",
+    "manufacturer": "JST",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "AO3401A": {
+    "mpn": "AO3401A",
+    "manufacturer": "Alpha & Omega Semiconductor",
+    "url": "https://www.aosmd.com/res/data_sheets/AO3401A.pdf",
+    "file": "AO3401A.pdf",
+    "sha256": "0d8e3261ae280e007b5837fff60c55142f2d92af71edc4d02aee6f7a760a785c",
+    "bytes": 326568,
+    "status": "downloaded"
+  },
+  "MMBT3904-7-F": {
+    "mpn": "MMBT3904-7-F",
+    "manufacturer": "Diodes Incorporated",
+    "url": "https://www.diodes.com/datasheet/download/MMBT3904.pdf",
+    "file": "MMBT3904.pdf",
+    "sha256": "483284b10e2a58c8ddafea3c1c3f77388edf9efd394ca30f9559e605f644f2dc",
+    "bytes": 349108,
+    "status": "downloaded"
+  },
+  "LTC3225EDDB#TRMPBF": {
+    "mpn": "LTC3225EDDB#TRMPBF",
+    "manufacturer": "Analog Devices",
+    "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/3225fb.pdf",
+    "status": "failed",
+    "reason": "The read operation timed out"
+  },
+  "GRM21BR61C475KA88L": {
+    "mpn": "GRM21BR61C475KA88L",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR61C475KA88L",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "GRM21BR71C225KA12L": {
+    "mpn": "GRM21BR71C225KA12L",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR71C225KA12L",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "RC0603FR-0724KL": {
+    "mpn": "RC0603FR-0724KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-0747KL": {
+    "mpn": "RC0603FR-0747KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "DW01A": {
+    "mpn": "DW01A",
+    "manufacturer": "HM Semiconductor",
+    "url": "https://hmsemi.com/downfile/DW01A.PDF",
+    "file": "DW01A.pdf",
+    "sha256": "cdba0ec05698cf629e4a23269f8c0371a0583cc132ec6730ef204aa04e886569",
+    "bytes": 1276278,
+    "status": "downloaded"
+  },
+  "RC0603FR-07100RL": {
+    "mpn": "RC0603FR-07100RL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "AO3400A": {
+    "mpn": "AO3400A",
+    "manufacturer": "Alpha & Omega Semiconductor",
+    "url": "https://www.aosmd.com/res/data_sheets/AO3400A.pdf",
+    "file": "AO3400A.pdf",
+    "sha256": "9c60d0b6c1ddc7609a4b788a91181468d8ffe6c3e9ba425c3d8ffc5ba88c5033",
+    "bytes": 317848,
+    "status": "downloaded"
+  },
+  "0451002.MRL": {
+    "mpn": "0451002.MRL",
+    "manufacturer": "Littelfuse",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "TPS3808G30DBVR": {
+    "mpn": "TPS3808G30DBVR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/tps3808.pdf",
+    "file": "TPS3808.pdf",
+    "sha256": "74d889c0f68af88032f1633c26381817cc03e10d9fd3b4c177a044ad3ed86eed",
+    "bytes": 2046179,
+    "status": "downloaded"
+  },
+  "TLV76033DBZR": {
+    "mpn": "TLV76033DBZR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/tlv760.pdf",
+    "file": "TLV760.pdf",
+    "sha256": "cbc82492fc6f0dcb87f1be90aa1fea13134a65aa283ae048f4b5772d47b2d844",
+    "bytes": 1037456,
+    "status": "downloaded"
+  },
+  "GRM21BR71H105KA12L": {
+    "mpn": "GRM21BR71H105KA12L",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM21BR71H105KA12L",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "SMF4L6.0A": {
+    "mpn": "SMF4L6.0A",
+    "manufacturer": "Littelfuse",
+    "url": "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smf_datasheet.pdf.pdf",
+    "status": "failed",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  "TUSB320LAIRWBR": {
+    "mpn": "TUSB320LAIRWBR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/tusb320lai.pdf",
+    "file": "TUSB320LAI.pdf",
+    "sha256": "62f7b3f65338e25ebd6fd46ef04474ba806b06b1cc04bc0b3d7b8191b01ca87d",
+    "bytes": 1313743,
+    "status": "downloaded"
+  },
+  "RC0603FR-07887KL": {
+    "mpn": "RC0603FR-07887KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "SN74LVC1G04DBVR": {
+    "mpn": "SN74LVC1G04DBVR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g04.pdf",
+    "file": "SN74LVC1G04.pdf",
+    "sha256": "c9c30cad010d198aaa645d511b03415edc42108ca9799b173ee97d54e3f1a977",
+    "bytes": 2748820,
+    "status": "downloaded"
+  },
+  "RC0603FR-0722RL": {
+    "mpn": "RC0603FR-0722RL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "PESD5V0S1BA,115": {
+    "mpn": "PESD5V0S1BA,115",
+    "manufacturer": "Nexperia",
+    "url": "https://assets.nexperia.com/documents/data-sheet/PESD5V0S1BA.pdf",
+    "status": "failed",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  "TPS25200DRVR": {
+    "mpn": "TPS25200DRVR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/tps25200.pdf",
+    "file": "TPS25200.pdf",
+    "sha256": "fafdb867c456a2b24ef4fe5908e7d6da75703c0f24a36f984864d1d2daf9cd4a",
+    "bytes": 4579378,
+    "status": "downloaded"
+  },
+  "TP4056-42-ESOP8": {
+    "mpn": "TP4056-42-ESOP8",
+    "manufacturer": "NanJing Top Power ASIC",
+    "url": "https://www.toppwr.com/uploadfile/file/20230304/640301eae1260.pdf",
+    "file": "TP4056.pdf",
+    "sha256": "59191d7c302d2944b98cb290f733a89faf89103615db487e2903bffd3fcc63a2",
+    "bytes": 720711,
+    "status": "downloaded"
+  },
+  "RC0603FR-074K02L": {
+    "mpn": "RC0603FR-074K02L",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-072K2L": {
+    "mpn": "RC0603FR-072K2L",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "LTST-C190KRKT": {
+    "mpn": "LTST-C190KRKT",
+    "manufacturer": "Lite-On",
+    "url": "https://optoelectronics.liteon.com/upload/download/DS-22-99-0178/LTST-C190KRKT.pdf",
+    "status": "failed",
+    "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)>"
+  },
+  "RC0603FR-076K49L": {
+    "mpn": "RC0603FR-076K49L",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "TLV3011BIDBVR": {
+    "mpn": "TLV3011BIDBVR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/tlv3011.pdf",
+    "file": "TLV3011.pdf",
+    "sha256": "02993c016420887ee4f1ab2fa640e7596c9c1324a73f4f72bee3b32adec38df3",
+    "bytes": 1624948,
+    "status": "downloaded"
+  },
+  "RC2010FK-07100RL": {
+    "mpn": "RC2010FK-07100RL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-07174KL": {
+    "mpn": "RC0603FR-07174KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-072M21L": {
+    "mpn": "RC0603FR-072M21L",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "TNPW0603150KBEEA": {
+    "mpn": "TNPW0603150KBEEA",
+    "manufacturer": "Vishay",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "file": "TNPW0603150KBEEA.pdf",
+    "sha256": "6f0508c568cb355aaf2accdd33fe3a780d3ea5ef207c4c9a71839a8acadc33a5",
+    "bytes": 363615,
+    "status": "downloaded"
+  },
+  "TNPW060310K0BEEA": {
+    "mpn": "TNPW060310K0BEEA",
+    "manufacturer": "Vishay",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "file": "TNPW060310K0BEEA.pdf",
+    "sha256": "6f0508c568cb355aaf2accdd33fe3a780d3ea5ef207c4c9a71839a8acadc33a5",
+    "bytes": 363615,
+    "status": "downloaded"
+  },
+  "LTC6993CS6-1#TRMPBF": {
+    "mpn": "LTC6993CS6-1#TRMPBF",
+    "manufacturer": "Analog Devices",
+    "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ltc6993-6993-1-6993-2-6993-3-6993-4.pdf",
+    "status": "failed",
+    "reason": "The read operation timed out"
+  },
+  "RC0603FR-07137KL": {
+    "mpn": "RC0603FR-07137KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-07357KL": {
+    "mpn": "RC0603FR-07357KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-07240KL": {
+    "mpn": "RC0603FR-07240KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "RC0603FR-07146KL": {
+    "mpn": "RC0603FR-07146KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "SN74LVC1G08DBVR": {
+    "mpn": "SN74LVC1G08DBVR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g08.pdf",
+    "file": "SN74LVC1G08DBVR.pdf",
+    "sha256": "30b963cc44233cf3ca35c891ff987c8323a2244ecc765e23296ec96ca4b42666",
+    "bytes": 2837825,
+    "status": "downloaded"
+  },
+  "CAT4101TV-T75": {
+    "mpn": "CAT4101TV-T75",
+    "manufacturer": "onsemi",
+    "url": "https://www.onsemi.com/download/data-sheet/pdf/cat4101-d.pdf",
+    "status": "failed",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  "RC0603FR-071K69L": {
+    "mpn": "RC0603FR-071K69L",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "AO4407A": {
+    "mpn": "AO4407A",
+    "manufacturer": "Alpha & Omega Semiconductor",
+    "url": "https://www.aosmd.com/res/data_sheets/AO4407A.pdf",
+    "file": "AO4407A.pdf",
+    "sha256": "ef4b3686383ca7264dad41bd466b750785a08c709d886a61d68ad39d21538bf8",
+    "bytes": 298249,
+    "status": "downloaded"
+  },
+  "BZT52C10-7-F": {
+    "mpn": "BZT52C10-7-F",
+    "manufacturer": "Diodes Incorporated",
+    "url": "https://www.diodes.com/datasheet/download/BZT52C2V4-BZT52C39.pdf",
+    "status": "failed",
+    "reason": "HTTP Error 404: Not Found"
+  },
+  "TPS3808G33DBVR": {
+    "mpn": "TPS3808G33DBVR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/tps3808.pdf",
+    "file": "TPS3808.pdf",
+    "sha256": "74d889c0f68af88032f1633c26381817cc03e10d9fd3b4c177a044ad3ed86eed",
+    "bytes": 2046179,
+    "status": "downloaded"
+  },
+  "SN74LVC1G125DBVR": {
+    "mpn": "SN74LVC1G125DBVR",
+    "manufacturer": "Texas Instruments",
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf",
+    "file": "SN74LVC1G125.pdf",
+    "sha256": "1098d46e4565695e9823a08309bc581e2c9ead26b19e99a43a011a38642b27ca",
+    "bytes": 3056649,
+    "status": "downloaded"
+  },
+  "RC0603FR-0756KL": {
+    "mpn": "RC0603FR-0756KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "MP3435GL-Z": {
+    "mpn": "MP3435GL-Z",
+    "manufacturer": "Monolithic Power Systems",
+    "url": "https://www.monolithicpower.cn/cn/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP3435GL/",
+    "file": "MP3435.pdf",
+    "sha256": "1f827a0457f2acab98499f0529422b80dd5737ad5719d651981cc0bfc9a2f52f",
+    "bytes": 796404,
+    "status": "downloaded"
+  },
+  "0451007.MRL": {
+    "mpn": "0451007.MRL",
+    "manufacturer": "Littelfuse",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "WSLP0805R0100FEA": {
+    "mpn": "WSLP0805R0100FEA",
+    "manufacturer": "Vishay",
+    "url": "https://www.vishay.com/docs/30122/wslp.pdf",
+    "file": "WSLP0805R0100FEA.pdf",
+    "sha256": "d3dd7b4f590e713c84303e32530e8c8c6fd025617896e11d25599521771e4c13",
+    "bytes": 146445,
+    "status": "downloaded"
+  },
+  "SiR800DP-T1-GE3": {
+    "mpn": "SiR800DP-T1-GE3",
+    "manufacturer": "Vishay",
+    "url": "https://www.vishay.com/docs/65738/sir800dp.pdf",
+    "file": "SiR800DP-T1-GE3.pdf",
+    "sha256": "100c32bbae7c89e274552ac42d28080899a64224a04910c70f6848f6c23f62a4",
+    "bytes": 370297,
+    "status": "downloaded"
+  },
+  "BAV21W-7-F": {
+    "mpn": "BAV21W-7-F",
+    "manufacturer": "Diodes Incorporated",
+    "url": "https://www.diodes.com/datasheet/download/BAV19W-BAV21W.pdf",
+    "file": "BAV21W-7-F.pdf",
+    "sha256": "039327b36de04287fa73b5a973f1851efe863d09afff9f7e3a16f444066020f5",
+    "bytes": 285806,
+    "status": "downloaded"
+  },
+  "XAL7030-152MEC": {
+    "mpn": "XAL7030-152MEC",
+    "manufacturer": "Coilcraft",
+    "url": "https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf",
+    "file": "XAL7030-152MEC.pdf",
+    "sha256": "c323552b4c1acd5ad94d13c32783d1d7db3f86ab70a1c58431673aebb96be9f6",
+    "bytes": 205099,
+    "status": "downloaded"
+  },
+  "GRM31CR61C226KE15L": {
+    "mpn": "GRM31CR61C226KE15L",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM31CR61C226KE15L",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "GRM188R71H103KA01D": {
+    "mpn": "GRM188R71H103KA01D",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R71H103KA01D",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "TNPW0603162KBEEA": {
+    "mpn": "TNPW0603162KBEEA",
+    "manufacturer": "Vishay",
+    "url": "https://www.vishay.com/docs/28758/tnpw_e3.pdf",
+    "file": "TNPW0603162KBEEA.pdf",
+    "sha256": "6f0508c568cb355aaf2accdd33fe3a780d3ea5ef207c4c9a71839a8acadc33a5",
+    "bytes": 363615,
+    "status": "downloaded"
+  },
+  "GRM188R71H333KA61D": {
+    "mpn": "GRM188R71H333KA61D",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM188R71H333KA61D",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "RC0603FR-07120KL": {
+    "mpn": "RC0603FR-07120KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "GRM1885C1H470JA01D": {
+    "mpn": "GRM1885C1H470JA01D",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM1885C1H470JA01D",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "GRM32ER71H106KA12L": {
+    "mpn": "GRM32ER71H106KA12L",
+    "manufacturer": "Murata",
+    "url": "https://www.murata.com/en-global/api/pdfdownloadapi?cate=luCeramicCapacitorsSMD&partno=GRM32ER71H106KA12L",
+    "status": "failed",
+    "reason": "Manufacturer response is not a PDF"
+  },
+  "35SVPF120M": {
+    "mpn": "35SVPF120M",
+    "manufacturer": "Panasonic",
+    "url": "https://industrial.panasonic.com/cdbs/www-data/pdf/AAB8000/AAB8000COL87.pdf",
+    "status": "failed",
+    "reason": "The read operation timed out"
+  },
+  "RC0805FR-0722KL": {
+    "mpn": "RC0805FR-0722KL",
+    "manufacturer": "Yageo",
+    "url": "",
+    "status": "failed",
+    "reason": "No direct manufacturer datasheet URL assigned"
+  },
+  "BXRV-TR-2765G-10A0-A-23": {
+    "mpn": "BXRV-TR-2765G-10A0-A-23",
+    "manufacturer": "Bridgelux",
+    "url": "https://www.bridgelux.com/sites/default/files/DS350.pdf",
+    "file": "Bridgelux_DS350.pdf",
+    "sha256": "144e271ab31cebbe2073ad9952e50a72744dab95f8c9b8ec7ba2d3aa7accde2b",
+    "bytes": 1909857,
+    "status": "downloaded"
+  },
+  "B57861S0103F040": {
+    "mpn": "B57861S0103F040",
+    "manufacturer": "TDK",
+    "url": "https://product.tdk.com/system/files/dam/doc/product/sensor/ntc/ntc_element/data_sheet/50/db/ntc/ntc_mini_sensors_s861.pdf",
+    "status": "failed",
+    "reason": "HTTP Error 403: Forbidden"
+  }
+}

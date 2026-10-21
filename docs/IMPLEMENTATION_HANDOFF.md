@@ -1,29 +1,17 @@
 # Implementation handoff
 
-**Implementation update:** the model switch occurred and the first core draft now exists. This original handoff is historical; read `IMPLEMENTATION_STATUS.md` before further work. It records the 65-symbol project, checks, open circuits, and component changes. Do not restart from the mechanical seed or treat the old 10.5 V/0.5 F assumptions as frozen.
+Continue from `IMPLEMENTATION_STATUS.md`, then the authoritative root KiCad files and scripts. The original architecture describes requirements and provisional decisions, not frozen component values.
 
-The user requested architecture first, followed by implementation using 6.1 Sol after compaction/model switch. Preserve this boundary; no schematic or PCB has been created yet. Do not claim the current chat model was changed by tools.
+KiCad10.0.7 CLI and pcbnew Python: `C:/Program Files/KiCad/10.0/bin/`.
 
-Read `docs/SYSTEM_ARCHITECTURE.md` and the three client screenshots first. The user authorizes routine engineering assumptions and wants an accurate, fast PCB-focused workflow for a hiring portfolio. One authoritative KiCad 10 project only. Do not ask for repeated permission for ordinary implementation choices. Record departures prominently.
+Generate with `scripts/build_schematic.py`, export a fresh native netlist to `analysis/draft.net`, then run `scripts/sync_core_pcb.py`. Before routing, `scripts/seed_power_placement.py` seeds the power blocks and `scripts/place_core.py` screens fit. **Do not run reseeding/placement or net synchronization on a routed board.** All have track guards. After routing, use reviewed incremental edits.
 
-Installed KiCad CLI is `C:/Program Files/KiCad/10.0/bin/kicad-cli.exe`, version 10.0.7. Bundled Python is `C:/Program Files/KiCad/10.0/bin/python.exe`. Installed skill `C:/Users/hecto/.codex/skills/kicad/SKILL.md` contains kicad-happy analyzers. There is no separate `kicad-happy` skill directory in the inspected skills folder. Relevant companion skills: bom, datasheets, digikey, spice, emc, and fabrication skills. Read applicable instructions before use.
+`select_bom.py` enriches source symbol properties. Manufacturer selection is separate from stock and effective-capacitance qualification. Do not overwrite BOM choices only in CSV.
 
-Important baseline decisions:
+KiCadRoutingTools is installed outside the project at `C:/Users/hecto/.codex/tools/KiCadRoutingTools`, commit0523df20d2f6e9f6c34e4491839c2d08b4280085; router binaryv0.23.1. Use explicit output/overwrite to avoid generating PCB copies. Keep project DRC settings: pass `--no-fix-drc-settings`, `--escalation off`, and do not request severity relaxation or pad swaps.
 
-- Preserve 84 mm circular PCB with 55 mm opening; move cell behind PCB rather than intersecting the annulus with the requested battery cutout.
-- Use 3.3 V buck-boost instead of LDO; maintain ESP32 supply across usable cell range.
-- Provisional two-channel 8–9.5 V COB envelope at 350 mA/channel, 10.5 V boost. It is not an identified real emitter. Do not start routing until a compatible real emitter is selected; revise architecture if necessary.
-- Balanced 0.5 F effective low-ESR cap bank, limited recharge, reverse blocking, independent flash fault isolation, hardware pulse cutoff. Exact capacitor and sink/timer/limiter parts remain unselected.
-- TP4056/DW01 topology, hardware operation inhibit on USB, conservative low-current charging baseline. Verify USB current rules and charger programmability before locking this choice.
-- UART pogo programming; no USB data routing. GPIO allocation is preliminary.
+The prototype channel setpoint is200mA (R230/R2312.49k), not the earlier350mA or300mA assumptions. GPIO2 is a post-boot trigger output with its required10k strap pull-up; initialize it LOW before ARM. Trigger the hardware window, wait50us, then generate0.5–1ms warm/cool requests. GPIO7 reads trigger permission.
 
-First implementation work:
+Independent datasheet extractions exist for MP3435GL-Z, TPS63070RNMR and TLV3011BIDBVR. They caught the mandatory TPS63070 PS/SYNC-to-VIN series resistor (R1810k). FB2 NC is permitted with VSEL grounded. TLV3011B reference is1.223–1.260V and its POR output is Hi-Z; the20ms supervisor delay handles initial comparator/timer settling.
 
-1. Select real COB and cap bank with manufacturer datasheets, validate electrical envelope/ESR/physical fit. Select actual USB-C connector and resolve true THT versus hybrid construction.
-2. Resolve hardware current-sink, timer/re-arm, cap charger, balancing, discharge, and isolation circuits. Fetch actual datasheets; TPS61088 datasheet web fetch failed in architecture phase.
-3. Validate footprints mechanically on annulus before committing detailed schematic. Verify rear battery/heat spreader/antenna coexistence.
-4. Establish single `Round_LED_Flash.kicad_sch/.kicad_pcb/.kicad_pro` with one schematic sheet and project-relative libraries. Use Git history, not named duplicate board variants.
-5. Verify pcbnew import with bundled Python. Review/install a pinned KiCadRoutingTools version only when routing is needed. Route critical power/analog nets deliberately; automate ordinary signals with fixed rules and placement.
-6. Complete all release gates in architecture document and keep an evidence-backed review. No physical measurements exist yet. Portfolio publishing follows fabrication-ready design, not this architecture stage.
-
-Files created in architecture phase: this handoff and `SYSTEM_ARCHITECTURE.md`; original screenshots unchanged. No tools installed, no orders placed, no PCB exports or portfolio published. No ERC/DRC/simulation has been run because no design files exist.
+No manufacturing order or portfolio publication is authorized by merely reaching this draft stage. Complete prototype release checks and inspect fabrication outputs first. Publishing must be an explicit user action/request.

@@ -67,6 +67,12 @@ for part in data['parts']:
     ref=part['reference']
     if not part['on_board'] or not part['footprint']: continue
     f=existing.get(ref)
+    preserved=None
+    if f is not None:
+        lib,name=part['footprint'].split(':',1)
+        if str(f.GetFPID().GetLibItemName())!=name:
+            preserved=(f.GetPosition(),f.GetOrientationDegrees(),f.GetLayer())
+            b.DeleteNative(f);f=None
     if f is None:
         lib,name=part['footprint'].split(':',1)
         directory=ROOT/'libraries'/'Round_LED_Flash.pretty' if lib=='Round_LED_Flash' else FP/(lib+'.pretty')
@@ -82,8 +88,25 @@ for part in data['parts']:
             if ref in ('Q20','Q21','Q22','Q23','R50','R51','R52','R53','U30','C60','C61','R60','R61','R62','R63','R64','R66','Q30','Q31','Q32','R67','R68'):
                 f.Flip(f.GetPosition(),False)
         else:
-            problems.append(f'{ref}: no initial placement')
+            # Functional-block seeds, refined by place_core before native DRC.
+            sx,sy=part['x'],part['y']; back=True; a=0
+            if ref=='U60': x,y,a,back=64,100,90,False
+            elif ref=='U61': x,y,a,back=64,100,90,True
+            elif sy>=820 and 280<sx<780: x,y,back=117,131,False
+            elif sy>=820 and sx<260: x,y,back=75,120,False
+            elif sy>=625: x,y=127,80
+            elif sx>=795 and sy<180: x,y=76,121
+            elif (sx>=795 and 180<sy<410) or (280<sx<540 and sy>410) or (540<sx<790 and sy>430): x,y=105,133
+            else: x,y=131,108
+            f.SetPosition(pos(x,y)); f.SetOrientationDegrees(a)
+            if back:f.Flip(f.GetPosition(),False)
+        if preserved:
+            oldpos,oldangle,oldlayer=preserved
+            f.SetPosition(oldpos)
+            if f.GetLayer()!=oldlayer:f.Flip(f.GetPosition(),False)
+            f.SetOrientationDegrees(oldangle)
     f.SetValue(part['value']); f.Value().SetVisible(False)
+    if ref=='U70': f.SetLocalClearance(p.FromMM(.125))
     if ref=='C32':
         t=math.radians(27)
         f.SetPosition(pos(100+35*math.cos(t)-2.5,100+35*math.sin(t)))

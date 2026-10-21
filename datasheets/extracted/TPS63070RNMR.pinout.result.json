@@ -1,0 +1,475 @@
+{
+  "task_id": "pinout",
+  "schema_version": "1.0",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:42:23Z",
+  "model_tier": "A",
+  "model_id": "gpt-6.1-sol",
+  "data": [
+    {
+      "numbers": [
+        "1"
+      ],
+      "name": "PS/SYNC",
+      "type": "input",
+      "description": "Low: forced PWM; high: PWM/PFM power save; external clock: synchronization.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ],
+      "notes": "If tied to VIN, section 11.1 page 32 requires a 10 kΩ series resistor; one shared resistor is sufficient. EN and PS/SYNC prose pages 11–12 also recommends 1 kΩ–1 MΩ.",
+      "recommended": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 6,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 0.77,
+          "typ": 0.8,
+          "max": 0.83,
+          "condition": "Rising threshold; PS/SYNC for mode change"
+        },
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 6,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 0.67,
+          "typ": 0.7,
+          "max": 0.73,
+          "condition": "Falling threshold; PS/SYNC for mode change"
+        }
+      ]
+    },
+    {
+      "numbers": [
+        "2"
+      ],
+      "name": "PG",
+      "type": "open_collector",
+      "description": "Open-drain power-good output; high impedance in regulation, low otherwise.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 12
+        }
+      ],
+      "subtype": "open_drain",
+      "drive_strength": [
+        {
+          "unit": "A",
+          "evidence": {
+            "page": 6,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "typ": 0.001,
+          "condition": "PG sink current"
+        }
+      ],
+      "notes": "External pull-up required; rising threshold 94.5/96/98.5% of target output; falling 90/92/94.5%. VOL <= 0.4 V at 1 mA sink; leakage <= 0.2 uA with PG=5 V."
+    },
+    {
+      "numbers": [
+        "3"
+      ],
+      "name": "VAUX",
+      "type": "power_out",
+      "description": "Internal regulator capacitor connection; must not be loaded externally.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 7
+        }
+      ]
+    },
+    {
+      "numbers": [
+        "4"
+      ],
+      "name": "GND",
+      "type": "power_in",
+      "description": "Control / logic ground.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      }
+    },
+    {
+      "numbers": [
+        "5"
+      ],
+      "name": "FB",
+      "type": "input",
+      "description": "Adjustable output feedback; regulated to 0.8 V. Fixed variants connect FB to VOUT.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 12
+        }
+      ],
+      "notes": "0.8 V reference; output 2.5–9 V. Bottom feedback resistor R2 should not exceed 400 kΩ for >=2 uA divider current (page 17)."
+    },
+    {
+      "numbers": [
+        "6"
+      ],
+      "name": "FB2",
+      "type": "output",
+      "description": "Voltage scaling output. Connect resistor FB to FB2; VSEL high pulls FB2 to GND and raises output voltage; leave FB2 open or grounded if unused.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "numbers": [
+        "7",
+        "8"
+      ],
+      "name": "VOUT",
+      "type": "power_out",
+      "description": "Buck-boost converter output.",
+      "power_domain": "VOUT",
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 12
+        }
+      ]
+    },
+    {
+      "numbers": [
+        "9"
+      ],
+      "name": "L2",
+      "type": "passive",
+      "description": "Inductor connection.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 12
+        }
+      ]
+    },
+    {
+      "numbers": [
+        "10"
+      ],
+      "name": "PGND",
+      "type": "power_in",
+      "description": "Power ground.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      }
+    },
+    {
+      "numbers": [
+        "11"
+      ],
+      "name": "L1",
+      "type": "passive",
+      "description": "Inductor connection.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ]
+    },
+    {
+      "numbers": [
+        "12",
+        "13"
+      ],
+      "name": "VIN",
+      "type": "power_in",
+      "description": "Power-stage supply voltage.",
+      "power_domain": "VIN",
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ]
+    },
+    {
+      "numbers": [
+        "14"
+      ],
+      "name": "EN",
+      "type": "input",
+      "description": "High enables, low disables. Must not float.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ],
+      "notes": "If tied to VIN, section 11.1 page 32 requires a 10 kΩ series resistor; one shared resistor is sufficient. EN and PS/SYNC prose pages 11–12 also recommends 1 kΩ–1 MΩ.",
+      "recommended": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 6,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 0.77,
+          "typ": 0.8,
+          "max": 0.83,
+          "condition": "Rising threshold; PS/SYNC for mode change"
+        },
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 6,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 0.67,
+          "typ": 0.7,
+          "max": 0.73,
+          "condition": "Falling threshold; PS/SYNC for mode change"
+        }
+      ]
+    },
+    {
+      "numbers": [
+        "15"
+      ],
+      "name": "VSEL",
+      "type": "input",
+      "description": "High enables internal transistor pulling FB2 to GND; low makes FB2 high impedance.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "evidence": {
+        "page": 3,
+        "section": "6 Pin Configuration and Functions",
+        "confidence": "high",
+        "method": "table"
+      },
+      "absolute_max": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 4,
+            "section": "7.1 Absolute Maximum Ratings",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": -0.3,
+          "max": 20
+        }
+      ],
+      "notes": "If tied to VIN, section 11.1 page 32 requires a 10 kΩ series resistor; one shared resistor is sufficient. EN and PS/SYNC prose pages 11–12 also recommends 1 kΩ–1 MΩ.",
+      "recommended": [
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 6,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "max": 0.3,
+          "condition": "Low-level input"
+        },
+        {
+          "unit": "V",
+          "evidence": {
+            "page": 6,
+            "section": "7.5 Electrical Characteristics",
+            "confidence": "high",
+            "method": "table"
+          },
+          "min": 1.1,
+          "condition": "High-level input"
+        }
+      ]
+    }
+  ]
+}

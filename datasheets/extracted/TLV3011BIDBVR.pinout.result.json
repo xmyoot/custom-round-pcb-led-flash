@@ -1,0 +1,190 @@
+{
+  "task_id": "pinout",
+  "schema_version": "1.0",
+  "status": "complete",
+  "extracted_at": "2026-10-21T04:43:21Z",
+  "model_tier": "A",
+  "model_id": "gpt-6",
+  "data": [
+    {
+      "numbers": [
+        "1"
+      ],
+      "name": "OUT",
+      "type": "open_collector",
+      "subtype": "open_drain",
+      "description": "Comparator output; open-drain sinking only.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "recommended": [
+        {
+          "min": -0.2,
+          "typ": null,
+          "max": 5.5,
+          "unit": "V",
+          "condition": "Referenced to V-",
+          "notes": null,
+          "evidence": {
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "notes": "External pull-up required. B version can be pulled to 5.5 V regardless of V+ (p21). During POR, output is high impedance for up to 1.9 ms (p22).",
+      "evidence": {
+        "page": 3,
+        "section": "5 Pin Configuration and Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "2"
+      ],
+      "name": "V-",
+      "type": "power_in",
+      "subtype": null,
+      "description": "Negative, lowest power supply.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "recommended": null,
+      "notes": null,
+      "evidence": {
+        "page": 3,
+        "section": "5 Pin Configuration and Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "3"
+      ],
+      "name": "IN+",
+      "type": "input",
+      "subtype": null,
+      "description": "Non-inverting comparator input.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "recommended": [
+        {
+          "min": -0.2,
+          "typ": null,
+          "max": null,
+          "unit": "V",
+          "condition": null,
+          "notes": "Upper input common-mode boundary is V+ +0.2 V, all relative to V-. Fail-safe 0\u20135.5 V does not imply both inputs may operate outside common-mode range.",
+          "evidence": {
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "notes": "B version fail-safe input 0\u20135.5 V independent of V+, even unpowered; output correct only with valid supply, outside POR, and at least one input within valid common-mode range. Both inputs outside range is indeterminate (p22).",
+      "evidence": {
+        "page": 3,
+        "section": "5 Pin Configuration and Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "4"
+      ],
+      "name": "IN-",
+      "type": "input",
+      "subtype": null,
+      "description": "Inverting comparator input.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "recommended": [
+        {
+          "min": -0.2,
+          "typ": null,
+          "max": null,
+          "unit": "V",
+          "condition": null,
+          "notes": "Upper input common-mode boundary is V+ +0.2 V, all relative to V-. Fail-safe 0\u20135.5 V does not imply both inputs may operate outside common-mode range.",
+          "evidence": {
+            "page": 5,
+            "section": "6.6 Recommended Operating Conditions",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "notes": "B version fail-safe input 0\u20135.5 V independent of V+; common-mode and POR constraints still apply (p22).",
+      "evidence": {
+        "page": 3,
+        "section": "5 Pin Configuration and Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "5"
+      ],
+      "name": "REF",
+      "type": "power_out",
+      "subtype": null,
+      "description": "Reference output.",
+      "power_domain": null,
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "recommended": [
+        {
+          "min": 1.223,
+          "typ": 1.242,
+          "max": 1.26,
+          "unit": "V",
+          "condition": "VS=1.8 V and 5.5 V; TA=25 C unless otherwise noted",
+          "notes": "Use B-version electrical table limits. Accuracy +/-1.5% max (+/-0.25% typical), despite cover general 1% claim.",
+          "evidence": {
+            "page": 8,
+            "section": "6.9 Electrical Characteristics - TLV3011B and TLV3012B",
+            "method": "table",
+            "confidence": "high"
+          }
+        }
+      ],
+      "notes": "Stable with up to 10 nF capacitive load. Typical source/sink capability 500 uA. Reference and output low level are relative to V-.",
+      "evidence": {
+        "page": 3,
+        "section": "5 Pin Configuration and Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    },
+    {
+      "numbers": [
+        "6"
+      ],
+      "name": "V+",
+      "type": "power_in",
+      "subtype": null,
+      "description": "Positive, highest power supply.",
+      "power_domain": "VS",
+      "alt_functions": [],
+      "is_5v_tolerant": null,
+      "recommended": null,
+      "notes": "VS=V+ minus V-. Use 0.1 uF ceramic bypass capacitor (p27).",
+      "evidence": {
+        "page": 3,
+        "section": "5 Pin Configuration and Functions",
+        "method": "table",
+        "confidence": "high"
+      }
+    }
+  ]
+}
