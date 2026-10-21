@@ -7,6 +7,13 @@
 		(legacy_teardrops no)
 	)
 	(paper "A4")
+	(title_block
+		(title "Round LED Flash — Annular Ring Camera Strobe")
+		(date "2026-10-21")
+		(rev "Rev A")
+		(company "Hector Jimenez")
+		(comment 1 "Engineering prototype candidate — bench qualification pending")
+	)
 	(layers
 		(0 "F.Cu" signal)
 		(4 "In1.Cu" signal)
