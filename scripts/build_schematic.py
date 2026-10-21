@@ -119,16 +119,14 @@ def core():
     annotations.append(text('02 / BLE CONTROLLER + UART PROGRAMMING',285,25,2))
     annotations.append(text('Boot GPIO2/8 high; GPIO9 high for normal boot, low at reset for UART download.',285,165))
 
-    # Section 3: actual capacitor bank. 2S2P: two parallel 5F cells per section.
+    # Section 3: two 5F cells in series, charged/balanced to 4.8V by LTC3225.
     capfp='Capacitor_THT:CP_Radial_D10.0mm_P5.00mm'
-    for ref,hi,lo,x,y in [('C30','CAP_BANK','CAP_MID',580,60),('C31','CAP_BANK','CAP_MID',640,60),('C32','CAP_MID','GND',580,105),('C33','CAP_MID','GND',640,105)]:
+    for ref,hi,lo,x,y in [('C30','CAP_BANK','CAP_MID',580,60),('C32','CAP_MID','GND',580,105)]:
         add(ref,'5F 2.7V','Device:C_Polarized',capfp,{1:hi,2:lo},x,y,
             mpn='HV1020-2R7505-R',manufacturer='Eaton',datasheet='https://www.eaton.com/content/dam/eaton/products/electronic-components/resources/data-sheet/eaton-hv-supercapacitors-cylindrical-cells-data-sheet.pdf',notes='Maximum body 10.5 mm diameter x 22.3 mm high. Hand-solder after reflow. Pulse and aged ESR validation pending.')
-    r('R31','2.2k','CAP_BANK','CAP_MID',705,60)
-    r('R32','2.2k','CAP_MID','GND',705,105)
-    annotations.append(text('03 / 5 F EFFECTIVE CAP BANK - 5.4 V nominal rating',545,25,2))
-    annotations.append(text('Maximum charge is one protected Li-ion cell. Stored energy at 4.2 V = 44.1 J.',545,145))
-    annotations.append(text('INCOMPLETE: add limited reverse-blocking charger, per-section clamps and flash isolation.',545,165))
+    annotations.append(text('03 / 2.5 F EFFECTIVE CAP BANK - regulated 4.8 V',545,25,2))
+    annotations.append(text('Two series cells; midpoint connects to LTC3225 CX. No bleed balancing resistors.',545,145))
+    annotations.append(text('Nominal stored energy 28.8 J. Flash isolation and service discharge still pending.',545,165))
 
     # Section 4: user inputs and indicators.
     add('SW2','SHUTTER','Switch:SW_Push','Button_Switch_SMD:SW_SPST_TL3342',{1:'SHUTTER_N',2:'GND'},65,235,mpn='TL3342F160QG',manufacturer='E-Switch')
@@ -155,12 +153,6 @@ def core():
 
     for ref,x in [('H1',580),('H2',640),('H3',700)]:
         add(ref,'M2.5 NPTH','Mechanical:MountingHole','MountingHole:MountingHole_2.7mm_M2.5',{},x,240)
-    annotations.append(text('06 / RELEASE STATUS: ENGINEERING DRAFT',545,205,2))
-    annotations.append(text('Pending: USB current detection, TP4056, DW01, cell NTC, flash boost and sinks,',545,270))
-    annotations.append(text('hardware pulse cutoff/re-arm, cap balancing/isolation, exact MPNs, routing,',545,280))
-    annotations.append(text('electrical/thermal/EMC verification and manufacturing outputs.',545,290))
-    annotations.append(text('PCB geometry: 84 mm OD / 55 mm opening / 4 layers / 1.6 mm FR4.',545,315))
-    annotations.append(text('One authoritative schematic/PCB/project. No fabrication release.',545,330))
 
     # Switch divider upper legs off whenever the logic rail is not power-good.
     # PMOS body diodes point from the sense node toward the source rail.
@@ -169,16 +161,44 @@ def core():
             {1:'SENSE_GATE_'+str(i),2:source,3:drain},x,375,
             mpn='AO3401A',manufacturer='Alpha & Omega Semiconductor',datasheet='https://www.aosmd.com/res/data_sheets/AO3401A.pdf',
             notes='Divider high-side switch. Gate pulls to its own source; diode blocks source-to-ADC while off.')
-        add('Q'+str(22+i),'2N7002-7-F','Transistor_FET:Q_NMOS_GSD','Package_TO_SOT_SMD:SOT-23',
-            {1:'LOGIC_PG',2:'GND',3:'SENSE_GATE_'+str(i)},x+40,375,
-            mpn='2N7002-7-F',manufacturer='Diodes Incorporated',datasheet='https://www.diodes.com/datasheet/download/2N7002.pdf',notes='Lifecycle/orderable suffix must be rechecked before BOM freeze; -7 listing is NRND.')
+        add('Q'+str(22+i),'MMBT3904-7-F','Transistor_BJT:Q_NPN_BEC','Package_TO_SOT_SMD:SOT-23',
+            {1:'SENSE_BASE_'+str(i),2:'GND',3:'SENSE_GATE_'+str(i)},x+40,375,
+            mpn='MMBT3904-7-F',manufacturer='Diodes Incorporated',datasheet='https://www.diodes.com/datasheet/download/MMBT3904.pdf')
         r('R'+str(50+i),'100k',source,'SENSE_GATE_'+str(i),x,405)
+        r('R'+str(52+i),'100k','LOGIC_PG','SENSE_BASE_'+str(i),x+40,405,
+          notes='Base current limits PG loading; pull-down saturation current is only tens of microamps.')
     annotations.append(text('07 / ADC POWER-OFF ISOLATION - enabled by regulator PG',545,350,2))
     annotations.append(text('TPS63070 PG is low with EN low; dividers discharge through their lower resistors.',545,425))
 
+    # Section 8: balanced, limited charge-pump charger. Pin mapping from ADI
+    # 3225fb page 5; voltage/current choices from pages 2,3,8. No -1 suffix.
+    pins=[('9','VIN','power_in'),('4','SHDN','input'),('6','VSEL','input'),('7','PROG','passive'),('8','GND','power_in'),('11','EP_GND','power_in'),('10','COUT','power_out'),('3','CX','passive'),('1','C_PLUS','passive'),('2','C_MINUS','passive'),('5','PGOOD','open_collector')]
+    ic('U30','LTC3225',pins,{9:'BAT_PROT',4:'CAP_CHG_EN',6:'GND',7:'CAP_PROG',8:'GND',11:'GND',10:'CAP_BANK',3:'CAP_MID',1:'CAP_FLY_P',2:'CAP_FLY_N',5:'CAP_PGOOD'},
+       'Package_DFN_QFN:DFN-10-1EP_2x3mm_P0.5mm_EP0.64x2.4mm',55,485,
+       'LTC3225EDDB#TRMPBF','Analog Devices','https://www.analog.com/media/en/technical-documentation/data-sheets/3225fb.pdf',
+       '4.8V selection, automatic cell balancing. EP soldered to ground. Independent package-land check pending.')
+    c('C60','4.7u 10V','BAT_PROT','GND',110,505,fp='Capacitor_SMD:C_0805_2012Metric')
+    c('C61','2.2u 16V','CAP_FLY_P','CAP_FLY_N',155,505,fp='Capacitor_SMD:C_0805_2012Metric',notes='Select effective capacitance >=1uF at applied voltage for charge-pump flying capacitor.')
+    r('R61','24k','CAP_PROG','GND',110,485,notes='Nominal input current 150mA; nominal balanced bank charge current 75mA.')
+    r('R62','10k','3V3','CAP_PGOOD',155,465)
+    add('Q30','AO3401A','Transistor_FET:Q_PMOS_GSD','Package_TO_SOT_SMD:SOT-23',
+        {1:'CAP_EN_GATE',2:'BAT_PROT',3:'CAP_EN_FEED'},110,440,mpn='AO3401A',manufacturer='Alpha & Omega Semiconductor',datasheet='https://www.aosmd.com/res/data_sheets/AO3401A.pdf',notes='Battery-referenced SHDN drive avoids driving SHDN above VIN when the battery supply disappears.')
+    for ref,signal,drain,x,y,res,value in [('Q31','ARM','CAP_EN_GATE',155,440,'R67','100k'),('Q32','HW_WINDOW','CAP_CHG_EN',205,525,'R68','47k'),('Q33','VBUS_RAW','CAP_CHG_EN',155,545,'R69','47k')]:
+        base=ref+'_BASE'
+        add(ref,'MMBT3904-7-F','Transistor_BJT:Q_NPN_BEC','Package_TO_SOT_SMD:SOT-23',
+            {1:base,2:'GND',3:drain},x,y,mpn='MMBT3904-7-F',manufacturer='Diodes Incorporated',datasheet='https://www.diodes.com/datasheet/download/MMBT3904.pdf')
+        r(res,value,signal,base,x+40,y)
+    r('R60','100k','BAT_PROT','CAP_EN_GATE',205,440)
+    r('R63','10k','CAP_EN_FEED','CAP_CHG_EN',205,465)
+    r('R64','100k','CAP_CHG_EN','GND',205,485)
+    r('R65','100k','VBUS_RAW','GND',110,545)
+    r('R66','100k','HW_WINDOW','GND',205,550)
+    annotations.append(text('08 / 4.8 V SUPERCAP CHARGER + AUTOMATIC BALANCING',25,415,2))
+    annotations.append(text('Charge enabled by ARM; USB presence or timed flash window forces SHDN low.',25,570))
+
 def write():
     rootid=uid('root')
-    out=['(kicad_sch (version 20250114) (generator "eeschema") (generator_version "10.0")',f'(uuid {q(rootid)}) (paper "A1")',
+    out=['(kicad_sch (version 20250114) (generator "eeschema") (generator_version "10.0")',f'(uuid {q(rootid)}) (paper "A0")',
          '(title_block (title "ROUND LED FLASH - ENGINEERING DRAFT") (date "2026-10-20") (rev "A-draft") (comment 1 "Incomplete electrical design - NOT FOR FABRICATION"))',
          '(lib_symbols '+'\n'.join(symbols.values())+')']
     errors=[]

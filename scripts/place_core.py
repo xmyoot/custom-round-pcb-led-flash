@@ -19,13 +19,14 @@ def in_ring(a):
     rmax=max(math.hypot(x-100,y-100) for x in (a[0],a[2]) for y in (a[1],a[3]))
     return rmin>=28.05 and rmax<=41.4 and not overlap(a,(76,38,124,59.5),0)
 fps={f.GetReference():f for f in b.GetFootprints()}
-fixed=[f for r,f in fps.items() if r in ['U10','J1','J2','H1','H2','H3','C30','C31','C32','C33']]
+fixed=[f for r,f in fps.items() if r in ['U10','J1','J2','H1','H2','H3','C30','C32']]
 movable=[f for r,f in fps.items() if f not in fixed]
 for f in fps.values():
     f.Reference().SetTextSize(pt(.8,.8)); f.Reference().SetTextThickness(p.FromMM(.12))
     # Reference artwork will be placed after the complete board is routed.
     f.Reference().SetVisible(False)
 for ref in ('R31','R32'):
+    if ref not in fps: continue
     f=fps[ref]
     if f.GetLayer()==p.F_Cu: f.Flip(f.GetPosition(),False)
 

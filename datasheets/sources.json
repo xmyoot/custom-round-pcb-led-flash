@@ -114,5 +114,54 @@
     "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/3225fb.pdf",
     "status": "failed",
     "reason": "The read operation timed out"
+  },
+  "MMBT3904": {
+    "url": "https://www.diodes.com/datasheet/download/MMBT3904.pdf",
+    "file": "MMBT3904.pdf",
+    "sha256": "483284b10e2a58c8ddafea3c1c3f77388edf9efd394ca30f9559e605f644f2dc",
+    "bytes": 349108,
+    "status": "downloaded"
+  },
+  "TLV760": {
+    "url": "https://www.ti.com/lit/ds/symlink/tlv760.pdf",
+    "file": "TLV760.pdf",
+    "sha256": "cbc82492fc6f0dcb87f1be90aa1fea13134a65aa283ae048f4b5772d47b2d844",
+    "bytes": 1037456,
+    "status": "downloaded"
+  },
+  "TLV3011": {
+    "url": "https://www.ti.com/lit/ds/symlink/tlv3011.pdf",
+    "file": "TLV3011.pdf",
+    "sha256": "02993c016420887ee4f1ab2fa640e7596c9c1324a73f4f72bee3b32adec38df3",
+    "bytes": 1624948,
+    "status": "downloaded"
+  },
+  "SN74LVC1G04": {
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g04.pdf",
+    "file": "SN74LVC1G04.pdf",
+    "sha256": "c9c30cad010d198aaa645d511b03415edc42108ca9799b173ee97d54e3f1a977",
+    "bytes": 2748820,
+    "status": "downloaded"
+  },
+  "SN74LVC1G125": {
+    "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf",
+    "file": "SN74LVC1G125.pdf",
+    "sha256": "1098d46e4565695e9823a08309bc581e2c9ead26b19e99a43a011a38642b27ca",
+    "bytes": 3056649,
+    "status": "downloaded"
+  },
+  "AO4407A": {
+    "url": "https://www.aosmd.com/res/data_sheets/AO4407A.pdf",
+    "file": "AO4407A.pdf",
+    "sha256": "ef4b3686383ca7264dad41bd466b750785a08c709d886a61d68ad39d21538bf8",
+    "bytes": 298249,
+    "status": "downloaded"
+  },
+  "TPS25200": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps25200.pdf",
+    "file": "TPS25200.pdf",
+    "sha256": "fafdb867c456a2b24ef4fe5908e7d6da75703c0f24a36f984864d1d2daf9cd4a",
+    "bytes": 4579378,
+    "status": "downloaded"
   }
 }

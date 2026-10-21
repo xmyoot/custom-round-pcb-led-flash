@@ -23,6 +23,13 @@ SOURCES = {
     '2N7002': 'https://www.diodes.com/datasheet/download/2N7002.pdf',
     'XFL4020': 'https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf',
     'LTC3225': 'https://www.analog.com/media/en/technical-documentation/data-sheets/3225fb.pdf',
+    'MMBT3904': 'https://www.diodes.com/datasheet/download/MMBT3904.pdf',
+    'TLV760': 'https://www.ti.com/lit/ds/symlink/tlv760.pdf',
+    'TLV3011': 'https://www.ti.com/lit/ds/symlink/tlv3011.pdf',
+    'SN74LVC1G04': 'https://www.ti.com/lit/ds/symlink/sn74lvc1g04.pdf',
+    'SN74LVC1G125': 'https://www.ti.com/lit/ds/symlink/sn74lvc1g125.pdf',
+    'AO4407A': 'https://www.aosmd.com/res/data_sheets/AO4407A.pdf',
+    'TPS25200': 'https://www.ti.com/lit/ds/symlink/tps25200.pdf',
 }
 
 def fetch(item):

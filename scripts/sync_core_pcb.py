@@ -15,6 +15,10 @@ def pos(x,y): return p.VECTOR2I(p.FromMM(x),p.FromMM(y))
 b=p.LoadBoard(str(ROOT/'Round_LED_Flash.kicad_pcb'))
 if list(b.GetTracks()): raise RuntimeError('Routed board: use an incremental, reviewed net update instead.')
 data=json.loads((ROOT/'analysis'/'draft_connectivity.json').read_text())
+live_refs={part['reference'] for part in data['parts'] if part['on_board']}
+for old in list(b.GetFootprints()):
+    if old.GetReference() in {'C31','C33','R31','R32'} and old.GetReference() not in live_refs:
+        b.DeleteNative(old)
 sys.path.insert(0,str(Path.home()/'.codex/skills/kicad/scripts'))
 from sexp_parser import parse_file,find_first,find_all
 native_file=ROOT/'analysis'/'draft.net'
@@ -51,6 +55,12 @@ locations={
  'R31':(130,121,0),'R32':(128,124,0),
  'Q20':(64,95,0),'Q21':(64,100,0),'Q22':(68,95,0),'Q23':(68,100,0),
  'R50':(72,95,0),'R51':(72,100,0),
+ 'R52':(71,92,0),'R53':(71,103,0),
+ 'U30':(133,109,0),'C60':(130,107,90),'C61':(130,110,90),
+ 'R60':(134,105,0),'R61':(136,109,90),'R62':(129,108,90),
+ 'R63':(129,113,90),'R64':(132,118,90),'R65':(110,137,0),'R66':(128,122,0),
+ 'Q30':(130,112,0),'Q31':(134,113,0),'Q32':(130,120,0),'Q33':(108,134,0),
+ 'R67':(136,113,0),'R68':(130,123,0),'R69':(108,137,0),
 }
 problems=[]
 for part in data['parts']:
@@ -69,10 +79,14 @@ for part in data['parts']:
             f.SetPosition(pos(x,y)); f.Flip(f.GetPosition(),False)
         elif ref in locations:
             x,y,a=locations[ref]; f.SetPosition(pos(x,y)); f.SetOrientationDegrees(a)
-            if ref in ('Q20','Q21','Q22','Q23','R50','R51'): f.Flip(f.GetPosition(),False)
+            if ref in ('Q20','Q21','Q22','Q23','R50','R51','R52','R53','U30','C60','C61','R60','R61','R62','R63','R64','R66','Q30','Q31','Q32','R67','R68'):
+                f.Flip(f.GetPosition(),False)
         else:
             problems.append(f'{ref}: no initial placement')
     f.SetValue(part['value']); f.Value().SetVisible(False)
+    if ref=='C32':
+        t=math.radians(27)
+        f.SetPosition(pos(100+35*math.cos(t)-2.5,100+35*math.sin(t)))
     lib,name=part['footprint'].split(':',1); f.SetFPID(p.LIB_ID(lib,name))
     attributes=f.GetAttributes()
     if part['in_bom']: attributes &= ~p.FP_EXCLUDE_FROM_BOM
